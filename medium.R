@@ -3,7 +3,7 @@ library(lintr)
 library(styler)
 
 # Adhere do tidyverse style guide
-tidyverse_style(
+tidyverse <- tidyverse_style(
   scope = "tokens",
   strict = TRUE,
   indent_by = 2,
@@ -13,4 +13,4 @@ tidyverse_style(
 )
 
 # Perform directory level styling
-style_dir(getwd(), transformers = tidyverse_style(strict = TRUE))
+style_dir(getwd(), transformers = tidyverse)
