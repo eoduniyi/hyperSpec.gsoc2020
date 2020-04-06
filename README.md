@@ -1,6 +1,6 @@
 # R GSoC 2020 hyperSpec
 <p style="line-height:12px"> <b>Student:</b> <i>Erick Oduniyi</i>; <b>Project:</b> <i>hyperSpec</i></p>
-This notebook contains notes and solutions for the R GSoC 2020 hyperSpec test.
+This README contains notes and solutions for the R GSoC 2020 hyperSpec test.
 
 ## 1. Easy
 **Task:** _Install `hyperSpec`, `covr` and `lintr` from CRAN and `hyperSpec.tidyverse` from github._
