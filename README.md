@@ -521,7 +521,7 @@ rename.hyperSpec() <- function(hyperSpecObject){
   # Check if user passed in a hyperSpec object
   chk.hy(hyperSpecObject)
   # Use dplyr::rename() to rename hyperSpec object data slot
-  res <- dplyr::rename(hyperSpecObject@data, ...)
+  res <- dplyr::rename(hyperSpecObject@data)
   # Check if $spc was renamed
   if(spc.name.changed(res)){
     # Throw an error
