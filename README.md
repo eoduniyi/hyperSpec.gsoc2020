@@ -65,12 +65,6 @@ setwd("/path/to/directory/R")
 # Check directory
 list.files()
 ```
-
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
 <ol class=list-inline><li>'aggregate.R'</li><li>'all.equal.R'</li><li>'apply.R'</li><li>'Arith.R'</li><li>'as.data.frame.R'</li><li>'barbiturates.R'</li><li>'bind.R'</li><li>'call.list.R'</li><li>'chk.hy.R'</li><li>'chondro.R'</li><li>'collapse.R'</li><li>'colMeans.R'</li><li>'Compare.R'</li><li>'count_lines.R'</li><li>'cov.R'</li><li>'decomposition.R'</li><li>'deprecated.R'</li><li>'dim.R'</li><li>'dimnames.R'</li><li>'DollarNames.R'</li><li>'droplevels.R'</li><li>'empty.R'</li><li>'extract.R'</li><li>'factor2num.R'</li><li>'fileio.optional.R'</li><li>'fix_spc_colnames.R'</li><li>'flu.R'</li><li>'getbynames.R'</li><li>'guesswavelength.R'</li><li>'hyperspec-class.R'</li><li>'hyperspec-package.R'</li><li>'initialize.R'</li><li>'labels.R'</li><li>'laser.R'</li><li>'levelplot.R'</li><li>'makeraster.R'</li><li>'map.identify.R'</li><li>'map.sel.poly.R'</li><li>'mark.dendrogram.R'</li><li>'mark.peak.R'</li><li>'Math.R'</li><li>'matlab.palette.R'</li><li>'mean_sd.R'</li><li>'merge.R'</li><li>'mvtnorm.R'</li><li>'normalize01.R'</li><li>'options.R'</li><li>'orderwl.R'</li><li>'paracetamol.R'</li><li>'paste.row.R'</li><li>'pearson.dist.R'</li><li>'plot.R'</li><li>'plotc.R'</li><li>'plotmap.R'</li><li>'plotmat.R'</li><li>'plotspc.R'</li><li>'plotvoronoi.R'</li><li>'qplot.R'</li><li>'qplotmixmap.R'</li><li>'quantile.R'</li><li>'rbind.fill.R'</li><li>'read.asc.Andor.R'</li><li>'read.asc.PerkinElmer.R'</li><li>'read.ENVI.HySpex.R'</li><li>'read.ENVI.Nicolet.R'</li><li>'read.ENVI.R'</li><li>'read.ini.R'</li><li>'read.jdx.R'</li><li>'read.mat.Cytospec.R'</li><li>'read.mat.Witec.R'</li><li>'read.spc.Kaiser.R'</li><li>'read.spc.R'</li><li>'read.spc.Shimadzu.R'</li><li>'read.spe.R'</li><li>'read.txt.Horiba.R'</li><li>'read.txt.long.R'</li><li>'read.txt.Renishaw.R'</li><li>'read.txt.Shimadzu.R'</li><li>'read.txt.wide.R'</li><li>'read.txt.Witec.R'</li><li>'regexps.R'</li><li>'replace.R'</li><li>'sample.R'</li><li>'scale.R'</li><li>'seq.R'</li><li>'show.R'</li><li>'spc.bin.R'</li><li>'spc.fit.poly.R'</li><li>'spc.identify.R'</li><li>'spc.loess.R'</li><li>'spc.NA.approx.R'</li><li>'spc.rubberband.R'</li><li>'spc.spline.R'</li><li>'split.R'</li><li>'split.string.R'</li><li>'splitdots.R'</li><li>'subset.R'</li><li>'Summary.R'</li><li>'sweep.R'</li><li>'trellis.factor.key.R'</li><li>'units.R'</li><li>'unittest.R'</li><li>'validate.R'</li><li>'vandermonde.R'</li><li>'wc.R'</li><li>'wl.R'</li><li>'wl2i.R'</li><li>'wleval.R'</li><li>'write.txt.long.R'</li><li>'write.txt.wide.R'</li><li>'y-pastenames.R'</li><li>'zzz.R'</li></ol>
 
 ```R
@@ -316,14 +310,11 @@ library(dplyr)
 library(hflights)
 ```
 
-
     Attaching package: ‘dplyr’
-
 
     The following objects are masked from ‘package:stats’:
 
         filter, lag
-
 
     The following objects are masked from ‘package:base’:
 
@@ -334,7 +325,6 @@ library(hflights)
 df <- data.frame(hflights)[1:3, 1:3]
 df
 ```
-
 
 <table>
 <caption>A data.frame: 3 × 3</caption>
@@ -349,14 +339,10 @@ df
 </tbody>
 </table>
 
-
-
-
 ```R
 # Rename columns of data frame
 df %>% rename(YearNewColName = Year) # same as rename(df, YearNewColName = Year)
 ```
-
 
 <table>
 <caption>A data.frame: 3 × 3</caption>
