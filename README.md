@@ -517,11 +517,11 @@ So, not only does a hyperSpec object have to contain the 4 slots mentioned above
 
 ```{R}
 # Function design for rename.hyperSpec()
-rename.hyperSpec() <- function(hyperSpecObject){
+rename.hyperSpec() <- function(hyperSpecObject, NewColName = OldColName, ...){
   # Check if user passed in a hyperSpec object
   chk.hy(hyperSpecObject)
   # Use dplyr::rename() to rename hyperSpec object data slot
-  res <- dplyr::rename(hyperSpecObject@data)
+  res <- dplyr::rename(hyperSpecObject@data, NewColName = OldColName, ...)
   # Check if $spc was renamed
   if(spc.name.changed(res)){
     # Throw an error
@@ -541,7 +541,7 @@ rename.hyperSpec() <- function(hyperSpecObject){
 A few `dplyr` operations have already been implemented for hyperSpec (e.g., `filter.hyperSpec()` and `select.hyperSpec()`). Fortunately, `dplyr::select()` and `dplyr::rename()` are similar operations, so hyperSpec's implementation of `select()` should be a good guide to follow for `rename()`.
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/select.hyperSpec.example.png)
 
-Using the above-mentioned function requirements and function design for `rename.hySpec()` and `select.hyperSpec` as a guide, an implementation of `rename()` could be the following:
+Using the above-mentioned function requirements and function design for `rename.hyperSpec()` and `select.hyperSpec()` as a guide, an implementation of `rename()` could be the following:
 
 ```R
 # Function implementation for rename.hyperSpec()
