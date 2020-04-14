@@ -639,4 +639,122 @@ The last thing to do is commit and then submit a pull request for rename.R and w
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/rename.hyperSpec.pull.png)
 
 ### 4. Very Hard
-The best is yet to come.
+**Task:** _Set up a github repo and R package skeleton and copy a hyperspec qplot function into the new package with one unit test._
+
+---
+
+I chose qplotspc because it seemed simple and because I wanted to know more the spectra within the hyperSpec objects
+
+So the main thing I'm trying to understand is how doe you test a plotting function (maybe the ggplot2 repo has some good resources). Furthermore, I need to understand what the function does and how the function does it. Basically, I need to understand the parameters and how they get processed in the function body.
+
+#### `qplotspc()` usage
+
+#### `qplotspc()` parameters
+The parameters of qplotspc are the following:
+* **x** - hyperSpec object
+* **wl.range** -  wavelength ranges to plot
+* **mapping** - uses gpgplot's geom_line?
+* **spc.nmax** -  maximum number of spectra to plot
+* **map.lineonly** - if TRUE, mapping will be handed to ggplot2 geom_line instead of ggplot2 ggplot.
+* **debuglevel** - if > 0, additional debug output is produced
+
+#### `qplotspc()` function body
+The function signature of qplotspc is the following:
+
+```R
+qplotspc <- function(x,
+                     wl.range = TRUE, ...,
+                     mapping = aes_string(x = ".wavelength", y = "spc", group = ".rownames"),
+                     spc.nmax = hy.getOption("ggplot.spc.nmax"),
+                     map.lineonly = FALSE,
+                     debuglevel = hy.getOption("debuglevel"))
+{
+  chk.hy(x)
+  validObject(x)
+
+  ## cut away everything that isn't asked for _before_ transforming to data.frame
+  if(nrow(x) > spc.nmax)
+  {
+    if(debuglevel >= 1L)
+    {
+      message("Number of spectra exceeds spc.nmax. Only the first ", spc.nmax, " are plotted.")
+    }
+    x <- x[seq_len(spc.nmax)]
+  }
+  wl.range <- wl2i(x, wl.range, unlist = FALSE)
+  x <- x[, , unlist(wl.range), wl.index = TRUE]
+  df <- as.long.df(x, rownames = TRUE, na.rm = FALSE) # with na.rm trouble with wl.range
+
+  ## ranges go into facets
+  if(length(wl.range) > 1L)
+  {
+    tmp <- wl.range
+    for(r in seq_along(tmp))
+    {
+      tmp [[r]][TRUE] <- r
+    }
+    df$.wl.range <- rep(unlist(tmp), each = nrow(x))
+  }
+  df <- df[!is.na(df$spc), , drop = FALSE]
+  if(map.lineonly)
+  {
+    p <- ggplot(df) +
+      geom_line(mapping = mapping, ...)
+  }
+  else
+  {
+    p <- ggplot(df, mapping = mapping) +
+      geom_line(...)
+  }
+  p <- p + xlab(labels(x, ".wavelength")) + ylab(labels(x, "spc"))
+  if(!is.null(df$.wl.range))
+  {
+    p <- p + facet_grid(. ~ .wl.range,
+                        labeller = as_labeller(rep(NA, nlevels(df$.wl.range))),
+                        scales = "free", space = "free") +
+      theme(strip.text.x = element_text(size = 0))
+  }
+  p
+}
+```
+
+Okay, clearly there is a bunch of stuff going on in this function, so let's try and break this into pieces first:
+
+piece_1: parameters list
+```R
+function(x, # expects a hyperSpec object
+         wl.range = TRUE, # defaults to true => will plot the wavelength ranges
+         ..., # passes additional arguments to ggplot geom_line()
+         mapping = aes_string(x = ".wavelength", y = "spc", group = ".rownames"), # map the variables in the data to visual properties
+         spc.nmax = hy.getOption("ggplot.spc.nmax"), # gets the number of spectra to be plotted based on the current package option
+         map.lineonly = FALSE, # defaults to handing mapping to ggplot2 ggplot
+         debuglevel = hy.getOption("debuglevel") # gets the debuglevel based on the current hyperSpec package option
+       )
+```
+
+piece_2: checking hyperSpec object
+```R
+chk.hy(x)
+validObject(x)
+```
+
+piece_3: transforming hyperSpec object into a data frame
+```R
+# Collect the first spc.max number of spectra
+if(nrow(x) > spc.nmax)
+{
+  # Report warning to user
+  if(debuglevel >= 1L)
+  {
+    message("Number of spectra exceeds spc.nmax. Only the first ", spc.nmax, " are plotted.")
+  }
+  # Subset hyperSpec object
+  x <- x[seq_len(spc.nmax)]
+}
+# ????????????????
+wl.range <- wl2i(x, wl.range, unlist = FALSE)
+# ????????????????
+x <- x[, , unlist(wl.range), wl.index = TRUE]
+# Turn hyperSpec object into a data frame
+df <- as.long.df(x, rownames = TRUE, na.rm = FALSE) # with na.rm trouble with wl.range
+```
