@@ -662,7 +662,7 @@ The parameters of qplotspc are the following:
 * **debuglevel** - if > 0, additional debug output is produced
 
 #### 4.3. `qplotspc()` function body
-The function signature of qplotspc is the following:
+The function body of qplotspc is the following:
 
 ```R
 qplotspc <- function(x,
