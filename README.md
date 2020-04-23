@@ -645,7 +645,9 @@ The last thing to do is commit and then submit a pull request for rename.R and w
 
 I chose `qplotspc` because it seemed simple and because I wanted to know more about the spectra within the hyperSpec objects.
 
+<p align="justify">
 So, the main thing I'm trying to understand is how does one test a plotting function (maybe the ggplot2 repo has some good resources). Furthermore, I need to understand what the function does and how the function does it. Basically, I need to understand the parameters/arguments and how they get processed in the function body.
+</p>
 
 #### 4.1. `qplotspc()` usage
 See how `qplotspc` and other plotting functions are used on[hyperSpec Plotting Examples with ggplot2](https://gegznav.github.io/spHelper/articles/v3_Plotting_Examples_gg_hy.html)
@@ -809,8 +811,9 @@ if(!is.null(df$.wl.range))
 # Return plot
 p
 ```
-
+<p align="justify">
 Alright! So I broke the function into six parts, which were divided according the start of control structures (i.e., if()). This was done to better understand how the function arguments were being handled based on the input given by the user. This was also done to try and develop more comprehensive unittest. Now, hopefully it's a little more clearer how to test each part of the code.
+</p>
 
 #### 4.4. Writing unit test for `qplotspc`
 Again, the plan is to write one unit test for each part of the function:
