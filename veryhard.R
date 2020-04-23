@@ -90,19 +90,73 @@ qplotspc <- function(x,
 .test(qplotspc) <- function(){
   context("qplot")
 
-  # UT1
-  test_that("plot returns ggplot object", {
+  # UT1: testing parts 1, 3, 4, & 5
+  test_that("spc.nmax and debuglevel arguments are correctly applied", {
+    hy.setOptions(ggplot.spc.nmax = 5, debuglevel = 1L)
+    tmp <- flu
+    tmp <- tmp[seq_len(hy.getOption("ggplot.spc.nmax"))]
+    wl.range <- wl2i(tmp, TRUE, unlist = FALSE)
+    tmp <- tmp[, , unlist(wl.range), wl.index = TRUE]
+    df <- as.long.df(tmp, rownames = TRUE, na.rm = FALSE)
+    df <- df[!is.na(df$spc), , drop = FALSE]
+    expect_identical(ggplot_build(qplotspc(flu))$plot$data, df)
+    expect_message(ggplot_build(qplotspc(flu))$plot$data)
+  })
+  test_that("wl.range argument is correctly applied", {
+    hy.setOptions(ggplot.spc.nmax = 10)
+    tmp <- flu
+    wl.range <- wl2i(tmp, 405:410, unlist = FALSE)
+    tmp <- tmp[, , unlist(wl.range), wl.index = TRUE]
+    df <- as.long.df(tmp, rownames = TRUE, na.rm = FALSE)
+    df <- df[!is.na(df$spc), , drop = FALSE]
+    expect_identical(ggplot_build(qplotspc(flu, 405:410))$plot$data, df)
+  })
+  test_that("mapping and map.lineonly arguments are correctly applied", {
+    hy.setOptions(ggplot.spc.nmax = 10)
+    tmp <- flu
+    wl.range <- wl2i(tmp, TRUE, unlist = FALSE)
+    tmp <- tmp[, , unlist(wl.range), wl.index = TRUE]
+    df <- as.long.df(tmp, rownames = TRUE, na.rm = FALSE)
+    df <- df[!is.na(df$spc), , drop = FALSE]
+    p <- ggplot(df, mapping = aes_string(x = ".wavelength", y = "spc", group = ".rownames")) + geom_line()
+    expect_equal(qplotspc(flu, map.lineonly = FALSE)$mapping, p$mapping)
+    p <- ggplot(df) + geom_line(mapping = aes_string(x = ".wavelength", y = "spc", group = ".rownames"))
+    expect_identical(qplotspc(flu, map.lineonly = TRUE)$mapping, p$mapping)
+  })
+
+  # UT2: testing part 2
+  test_that("non hyperSpec objects are rejected", {
+    tmp <- flu$spc
+    df <- data.frame(a = NA, b = NA)
+    expect_error(qplotspc(tmp))
+    expect_error(qplotspc(df))
+  })
+
+  # UT3: testing part 6
+  test_that("facets and labels correctly applied", {
+    hy.setOptions(ggplot.spc.nmax = 10)
+    tmp <- flu
+    wl.range <- wl2i(tmp, TRUE, unlist = FALSE)
+    tmp <- tmp[, , unlist(wl.range), wl.index = TRUE]
+    df <- as.long.df(tmp, rownames = TRUE, na.rm = FALSE)
+    df <- df[!is.na(df$spc), , drop = FALSE]
+    p <- ggplot(df, mapping = aes_string(x = ".wavelength", y = "spc", group = ".rownames")) + geom_line()
+    p <- p + xlab(labels(tmp, ".wavelength")) + ylab(labels(tmp, "spc"))
+    # p <- p + facet_grid(. ~ .wl.range,
+    #                     labeller = as_labeller(rep(NA, nlevels(df$.wl.range))),
+    #                     scales = "free", space = "free") +
+    #   theme(strip.text.x = element_text(size = 0))
+    expect_equal(qplotspc(flu)$facet, p$facet)
+    expect_equal(qplotspc(flu)$labels, p$labels)
+    expect_equal(qplotspc(flu)$layers, p$layers)
+    expect_equal(qplotspc(flu)$scales, p$scales)
+
+  })
+
+  # UT4
+  test_that("a ggplot is returned", {
     p <- qplotspc(chondro)
     expect_is(p, "ggplot")
   })
-
-  # UT2
-  test_that("plot uses correct data", {
-    p <- qplotspc(chondro)
-    expect_equal(p$data$x, chondro@data$x)
-    expect_equal(p$data$y, chondro@data$y)
-  })
-
-  # UTTODO: Create unit test for hyperSpec object nuances.
 
 }

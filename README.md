@@ -643,13 +643,14 @@ The last thing to do is commit and then submit a pull request for rename.R and w
 
 ---
 
-I chose qplotspc because it seemed simple and because I wanted to know more the spectra within the hyperSpec objects
+I chose `qplotspc` because it seemed simple and because I wanted to know more about the spectra within the hyperSpec objects.
 
-So the main thing I'm trying to understand is how doe you test a plotting function (maybe the ggplot2 repo has some good resources). Furthermore, I need to understand what the function does and how the function does it. Basically, I need to understand the parameters and how they get processed in the function body.
+So, the main thing I'm trying to understand is how does one test a plotting function (maybe the ggplot2 repo has some good resources). Furthermore, I need to understand what the function does and how the function does it. Basically, I need to understand the parameters/arguments and how they get processed in the function body.
 
-#### `qplotspc()` usage
+#### 4.1. `qplotspc()` usage
+See how `qplotspc` and other plotting functions are used on[hyperSpec Plotting Examples with ggplot2](https://gegznav.github.io/spHelper/articles/v3_Plotting_Examples_gg_hy.html)
 
-#### `qplotspc()` parameters
+#### 4.2. `qplotspc()` parameters
 The parameters of qplotspc are the following:
 * **x** - hyperSpec object
 * **wl.range** -  wavelength ranges to plot
@@ -658,7 +659,7 @@ The parameters of qplotspc are the following:
 * **map.lineonly** - if TRUE, mapping will be handed to ggplot2 geom_line instead of ggplot2 ggplot.
 * **debuglevel** - if > 0, additional debug output is produced
 
-#### `qplotspc()` function body
+#### 4.3. `qplotspc()` function body
 The function signature of qplotspc is the following:
 
 ```R
@@ -717,7 +718,7 @@ qplotspc <- function(x,
   p
 }
 ```
-
+#### 4.3.1. Understanding the pieces of `qplotspc`
 Okay, clearly there is a bunch of stuff going on in this function, so let's try and break this into pieces first:
 
 piece_1: parameters list
@@ -740,7 +741,7 @@ validObject(x)
 
 piece_3: transforming hyperSpec object into a data frame
 ```R
-# Collect the first spc.max number of spectra
+# Collect the first spc.nmax number of spectra
 if(nrow(x) > spc.nmax)
 {
   # Report warning to user
@@ -748,13 +749,74 @@ if(nrow(x) > spc.nmax)
   {
     message("Number of spectra exceeds spc.nmax. Only the first ", spc.nmax, " are plotted.")
   }
-  # Subset hyperSpec object
+  # Collect a subset of the hyperSpec object's spectra (i.e., number of rows)
   x <- x[seq_len(spc.nmax)]
 }
-# ????????????????
+# Get indices of specified wavelength ranges
 wl.range <- wl2i(x, wl.range, unlist = FALSE)
-# ????????????????
+# Collect a subset of the hyperSpec object's wavelength (i.e., number of columns)
 x <- x[, , unlist(wl.range), wl.index = TRUE]
 # Turn hyperSpec object into a data frame
 df <- as.long.df(x, rownames = TRUE, na.rm = FALSE) # with na.rm trouble with wl.range
 ```
+
+piece_4: turning ranges into facets
+```R
+# Replace the wavelength ranges with a vector containing 1 to length(wl.ranges)
+if(length(wl.range) > 1L)
+{
+  tmp <- wl.range
+  for(r in seq_along(tmp))
+  {
+    tmp [[r]][TRUE] <- r
+  }
+  # Update wavelength ranges for all rows
+  df$.wl.range <- rep(unlist(tmp), each = nrow(x))
+}
+# Collect non NA rows and ensure a data frame is returned
+df <- df[!is.na(df$spc), , drop = FALSE]
+
+```
+piece_5: Handling map.lineonly input
+```R
+# Let geom_line handle mapping
+if(map.lineonly)
+{
+  p <- ggplot(df) +
+    geom_line(mapping = mapping, ...)
+}
+# Let ggplot handle mapping
+else
+{
+  p <- ggplot(df, mapping = mapping) +
+    geom_line(...)
+}
+# Add x and y labels to plot
+p <- p + xlab(labels(x, ".wavelength")) + ylab(labels(x, "spc"))
+```
+
+piece_6: adding facets
+```R
+# Check if the data frame has wavelength ranges
+if(!is.null(df$.wl.range))
+{
+  # Add facets and theme to plot
+  p <- p + facet_grid(. ~ .wl.range,
+                      labeller = as_labeller(rep(NA, nlevels(df$.wl.range))),
+                      scales = "free", space = "free") +
+    theme(strip.text.x = element_text(size = 0))
+}
+# Return plot
+p
+```
+
+Alright! So I broke the function into six parts, which were divided according the start of control structures (i.e., if()). This was done to better understand how the function arguments were being handled based on the input given by the user. This was also done to try and develop more comprehensive unittest. Now, hopefully it's a little more clearer how to test each part of the code.
+
+#### 4.4. Writing unit test for `qplotspc`
+Again, the plan is to write one unit test for each part of the function:
+![](./img/qplotspc.unittest.png)
+
+[See for the remaining unittest](./veryhard.R)
+
+Finally, check package coverage:
+![](./img/qplotspc.test-coverage.png)
