@@ -357,7 +357,7 @@ df %>% rename(YearNewColName = Year) # same as rename(df, YearNewColName = Year)
 </tbody>
 </table>
 
-Observe `df %>% rename(NewColName = OldColName, ...)` only operates on the column names of the data frame and so while the column names of the data frame may be changed, the number of columns is preserved. So, if I pass in a <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;\times&space;\&space;m" title="n \times \ m" /></a> data frame to `rename()`, then the result will be an <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;\times&space;\&space;m" title="n \times \ m" /></a> data frame. `dplyr::rename()` is equivalent to:
+Observe `df %>% rename(NewColName = OldColName, ...)` only operates on the column names of the data frame and so while the column names of the data frame may be changed, the number of columns is preserved. So, if I pass in a <img src="https://latex.codecogs.com/gif.latex?n&space;\times\&space;m" title="n \times\ m" /> data frame to `rename()`, then the result will be an <img src="https://latex.codecogs.com/gif.latex?n&space;\times\&space;m" title="n \times\ m" /> data frame. `dplyr::rename()` is equivalent to:
 
 ```{R}
 names(df)[names(df) == "OldColName"] <- "NewColName"
@@ -383,7 +383,7 @@ df %>% select(Year) # same as select(df, year)
 </tbody>
 </table>
 
-Observe `df %>% select(ColName1, ColName2, ...)` selects a subset of the columns as specified by the column names. Thus, select operates on the entire data frame. So, if I pass in a <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;\times&space;\&space;m" title="n \times \ m" /></a> data frame, then the result will be a data frame with <a href="https://www.codecogs.com/eqnedit.php?latex=\&hash;cols-selected&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\&hash;cols-selected&space;\times&space;\&space;m" title="\#cols-selected \times \ m" /></a>. `dplyr::select()` is equivalent to:
+Observe `df %>% select(ColName1, ColName2, ...)` selects a subset of the columns as specified by the column names. Thus, select operates on the entire data frame. So, if I pass in a <img src="https://latex.codecogs.com/gif.latex?n&space;\times\&space;m" title="n \times\ m" /> data frame, then the result will be a data frame with <img src="https://latex.codecogs.com/gif.latex?\&hash;cols_{selected}&space;\times&space;\&space;m" title="\#cols_{selected} \times \ m" />. `dplyr::select()` is equivalent to:
 
 ```{R}
 df[names(df) == "OldColName"]
@@ -604,7 +604,7 @@ chondro %>% rename.hyperSpec(spc2 = spc) # should throw an error
 ### 3.7. Testing and Validation
 Now that `rename()` has been implemented it's important to test the code. Unit testing (UT) is an automated procedure for checking the correctness of pieces/components/cases of a function/module. The life cycle of UT and code development could like the following:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}" title="\mbox{function-implementation} \leftrightarrow \mbox{unit-test} \leftrightarrow \mbox{check-test} \leftrightarrow \mbox{update -implementation}" /></a>
+<img src="https://latex.codecogs.com/gif.latex?\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}" title="\mbox{function-implementation} \leftrightarrow \mbox{unit-test} \leftrightarrow \mbox{check-test} \leftrightarrow \mbox{update -implementation}" />
 
 **Note:** _It's important to know whether or not there is a problem with your code or the unit test your wrote for the code._
 
