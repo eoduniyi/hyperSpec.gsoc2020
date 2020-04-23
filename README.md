@@ -357,7 +357,7 @@ df %>% rename(YearNewColName = Year) # same as rename(df, YearNewColName = Year)
 </tbody>
 </table>
 
-Observe `df %>% rename(NewColName = OldColName, ...)` only operates on the column names of the data frame and so while the column names of the data frame may be changed, the number of columns is preserved. So, if I pass in a <a href="https://www.codecogs.com/eqnedit.php?latex=$n&space;\times&space;\&space;m$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$n&space;\times&space;\&space;m$" title="$n \times \ m$" /></a> data frame to `rename()`, then the result will be an <a href="https://www.codecogs.com/eqnedit.php?latex=$n&space;\times&space;\&space;m$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$n&space;\times&space;\&space;m$" title="$n \times \ m$" /></a> data frame. `dplyr::rename()` is equivalent to:
+Observe `df %>% rename(NewColName = OldColName, ...)` only operates on the column names of the data frame and so while the column names of the data frame may be changed, the number of columns is preserved. So, if I pass in a <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;\times&space;\&space;m" title="n \times \ m" /></a> data frame to `rename()`, then the result will be an <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;\times&space;\&space;m" title="n \times \ m" /></a> data frame. `dplyr::rename()` is equivalent to:
 
 ```{R}
 names(df)[names(df) == "OldColName"] <- "NewColName"
@@ -383,7 +383,7 @@ df %>% select(Year) # same as select(df, year)
 </tbody>
 </table>
 
-Observe `df %>% select(ColName1, ColName2, ...)` selects a subset of the columns as specified by the column names. Thus, select operates on the entire data frame. So, if I pass in a <a href="https://www.codecogs.com/eqnedit.php?latex=$n&space;\times&space;\&space;m$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$n&space;\times&space;\&space;m$" title="$n \times \ m$" /></a> data frame, then the result will be a data frame with <a href="https://www.codecogs.com/eqnedit.php?latex=$\&hash;cols-selected&space;\times&space;\&space;m$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$\&hash;cols-selected&space;\times&space;\&space;m$" title="$\#cols-selected \times \ m$" /></a>. `dplyr::select()` is equivalent to:
+Observe `df %>% select(ColName1, ColName2, ...)` selects a subset of the columns as specified by the column names. Thus, select operates on the entire data frame. So, if I pass in a <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;\times&space;\&space;m" title="n \times \ m" /></a> data frame, then the result will be a data frame with <a href="https://www.codecogs.com/eqnedit.php?latex=\&hash;cols-selected&space;\times&space;\&space;m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\&hash;cols-selected&space;\times&space;\&space;m" title="\#cols-selected \times \ m" /></a>. `dplyr::select()` is equivalent to:
 
 ```{R}
 df[names(df) == "OldColName"]
@@ -604,7 +604,7 @@ chondro %>% rename.hyperSpec(spc2 = spc) # should throw an error
 ### 3.7. Testing and Validation
 Now that `rename()` has been implemented it's important to test the code. Unit testing (UT) is an automated procedure for checking the correctness of pieces/components/cases of a function/module. The life cycle of UT and code development could like the following:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$$\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}$$" title="$$\mbox{function-implementation} \leftrightarrow \mbox{unit-test} \leftrightarrow \mbox{check-test} \leftrightarrow \mbox{update -implementation}$$" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mbox{function-implementation}&space;\leftrightarrow&space;\mbox{unit-test}&space;\leftrightarrow&space;\mbox{check-test}&space;\leftrightarrow&space;\mbox{update&space;-implementation}" title="\mbox{function-implementation} \leftrightarrow \mbox{unit-test} \leftrightarrow \mbox{check-test} \leftrightarrow \mbox{update -implementation}" /></a>
 
 **Note:** _It's important to know whether or not there is a problem with your code or the unit test your wrote for the code._
 
@@ -619,7 +619,7 @@ test_that("a description of my test", {
 See Hadley Wickham's [Testing chapter](https://r-pkgs.org/tests.html) to get more information about setting up unit testing for R. Additionally, André Müller's ["Unit Testing in R"](https://towardsdatascience.com/unit-testing-in-r-68ab9cc8d211) is a helpful resource for R test development.
 
 #### 3.7.2. Writing unit test for `rename.hyperSpec()`
-Because the column renaming functionality is provided by `dplyr::rename()` I don't need to test if that works (it's already being [tested](https://github.com/tidyverse/dplyr/blob/master/tests/testthat/test-rename.R)). Instead, the main things I want to test is that `rename()` doesn't allow the renaming of `$spc` and that when the columns of the data frame are renamed the labels are correctly updated:
+Because the column renaming functionality is provided by `dplyr::rename()` I don't need to test if that works (it's already being [tested](https://github.com/tidyverse/dplyr/blob/master/tests/testthat/test-rename.R)). Instead, the main things I want to test is that `rename()` doesn't allow the renaming of `spc` and that when the columns of the data frame are renamed the labels are correctly updated:
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/rename.hyperSpec.unittest.png)
 
 Certainly there are more test I could write for `rename()`, but I think these three are a good start. We can use `covr` to check the testing coverage:
@@ -819,7 +819,7 @@ Alright! So I broke the function into six parts, which were divided according th
 Again, the plan is to write one unit test for each part of the function:
 ![](./img/qplotspc.unittest.png)
 
-[See for the remaining unittest](./veryhard.R)
+[See](./veryhard.R) for the remaining unittest
 
 Finally, check package coverage:
 ![](./img/qplotspc.test-coverage.png)
