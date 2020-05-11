@@ -3,11 +3,18 @@
 ### License
 Contributing under hyperSpec should be free
 
+---
+
+
 ### Trello
 Will be using Trello as a way to organize high-level task, quick links, resources, agendas, and todos
 
+---
+
 ### hyperSpec's contributors guideline
 Roman will be working on a draft. I can help by adding weekly meeting notes and weekly reports
+
+---
 
 ### Github workflow
 In general, the workflow for contributing to the the hyperSpec ecosystem is the following:
@@ -20,13 +27,19 @@ In general, the workflow for contributing to the the hyperSpec ecosystem is the 
   7. Make necessary changes
   8. Merge branch into master/development
 
+---
+
 ### Package skeleton
 TODO: Create a package skeleton and associated github repo that contains unittest and contious integration.
+
+---
 
 ### Package building
 TODO: Read up on git-lfs, cMAKE, win-builder, and r-hub
 
 **Note:** I should install the R development branch via subversion
+
+---
 
 ### Development Trajectory
 In terms of contributing, there are a number of entry points I can start on:
