@@ -277,4 +277,5 @@ test@data[c('spc')] <- spc
 expr <- quo_get_expr(args[[1]])
 test@data[c("spc*2")]
 transmute(df, a=a*0, a=b*2, c = a)
+transmute(df)
 proc_args(flu, c, spc=spc*0, spc=spc*2, spc=spc*0, a = spc)
