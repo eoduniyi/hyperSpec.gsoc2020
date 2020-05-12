@@ -1,4 +1,4 @@
-# Meeting 5-11-20
+# Meeting notes for 5-11-20
 
 ### License
 Contributing under hyperSpec should be free

@@ -21,7 +21,7 @@ head(flu@data)
 # Take a look at the flu object data
 # head(flu@data, 3)
 # # Plot flu
-# qplotspc(flu, spc.nmax = 3)
+# qplotspc(flu, spc.nmax = 3)¸¸
 # # Collect the indices of the specified wavelength
 # wl2i(flu, 405:407)
 # wl2i(flu, 405~407)
