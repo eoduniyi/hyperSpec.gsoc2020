@@ -13,7 +13,7 @@ Because I will be creating a lot of R packages there should be a package pattern
   5. code coverage via `covr` and [Codecov](https://codecov.io/)
 
 ##### 1.1.1 Create a Github repository
-Make a new Github repository for the package to be. Clone the Github repository locally. Clone the hyperSpec.skeleton repository. commit/publish local repository.
+Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton). commit/publish local repository.
 
 ##### 1.1.2 Create a R package via RStudio
 It is best to develop all packages from within RStudio:
