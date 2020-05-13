@@ -1,6 +1,8 @@
 # Report for Week of 5-11-20
 
+### 1. Package skeleton
 Create a package skeleton and associated github repo that contains unittest and continuous integration.
+
 
 #### 1.1 Creating a hyperSpec package skeleton
 Because I will be creating a lot of R packages there should be a package pattern to ensure a consistent infrastructure style is present across the hyperSpec ecosystem. Every hyperSpec package should then include the following components:
@@ -37,7 +39,7 @@ All hyperSpec packages include CI via [Travis CI]() and [AppVeyor](). The .yml f
 **Note:** You need a Travis CI and AppVeyor account. Make sure the Travis CI and AppVeyor apps are installed in the Github repository's settings.
 
 ##### 1.1.5 Set up code coverage
-All hyperSpec packages report code coverage via [codecov.io](). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual]((https://cran.r-project.org/web/packages/covr/covr.pdf).
+All hyperSpec packages report code coverage via [codecov.io](). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual](https://cran.r-project.org/web/packages/covr/covr.pdf).
 
 **Note:** You need a codecov.io account. Make sure the Codecov app is installed in the Github repository's settings.
 

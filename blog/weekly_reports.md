@@ -38,7 +38,7 @@ All hyperSpec packages include CI via [Travis CI]() and [AppVeyor](). The .yml f
 **Note:** You need a Travis CI and AppVeyor account. Make sure the Travis CI and AppVeyor apps are installed in the Github repository's settings.
 
 ##### 1.1.5 Set up code coverage
-All hyperSpec packages report code coverage via [codecov.io](). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual]((https://cran.r-project.org/web/packages/covr/covr.pdf).
+All hyperSpec packages report code coverage via [codecov.io](). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual](https://cran.r-project.org/web/packages/covr/covr.pdf).
 
 **Note:** You need a codecov.io account. Make sure the Codecov app is installed in the Github repository's settings.
 
