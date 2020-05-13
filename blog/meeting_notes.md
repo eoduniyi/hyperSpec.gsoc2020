@@ -35,7 +35,7 @@ TODO: Create a package skeleton and associated github repo that contains unittes
 ---
 
 ### Package building
-TODO: Read up on git-lfs, cMAKE, win-builder, and r-hub
+TODO: Read up on git-lfs, CMAKE, win-builder, and r-hub
 
 **Note:** I should install the R development branch via subversion
 
