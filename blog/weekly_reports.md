@@ -50,3 +50,10 @@ Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyo
 
 ### 2. Package building
 Read up on git-lfs, CMAKE, win-builder, and r-hub
+
+### 3. hyperSpec fileIO
+TODO: I should install the R development branch via subversion
+TODO: Sketch out fileIO design
+TODO: Sketch out package splitting design (reference 2011 presentation by Claudia)
+TODO: Read "An Introduction to PCA"
+TODO: Read "Evaluating the Design of the R language"

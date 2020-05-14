@@ -85,15 +85,12 @@ In general, the workflow for contributing to the the hyperSpec ecosystem is the 
 ---
 
 ### Package skeleton
-TODO: Create a package skeleton and associated github repo that contains unittest and contious integration.
+<s>TODO: Create a package skeleton and associated github repo that contains unittest and contious integration.</s>
 
 ---
 
 ### Package building
-TODO: Read up on git-lfs, CMAKE, win-builder, and r-hub
-
-**Note:** I should install the R development branch via subversion
-
+<s>TODO: Read up on git-lfs, CMAKE, win-builder, and r-hub</s>
 ---
 
 ### Development Trajectory
