@@ -279,3 +279,191 @@ test@data[c("spc*2")]
 transmute(df, a=a*0, a=b*2, c = a)
 transmute(df)
 proc_args(flu, c, spc=spc*0, spc=spc*2, spc=spc*0, a = spc)
+
+getwd()
+setwd("/Users/erickoduniyi/Documents/Projects/open-source/hyperspec/hyperSpec.tidyverse")
+
+getwd()
+list.files()
+library(devtools)
+library(hyperSpec)
+load_all()
+load_all()
+chondro.test <- chondro
+chondro.test
+head(dplyr::mutate(chondro, y, x, y2 = y))
+
+ ead(transmute(chondro, y, x, y2 = y))
+load_all()
+test()
+df <- data.frame(a = 1:2, b = 1:2)
+df
+
+flu %>% mutate.hyperSpec(c = a*b)
+df %>% transmute.hyperSpec(c = a*b)
+flu
+flu %>% transmute.hyperSpec(filename, spc2 = spc*2)
+flu %>% transmute.hyperSpec(c2 = c)
+load_all()
+test()
+mutate.hyperSpec(flu, c=c*2, c=c*0)
+transmute.hyperSpec(flu, filename, c)
+typeof(chk.hy(flu))
+typeof(chk.hy(df))
+flu
+
+.data <- flu
+labels <- labels(.data)[c(".wavelength", colnames(.data))]
+labels(.data)
+colnames(.data)
+labels
+load_all()
+load_all()
+test()
+flu
+test <- mutate.hyperSpec(flu, c1 = c*c, c2 = c^3, c3 = c^4)
+head(test)
+labels(.data)
+labels(test)
+blah <- transmute.hyperSpec(flu, c)
+labels(blah)
+colnames(blah)
+library(hyperSpec)
+library(devtools)
+labels(laser, ".wavelength")
+laser
+test <- laser
+labels(test, ".wavelength") <- "f / THz"
+test
+labels(test)
+load_all()
+test()
+test <- mutate.hyperSpec(flu, c1 = c, c2= c^2)
+test
+labels(test)
+
+proc_args <- function(.data, ...){
+  args <- enquos(...)
+  args
+}
+names(proc_args(test, r = "@", z = expression(z)))
+labels(test, 'c1') <- expression(c3)
+test
+proc_args <- function(.data, ...){
+  args <- enquos(...)
+  args_names <- names(args)
+  labels2update <- args_names[args_names %in% colnames(.data)]
+  print(.data)
+  labels2get <- vector()
+  for (i in seq_along(args)) {
+      # labels(.data, args_names[i])
+      # print(args_names[i])
+      # print(labels(.data, args_names[i]))
+      # labels(test2, "c") <- "c / ml"
+
+      # Get new and current column names
+
+
+      # Get new and current column names
+      # labels.to.update <- setdiff(colnames(res), colnames(.data))
+      # labels.to.remove <- setdiff(colnames(.data), colnames(res))
+      # Update the data slot with newly renamed data frame
+      # .data@data <- res
+      # Update labels of hyperSpec object
+      # new.labels <- lapply(labels(.data, labels.to.update), as.expression)
+      # labels(.data)[c(labels.to.remove)] <- NULL
+      # labels(.data)[c(labels.to.update)] <- new.labels
+      # .data
+
+      setlabels2 <- quo_name(quo_get_expr(args[[i]]))
+      print(setlabels2)
+      if(grepl('expr', setlabels2)) {
+          setlabels2 <- as.expression(setlabels2)
+      }
+      # labels2set <- c(labels2get, setlabels2)
+      labels(.data, labels2update[i]) <- setlabels2
+      # print(label)
+      # labels(.data, args_names[i]) <- label
+      # print(labels(.data, args_names[i]))
+      # print(quo_name(quo_get_expr(args[[i]])))
+  }
+  .data
+  # print(labels(.data))
+  # lapply(labels(.data, labels.to.update), as.expression)
+  # labels(.data) <- labels2get
+  # print(labels(.data))
+}
+
+test <- flu
+test
+proc_args(test, c = "c / ml", filename = expression(filename))
+
+test
+colnames(test)
+
+labels(test)[c(".wavelength", colnames(test))]
+
+# colnames(names(enquos(c = "c / ml", filename = expression(filename))))
+test_quo <- function(.data, ...) {
+    args <- enquos(...)
+    args_names <- names(args)
+    labels2update <- args_names[args_names %in% colnames(.data)]
+
+    # Update labels of hyperSpec object
+    new.labels <- lapply(labels(.data, labels.to.update), labels <- c("new", "juice"))
+}
+names2update <- test_quo(test, c = "c / ml", filename = expression(filename))
+names2update
+setdiff(args_names, colnames(test))
+args_names
+colnames(test)
+
+setdiff(colnames(test), args_names)
+ls <- args_names %in% colnames(test)
+labels2update <- args_names[args_names %in% colnames(test)]
+labels2update
+
+
+
+
+labels(test, )
+
+test2 <- flu
+test2
+
+labels(test2, "c") <- "c / ml"
+test2
+
+as.expression(expression(filename))
+expression(filename)
+grepl('expr','expression(filename)')
+labels(test)
+getwd()
+load_all()
+test()
+test <- flu
+test
+test %>% setLabels(.wavelength = "lambda/nm", c = "c / (mg / l)")
+setLabels(test, .wavelength = "filename2", c = "r / μm")
+load_all()
+load_all()
+test()
+load_all()
+test()
+load_all()
+test()
+transmute.hyperSpec(flu)
+structure(tmp_hy = test, mutate_args = c("3","#@","23"))
+f <- structure(1:10, comment = "This is my simple vector with info")
+f <- list(name1 = test@data, name2 = 1:10)
+f$name2
+load_all()
+test()
+load_all()
+test()
+mutate.hyperSpec(test, c = c, c1 = c*2)
+transmute.hyperSpec(test, c = c, c1 = c*2)
+test()
+test()
+load_all()
+test()

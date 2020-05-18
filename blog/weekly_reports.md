@@ -1,3 +1,15 @@
+# Report for Week of 5-18-20
+
+TODO: I should install the R development branch via subversion
+TODO: Sketch out fileIO design
+TODO: Sketch out package splitting design (reference 2011 presentation by Claudia)
+TODO: Read "An Introduction to PCA"
+TODO: Read "Evaluating the Design of the R language"
+
+### #. PCA
+### #. fileIO design
+### #. package splitting design
+
 # Report for Week of 5-11-20
 
 ### 1. Package skeleton
@@ -52,8 +64,22 @@ Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyo
 Read up on git-lfs, CMAKE, win-builder, and r-hub
 
 ### 3. hyperSpec fileIO
-TODO: I should install the R development branch via subversion
-TODO: Sketch out fileIO design
-TODO: Sketch out package splitting design (reference 2011 presentation by Claudia)
-TODO: Read "An Introduction to PCA"
-TODO: Read "Evaluating the Design of the R language"
+<s>TODO: Submit an issue for mutate/transmute.R</s>
+<s>TODO: Implement mutate.R, setLabels</s>
+
+### 4. mutate.R and setLabels.R
+Implemented mutate.R and setLabels.R
+
+`mutate.R` takes care of issue #6 and issue #7
+`setLabels.R` implements updating labels as discussed in #7
+
+TODO: Generalizing mutate/transmute as discussed in issue #12
+
+### 5. Templates
+In general, a template is pattern for a repeatable format for a document or file. The primary benefit of such a structure is that the underlying structure does not have to be recreated from scratch. This ensures a level of consistency across projects. And so indeed, it makes sense to also have templates for repositories. And if it makes sense for repositories, perhaps it also makes sense for issues, pull request, and a range of collaborative structures.
+
+#### 5.1 Template repository
+A template repository can be made in Github by going to the settings of the repository and checking the template repository box. Then, you can generate new repositories by using the url-end point:`https://github.com/username/repoistory.name/generate`. This is equivalent to clicking the "Use this template" button in the repository's code tab. Once, the derived repository is created, it's a good idea to set the template repository as a remote via  `git remote add template [URL of the template repo]`. Now, changes made to the template can be propagated to the derived repo by fetching and pulling in the changes.
+
+<s>TODO: Make hyperSpec package a template repository</s>
+
