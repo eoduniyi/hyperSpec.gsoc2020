@@ -1,15 +1,21 @@
 # Report for Week of 5-18-20
 
-TODO: I should install the R development branch via subversion
-TODO: Sketch out fileIO design
-TODO: Sketch out package splitting design (reference 2011 presentation by Claudia)
+### 1. Generalizing mutate.R and improving setLabels.R
+
+### 2. `pkgdown` and `drat`
+
+### 3. Flesh hyperSpec.skeleton Github repository
+Add template labels to hyperSpec.skeleton so that the hyperSpec ecosystem has a consistent set of labels.
+
+<s>TODO: I should install the R development branch via subversion</s>
 TODO: Read "An Introduction to PCA"
 TODO: Read "Evaluating the Design of the R language"
 
-### #. PCA
-### #. fileIO design
-### #. package splitting design
+### 4. Figure out the build/make issue of hyperSpec
 
+### #. PCA
+
+---
 # Report for Week of 5-11-20
 
 ### 1. Package skeleton
