@@ -29,7 +29,7 @@ There are still a couple of "bugs" that need to be taken care of before further 
 **Note:** bug fixes (bugfix/) should always come before features (feature/)
 **Note:** In RStudio, the CI build processes can be run using `ctrl shift E`
 
-## Generalizing `mutate.R`
+## Generalizing mutate.R
 At the moment, mutate.R is implemented using an approach that is mostly based on checking for the language (checking against hardcoded strings). `mutate.R` should be robust enough to handle any additional column that has matrices in the column (row).
 
 **Note:** Make sure all the .R files follow the tidtverse styling conventions as well as the convention of keep blank lines before comments and control structures.
