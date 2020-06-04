@@ -467,3 +467,67 @@ test()
 test()
 load_all()
 test()
+
+getwd()
+setwd('/Users/erickoduniyi/Documents/Projects/open-source/hyperspec/hyperSpec.skeleton')
+getwd()
+list.files()
+install.packages("pkgdown")
+library(pkgdown)
+library(devtools)
+usethis::use_github_action("pkgdown")
+pkgdown::build_site()
+library(hyperSpec)
+library(devtools)
+library(testthat)
+# update.examples expects a directory of .R files where the examples exist
+# name of the new dataset
+# name of the old dataset
+update.examples <- function(dir, new_ds, old_ds) {
+
+    # Check the difference between the two datasets
+    old_ds_name <- deparse(substitute(old_ds))
+    new_ds_name <- deparse(substitute(new_ds))
+    message(paste("Checking differences between", old_ds_name, "and", new_ds_name))
+
+    # Handle potential differences between datasets
+    if (!setequal(colnames(old_ds), colnames(new_ds))) {
+        col_diff_old <- setdiff(colnames(old_ds), colnames(new_ds))
+        col_diff_new <- setdiff(colnames(new_ds), colnames(old_ds))
+        message(paste("The following columns appear in", old_ds_name, "but not", new_ds_name, ":", col_diff))
+        message(paste("Do you want to substitute", col_diff, "for one of the following columns in", new_ds_name, "?:"))
+        
+    }
+
+    # Read in the file
+    print("Reading in file...")
+    code <- readLines(dir)
+
+    # Look for occurences of old_dt and replace with new_dt
+    print("Updating file...")
+    code_edited <- gsub("foo", "bar", code)
+    writeLines(code_edited, getwd())
+
+    # Output File
+    print("Outputting file...")
+
+    # Test File
+    ## Check unittest
+    print("Checking unittest...")
+    print("Logging errors to...")
+
+    ## Check examples
+    print("Checking examples...")
+    print("Logging errors to...")
+
+    ## Check vingettes
+    print("Checking vingettes...")
+    print("Logging errors to...")
+
+    print("Done!")
+}
+update.examples()
+getwd()
+old_dt <- deparse(substitute(chondro))
+new_dt <- old_dt
+print(paste("Checking differences between", old_dt, "and", new_dt))

@@ -7,13 +7,13 @@
 ### 3. Flesh hyperSpec.skeleton Github repository
 Add template labels to hyperSpec.skeleton so that the hyperSpec ecosystem has a consistent set of labels.
 
-<s>TODO: I should install the R development branch via subversion</s>
-TODO: Read "An Introduction to PCA"
-TODO: Read "Evaluating the Design of the R language"
-
 ### 4. Figure out the build/make issue of hyperSpec
 
 ### #. PCA
+
+<s>TODO: I should install the R development branch via subversion</s>
+TODO: Read "An Introduction to PCA"
+TODO: Read "Evaluating the Design of the R language"
 
 ---
 # Meeting notes for 5-18-20

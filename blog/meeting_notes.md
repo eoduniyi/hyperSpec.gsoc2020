@@ -1,3 +1,34 @@
+# Meeting notes for 5-20-20
+Check apply method
+
+CRAN Submission process
+
+How to build to pass the CRAN processes
+Winbuilder
+
+Get a structure without make and latex
+Get online documentation!
+Github actions
+pkgdown
+
+synthetic data + EXAMPLES OF HYPErSpec
+setting github repo to develop
+semantic versioning
+
+hyperSpec [cran]
+small bridge hyperSpec
+major realse of hyperSpec(little hyprSepc)
+versioning
+issue: synthetic data set
+Erick needs to...chondro delayed assigned statement
+R scripts for generating data in the data directory
+
+import package Vitek
+data tables
+
+hySpc.txt
+catools
+
 # Meeting notes for 5-18-20
 
 ## Outstanding bug fixes
