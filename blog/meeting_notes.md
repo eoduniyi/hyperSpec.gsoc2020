@@ -1,33 +1,82 @@
-# Meeting notes for 5-20-20
-Check apply method
+# Meeting notes for 6-15-20
 
-CRAN Submission process
+**Things to do:**
+ * Cleaning up `hySpc.dplyr`
+ * Update unit test to work with `hySpc.testthat`
 
-How to build to pass the CRAN processes
-Winbuilder
+**Things to apply:**
+ * Make sure version numbering system follows `tidyverse`
 
-Get a structure without make and latex
-Get online documentation!
-Github actions
-pkgdown
+**Things to consider:**
+ * update fauxCell so that is can parameterized
+ * Operations with hyperSpec objects
 
-synthetic data + EXAMPLES OF HYPErSpec
-setting github repo to develop
-semantic versioning
+**Things to look into:**
+ * `gtools::keywords()`
+ * negative factorization
+ * principle component analysis (pca)
 
-hyperSpec [cran]
-small bridge hyperSpec
-major realse of hyperSpec(little hyprSepc)
-versioning
-issue: synthetic data set
-Erick needs to...chondro delayed assigned statement
-R scripts for generating data in the data directory
+---
 
-import package Vitek
-data tables
+# Meeting notes for 6-8-20
+**Things to do:**
+ * Cleaning up `hySpc.dplyr`
+ * Update unit test to work with `hySpc.testthat`
+ * Move `hyperSpec.tidyverse` to `hySpc.dplyr`
+ * Travis has been activated for r-hyperSpec organization
 
-hySpc.txt
-catools
+**Things to check:**
+ * R hyperSpec project has been created (r-hyperSpec)
+
+**Things to apply:**
+ * Make sure version numbering system follows `tidyverse`
+
+**Things to consider:**
+ * update `fauxCell` so that is can parameterized
+ * Operations with hyperSpec objects
+ * plotting
+  * `base` plots create graphs really quickly (pen and paper)
+  * `lattice` provides the ability to add facets, and aesthetics
+  * `ggplot2` is more powerful and aesthetically pleasing (pencil and paper)
+  * `plotly` is interactive
+
+**Things to look into:**
+ * Vilmantis has created a `hySpc.ggplot2`
+  * We would like to separate `ggplot2` and general plotting for `hyperSpec`.
+  * Consider only keeping general plotting (`base` and `lattice`) in hyperSpec.
+ * negative factorization
+ * principle component analysis (pca)
+
+---
+
+# Meeting notes for 6-1-20
+**Things to do:**
+ * When replacing `chondro` make sure to:`make -> build -> check`
+
+**Things to apply:**
+ * Convention for writing unit test
+    * ``.test(.name_of_function)``
+    * There are some files without unit test
+    * There are some files where anonymous functions are used
+
+**Things to consider:**
+ * Ecosystem and satellite packages
+
+---
+
+# Meeting notes for 5-25-20
+
+**Things to do:**
+ * Get a structure without make and latex
+ * Get online documentation!
+ * Check apply method
+
+**Things to look into:**
+ * CRAN Submission process
+ * `Winbuilder`
+ * `pkgdown`
+
+---
 
 # Meeting notes for 5-18-20
 

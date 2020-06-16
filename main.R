@@ -496,7 +496,8 @@ update.examples <- function(dir, new_ds, old_ds) {
         col_diff_new <- setdiff(colnames(new_ds), colnames(old_ds))
         message(paste("The following columns appear in", old_ds_name, "but not", new_ds_name, ":", col_diff))
         message(paste("Do you want to substitute", col_diff, "for one of the following columns in", new_ds_name, "?:"))
-        
+        select.list(sort(.packages(all.available = TRUE)))
+
     }
 
     # Read in the file
@@ -531,3 +532,132 @@ getwd()
 old_dt <- deparse(substitute(chondro))
 new_dt <- old_dt
 print(paste("Checking differences between", old_dt, "and", new_dt))
+select.list(sort(.packages(all.available = TRUE)))
+
+col_tmp <- charmatch(colnames(.data), deparse(substitute(expr)))
+cat(paste("deparse(substitute(expr)):", deparse(substitute(expr))), "\n")
+cat(paste("colnames(data):", colnames(.data)), "\n")
+cat(paste("col_tmp:", col_tmp), "\n")
+# if (col_tmp[!is.na(col_tmp)] > 0) {
+#   var_expr <- eval(parse(text = paste("tmp_hy@data$", expr, sep="")))
+# }
+print(args_names[i])
+print(expr)
+
+library(hyperSpec)
+library(devtools)
+library(dplyr)
+library(rlang)
+test_func <- function(.data, ...) {
+    args <- enquos(...)
+}
+see <- test_func(chondro, x = y, y = x)
+see
+################################################################ - Mutate
+mutate.hyperSpec <- function(.data, ...) {
+
+    # Check if user passed in a hyperSpec object
+    chk.hy(.data)
+
+    # Collect mutate arguments
+    mutate_args <- get_args(.data, ...)
+
+    # Pass mutate arguments to dplyr::mutate
+    .data@data <- eval(parse(text = paste("mutate(mutate_args$tmp_data,", mutate_args$args, ")")))
+    .data
+}
+################################################################ - Transmute
+transmute.hyperSpec <- function(.data, ...) {
+
+    # Check if user passed in a hyperSpec object
+    chk.hy(.data)
+
+    # Collect transmute arguments
+    transmute_args <- get_args(.data, ...)
+
+    # Pass transmute arguments to dplyr::transmute
+    res <- eval(parse(text = paste("transmute(transmute_args$tmp_data,", transmute_args$args, ")")))
+    res
+
+    # Update labels
+    # setLabels.select(.data, res)
+}
+################################################################ - Get-Args
+
+################################################################
+get_args <- function(.data, ...) {
+
+    # Collect function arguments
+    args <- enquos(...)
+    args_names <- names(args)
+
+    # Give nothing, return nothing
+    if (length(args) == 0L) {
+      return(NULL)
+    }
+
+    # Make a copy of the original hyperSpec object
+    tmp_hy <- .data
+    cols2get <- vector()
+    for (i in seq_along(args)) {
+        expr <- quo_name(quo_get_expr(args[[i]]))
+        col_name <- gsub("[[:punct:]].*","", expr) # "base" expr must be in colnames(.data)
+        expr_val <- eval(parse(text = paste("tmp_hy@data$", expr)))
+
+        # If the argument has no name (only an expression)
+        if ("" %in% args_names[i]) {
+
+            # If the expression is a column with row matrices
+            if (is.matrix(expr_val)) {
+
+                # If mutation is being performed on `spc`(3)
+                if (grepl("spc", expr) && nchar(expr) > 3) {
+                        stop("spc column can not be mutated")
+                } else {
+
+                    # Update tmp_hy@data
+                    tmp_hy@data[[col_name]] <- expr_val
+
+                    # Store expr as column (# just store `mat` not `mat`+anything_else)
+                    cols2get <- c(cols2get, col_name)
+                }
+            } else {
+
+                # Store "base" expr as column
+                cols2get <- c(cols2get, expr)
+            }
+        # Else the expression's name (args_name[i]) is not empty
+        } else {
+
+            # If mutation is being performed on `spc`
+            if ("spc" %in% args_names[i]) {
+                stop("spc column can not be mutated")
+
+            # If expression is a column with row matrices
+            } else if (is.matrix(expr_val)) {
+
+                # Update tmp_hy@data
+                tmp_hy@data[[args_names[i]]] <- expr_val
+
+                # Store "base" expr in column
+                cols2get <- c(cols2get, col_name)
+
+            # Else "vanilla" assignment
+            } else {
+
+                # Create an assignment using paste
+                assign <- paste(args_names[i], "=", expr, sep="")
+
+                # Store expr in column
+                cols2get <- c(cols2get, assign)
+            }
+        }
+        # Hand off columns (i.e., prepared arguments) to mutate()/transmute()
+        cols2get <- unique(cols2get) # transmute/mutate already take care of this...
+        return(list(tmp_data = tmp_hy@data, args = paste(cols2get, collapse=", ")))
+    }
+}
+################################################################
+transmute.hyperSpec(chondro, x)
+dplyr::transmute(chondro@data, x) %>% head()
+
