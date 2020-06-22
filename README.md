@@ -258,23 +258,30 @@ Here is a table with my findings:
 ##### What else?
 The vignettes still make use of examples that reference `chondro`, so at some point that also needs to be updated.
 
-
 ---
 
-# [Meeting notes for 6-15-20](/blog/meeting_notes.md)
+ # [Meeting notes for 6-22-20](/blog/meeting_notes.md)
 
-**Things to do:**
- * Cleaning up `hySpc.dplyr`
- * Update unit test to work with `hySpc.testthat`
+ **Things to do:**
+  * Update `hySpc.skeleton` documentation to `hyperSpec` repo quality
+  * `hySpc.read.Witec`
+  * `hySpc.read.JDX`
+   * `readJDX`
+  * Update unit test to work with `hySpc.testthat`
+     * Wait on `hySpc.testthat`
+  * Make commit messages align with: _"intention behind the change: we want to do this and that"_
+     * ex. "fix this and this"
+  * `install_url(readily-prepackaged-nightly-build)`
+   * link that always points to the most recent build
+  * `drat` package
+  * Update labels for `hySpc.testthat` and `hySpc.dplyr`
+  * Weekly repo maintenance
 
-**Things to apply:**
- * Make sure version numbering system follows `tidyverse`
 
-**Things to consider:**
- * update fauxCell so that is can parameterized
- * Operations with hyperSpec objects
-
-**Things to look into:**
- * `gtools::keywords()`
- * negative factorization
- * principle component analysis (pca)
+ **Things to look into:**
+  * Are the make files still being used in `hyperSpec`; can these be deleted?
+   * inst/doc/Makefile
+  * `readJDX` package
+  * Reviewing "issues" in the vignette
+  * Linking packages that are built using AppVeyor and Travis
+     * `install_url(readily-prepackaged-nightly-build)`
