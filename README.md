@@ -3,8 +3,6 @@
 According to naming conventions, the hyperSpec skeleton package has changed from
 `hyperSpec.skeleton` to `hySpc.skeleton`
 
-The `hySpc.skeleton` package includes:
-
 ---
 
  # [Meeting notes for 6-22-20](/blog/meeting_notes.md)
