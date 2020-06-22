@@ -1,5 +1,22 @@
+# Report for Week of 6-22-20
+
+### `hySpc.read.Witec`
+`hySpc.read.Witec` is a bridge package for managing all kinds of files produced by Witec instruments. The application of this package is the following:
+```R
+install.packages("hySpc.read.Witec")
+library("hySpc.read.Witec")
+hySpc.read.Witec("name/of/Witec/file.R")
+```
+
+---
+
 # Report for Week of 6-15-20
-#### Return of hyperSpec.skeleton
+#### Return of hyperSpec.skeleton (hySpc.skeleton)
+According to naming conventions, the hyperSpec skeleton package has changed from
+`hyperSpec.skeleton` to `hySpc.skeleton`
+
+The `hySpc.skeleton` package includes:
+
 #### Github Actions vs. Travis CI vs. rhub vs. winBuilder
 #### Data package: drat, R.cache, piggyback
 
