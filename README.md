@@ -1,12 +1,9 @@
-# Report for Week of 6-15-20
+# [Report for Week of 6-15-20](/blog/weekly_notes.md)
 #### Return of hyperSpec.skeleton (hySpc.skeleton)
 According to naming conventions, the hyperSpec skeleton package has changed from
 `hyperSpec.skeleton` to `hySpc.skeleton`
 
 The `hySpc.skeleton` package includes:
-
-#### Github Actions vs. Travis CI vs. rhub vs. winBuilder
-#### Data package: drat, R.cache, piggyback
 
 ---
 
@@ -26,7 +23,6 @@ The `hySpc.skeleton` package includes:
   * `drat` package
   * Update labels for `hySpc.testthat` and `hySpc.dplyr`
   * Weekly repo maintenance
-
 
  **Things to look into:**
   * Are the make files still being used in `hyperSpec`; can these be deleted?
