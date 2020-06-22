@@ -1,4 +1,4 @@
-# [Report for Week of 6-15-20](/blog/weekly_notes.md)
+# [Report for Week of 6-15-20](/blog/weekly_reports.md)
 #### Return of hyperSpec.skeleton (hySpc.skeleton)
 According to naming conventions, the hyperSpec skeleton package has changed from
 `hyperSpec.skeleton` to `hySpc.skeleton`
