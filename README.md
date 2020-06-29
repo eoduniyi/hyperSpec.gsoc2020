@@ -1,31 +1,31 @@
-# [Report for Week of 6-15-20](/blog/weekly_reports.md)
-#### Return of hyperSpec.skeleton (hySpc.skeleton)
-According to naming conventions, the hyperSpec skeleton package has changed from
-`hyperSpec.skeleton` to `hySpc.skeleton`
+# [Report for Week of 6-22-20](/blog/weekly_reports.md)
+
+### `hySpc.read.Witec`
+`hySpc.read.Witec` is a bridge package for managing all kinds of files produced by Witec instruments. The application of this package is the following:
+```R
+install.packages("hySpc.read.Witec")
+library("hySpc.read.Witec")
+hySpc.read.Witec("name/of/Witec/file.R")
 
 ---
 
- # [Meeting notes for 6-22-20](/blog/meeting_notes.md)
+ # [Meeting notes for 6-29-20](/blog/meeting_notes.md)
 
  **Things to do:**
-  * Update `hySpc.skeleton` documentation to `hyperSpec` repo quality
-  * `hySpc.read.Witec`
-  * `hySpc.read.JDX`
-   * `readJDX`
-  * Update unit test to work with `hySpc.testthat`
-     * Wait on `hySpc.testthat`
-  * Make commit messages align with: _"intention behind the change: we want to do this and that"_
-     * ex. "fix this and this"
-  * `install_url(readily-prepackaged-nightly-build)`
-   * link that always points to the most recent build
-  * `drat` package
-  * Update labels for `hySpc.testthat` and `hySpc.dplyr`
-  * Weekly repo maintenance
+ * `hySpc.skeleton` should be built on CI
+ * Testing documentation to be used under version control
+ * Splitting file import package by manufactures
+ * Get smaller Witec files
+ * Change the naming convention from "." to "_"
+ * Use package `ini`
 
  **Things to look into:**
-  * Are the make files still being used in `hyperSpec`; can these be deleted?
-   * inst/doc/Makefile
-  * `readJDX` package
-  * Reviewing "issues" in the vignette
-  * Linking packages that are built using AppVeyor and Travis
-     * `install_url(readily-prepackaged-nightly-build)`
+ * `drat` and `piggyback` packages
+  * `drat` is more of a strategy - repo with data in it
+  * `piggyback` -
+ * Color palettes for spectroscopy analysis
+ * `usethis` strategy
+ * Strategy for skeleton
+  * GitHub templates
+  * Make a checklist of what files should be effected
+    * patches

@@ -661,3 +661,148 @@ get_args <- function(.data, ...) {
 transmute.hyperSpec(chondro, x)
 dplyr::transmute(chondro@data, x) %>% head()
 
+## Witec {#sec:read-txt-Witec}
+
+\index{Witec!ASCII}
+\index{ASCII!Witec}
+\index{Graph ASCII!Witec}
+\index{Witec!Graph ASCII}
+\index{Raman!Witec!ASCII}
+\index{Raman!Witec!Save ASCII X, Save ASCII Y}
+\index{Raman!Witec!Export Table}
+\index{Raman!Witec!spc}
+\index{Raman!Witec!Graph ASCII}
+\index{spc!Witec}
+
+The Witec project software supports exporting spectra as Thermo Galactic `.spc` files.
+
+```{r witec-spc, results='hide'}
+read.spc("fileio/spc.Witec/Witec-timeseries.spc")
+read.spc("fileio/spc.Witec/Witec-Map.spc")
+```
+
+`.spc` is in general the recommended format for package **hyperSpec** import.
+For imaging data no spatial information for the set of spectra is provided (in version 2.10 this export option is not supported).
+
+Imaging data (but also single spectra and time series) can be exported as ASCII X and Y files (Save ASCII X and Save ASCII Y, not supported in version 4).
+These can be read by `read.dat.Witec()`{.r}:
+
+```{r witec-dat, results='hide'}
+read.dat.Witec("fileio/txt.Witec/Witec-timeseries-x.dat")
+read.dat.Witec(
+  filex = "fileio/txt.Witec/Witec-Map-x.dat",
+  points.per.line = 5, lines.per.image = 5, type = "map"
+)
+```
+
+Note that the Y data files also contain a wavelength information, but (at least Witec Project 2.10) this information is always wavelength in nm, not Raman shift in wavenumbers: this is provided by the X data file only.
+
+Another option is Witec's txt table ASCII export (Export $\rightarrow$ Table), which produces ASCII files with each row corresponding to one wavelength.
+The first column contains the wavelength axis, all further columns contain one spectrum each column.
+Such files can be read with `read.txt.Witec()`{.r}:
+
+```{r witec-txt, include=FALSE}
+read.txt.Witec("fileio/txt.Witec/Witec-timeseries_no.txt")
+```
+`read.txt.Witec()`{.r} determines the number of wavelengths automaticallly.
+
+Note that there are several Export Filter Options.
+Here you can determine, which units should be used for the export (see XUnits tab).
+In addition, it is possible to export two additional header lines containing information about spectra labels and units.
+Therefore parameters `hdr.label`{.r} and `hdr.units`{.r} have to be set properly.
+Otherwise, either an error will be displayed like
+
+```{r witec-txt-error, echo=FALSE}
+cat("Error in scan(file, what, nmax, sep, dec, quote, skip, nlines, na.strings,  :
+  scan() expected 'a real', got 'rel.'")
+```
+or the one or two wavelengths will be skipped.
+
+Depending on the used export options the header files should look like:
+
+```{r witec-txt-textfiles, include=FALSE}
+headline <- c(
+  "with exported labels and units headerlines:",
+  "\nwith exported labels headerline:",
+  "\nwith exported units headerline:",
+  "\nwithout headerline:"
+)
+files <- c(
+  "fileio/txt.Witec/Witec-timeseries_full.txt",
+  "fileio/txt.Witec/Witec-timeseries_label.txt",
+  "fileio/txt.Witec/Witec-timeseries_unit.txt",
+  "fileio/txt.Witec/Witec-timeseries_no.txt"
+)
+
+for (f in seq_along(files)) {
+  cat(headline[f], "\n")
+  tmp <- format(as.matrix(read.table(files[f], sep = "\t")[1:4, 1:3]))
+  apply(tmp, 1, function(l) cat(l, "\n"))
+}
+```
+For imaging data set parameter `type`{.r} to "map".
+If the label header is exported, the spatial information can be extracted from this line.
+Otherwise, at least one, `points.per.line`{.r} or `lines.per.image`{.r}, has to be given manually, if not, a warning will be shown.
+
+```{r witec-txt-map, include=FALSE}
+read.txt.Witec("fileio/txt.Witec/Witec-Map_full.txt",  type = "map", hdr.label = TRUE, hdr.units = TRUE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_label.txt", type = "map", hdr.label = TRUE, hdr.units = FALSE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",  type = "map", hdr.label = FALSE, hdr.units = TRUE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",
+  type = "map", hdr.label = FALSE, hdr.units = TRUE,
+  points.per.line = 5
+)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt", type = "map", hdr.label = FALSE, hdr.units = FALSE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
+  type = "map", hdr.label = FALSE, hdr.units = FALSE,
+  lines.per.image = 5
+)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
+  type = "map", hdr.label = FALSE, hdr.units = FALSE,
+  points.per.line = 5, lines.per.image = 5
+)
+```
+
+For line scans and z-stacks use `type = "single"`{.r} because the provided information are looking the same like for timeseries, so no further information can be extracted from the header files.
+
+Since version 4 WITec Project offers the Graph ASCII export (Export $\rightarrow$ Graph ASCII) which produces three ASCII files, named Header containing additional information, X-Axis containing the wavelength values and Y-Axis containing the spectra one spectrum in each column. Data exported in this way can be read with `read.txt.Witec.Graph()`{.r}:
+
+```{r witec-txt-Graph, results='hide'}
+read.txt.Witec.Graph("fileio/txt.Witec/Witec-timeseries (Header).txt")
+read.txt.Witec.Graph("fileio/txt.Witec/Witec-Map (Header).txt", type = "map")
+read.txt.Witec.Graph("fileio/txt.Witec/nofilename (Header).txt", encoding = "latin1")
+```
+
+This function reads the spectra files automatically, if they are named properly and extracts additional information of the header file. As for the other Witec functions it is possible to read image data by by selecting `type = "map"`{.r}. Line scans and z-stacks should be read as single spectra.
+
+
+# Writing your own Import Function {#sec:writing-Import}
+
+This section gives examples how to write import functions. The first example implements an import
+filter for an ASCII file format basically from scratch. The second example shows how to implement
+more details for an already existing import filter.
+
+
+## A new ASCII Import Function: `read.txt.PerkinElmer` {#sec:read-txt-PerkinElmer}
+
+\index{ASCII!long!Fluorescence}
+\index{ASCII!long!PerkinElmer}
+\index{Fluorescence!ASCII long}
+\index{Fluorescence!PerkinElmer!ASCII}
+\index{PerkinElmer!Fluorescence}
+\index{PerkinElmer!ASCII long}
+
+The raw spectra of the `flu`{.r} data set (see also the respective vignette) are in PerkinElmer's ASCII file format, one spectrum per file.
+
+We need a function that automatically reads all files specified by a pattern, such as `*.txt`{.r}.
+In order to gain speed, the spectra matrix should be preallocated after the first file is read.
+
+
+
+<!-- ======================================================================= -->
