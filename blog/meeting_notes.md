@@ -1,3 +1,22 @@
+# Meeting notes for 7-6-20
+**Things to do:**
+* Finish the todo list for the `hySpc.read.Witec` pkg
+* Start implementation of the `hySpc.read.JCAMP-DX` pkg
+
+**Things to look into:**
+* `drat` and `piggyback` packages
+ * `drat` is more of a strategy - repo with data in it
+ * `piggyback` - ...
+* Color palettes for spectroscopy analysis
+* `usethis` strategy
+* Strategy for skeleton
+ * GitHub templates
+ * Make a checklist of what files should be effected
+   * patches
+* Github Actions and pkgdown
+* Claudia's hyperSpec lecture
+---
+
 # Meeting notes for 6-29-20
 
 **Things to do:**
