@@ -90,7 +90,7 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
 
 ---
 
- # [Meeting notes for 7-6-20](/blog/meeting_notes.md)
+# [Meeting notes for 7-6-20](/blog/meeting_notes.md)
 
  **Things to do:**
  * Finish the todo list for the `hySpc.read.Witec` pkg
