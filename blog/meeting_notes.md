@@ -1,3 +1,41 @@
+# Meeting notes for 7-15-20
+**What was decided:**
+* Add automated way to archive/past TODOs to past meetings list on Trello
+ * Add meeting minutes: "What was discussed", "what was decided"
+ * Add links to Trello board -> {github_issues, slack_conv}
+* Add deploy on master branch for GA:
+* Try and test different merge/manage/commit settings
+* Make sure that all of the bridge tidyverse packages follow the tidyverse conventions
+* Finishing up `hySpc.read.Witec`
+    * Check code coverage
+    * Check into skipped test
+    * Check the difference between `hySpc.read.Witec` and `hySpc.skeleton`
+ * Apply changes from `hySpc.read.Witec` to `hySpc.skeleton`.
+    * Remove Witec files from `develop` branch of `hypSpec`
+     * Add `hyperSpec::deprecation()` to `hyperSpec`
+     * We should add::FIX_ME or TODO
+      * Where did this file/pkg go?
+      * Add documentation to refer to pkg_down site
+* Check to see what the difference between template and derived
+    * Is the skeleton repo settings the same as its derived pkg settings?
+
+**What was discussed:**
+* Generating master and develop .zip (Windows) and .tar.gz (MacOS) files
+* What is the best way to keep track of the notes during video meetings?
+* Experimenting with various CI/CD interfaces to figure out if we want to go with a specific
+CI/CD framework.
+* automated README.md for `hySpc.pkgs`
+ * Update README.md based on the differnce between the different branches...
+* `hySpc.pkgs` supporting the ability to choose between different branches
+* Adding automated deletion for the hySpc repos
+* Interconnecting `baseline` and `hyperSpec`
+* Go through proper deprecation cycle
+    * Using `hyperSpec::deprecated()` or `defunct` to interface to the other pkg names
+* Having function-specific license: MIT or GPL3
+* Don't add LICENSE file'
+* Removing dependencies
+
+---
 # Meeting notes for 7-6-20
 **Things to do:**
 * Finish the todo list for the `hySpc.read.Witec` pkg
@@ -15,6 +53,7 @@
    * patches
 * Github Actions and pkgdown
 * Claudia's hyperSpec lecture
+
 ---
 
 # Meeting notes for 6-29-20

@@ -1,3 +1,23 @@
+# Report for Week of 7-13-20
+
+## Labels
+Okay, for whatever reason I have been letting a couple of things on the Trello "In Progress" list for a little too long. So, I want to try and go ahead and clean up some of these task if not finish this week:
+
+**In Progress**
+ * Check performance of different ways to import the text data
+ * Attach labels to hySpc.testthat and hySpc.dplyr
+ * Update hySpc.skeleton documentation to hyperSpec repo quality
+ hySpc.read.Witec
+ * hySpc.JCAMP-DX
+ * skeleton package and usethis strategy
+ * Start making sure test coverage is at least 60% for hyperSpec
+
+
+ **To Do**
+  * issue #208 - enforcing Tidyverse function naming style
+
+
+---
 # Report for Week of 7-6-20
 
 ## Github Actions and `pkgdown`
@@ -27,6 +47,13 @@ jobs:
 
  There are a number of open-source .yml solutions, as well as, configurations one can specify.
 
+### Secrets
+So, what is the difference between "personal access tokens", "Github secrets", "keys", etc.
+
+* Personal Access Tokens - Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
+
+* Secrets -
+
 ### `pkgdown`
 According to the main website for `pkgdown`
 > pkgdown is designed to make it quick and easy to build a website for your package.
@@ -42,13 +69,28 @@ According to the maintainers, "Drat is an R package which makes it really easy t
 ### Issue #2: Use Github Actions to Move .tar.gz over to hySpc.pkgs
 According to Bryan, the team will be using `drat` and `hySpc.pkgs` to, "[hold] certain packages in the `r-hyperspec` series (in particular, data-rich packages that are too large to be distributed on CRAN)." The purpose of this is to avoid using git-lfs, and `make` and so that users can just install these large than life pkgs directly: `install_github(hySpc.pkgs)`. With that being said, we will still need CI/CD via GA. So, to test this out we're going to move `hySpc.read.Witec` to `hySpc.pkgs`
 
+
+#### Issue #2: Chef Hanson, Chef Oduniyi -- Serving up some actions
+Over the weekend Bryan and I worked on fleshing out our drat formula, which basically looks like this, but in GA/.yml speak:
+
+```R
+if (package.size > CRAN.size) {
+ # put package on GH
+}
+else {
+ # put package on CRAN
+}
+```
+
+A lot of these `hySpc.pkgs` are will be data packages.
+
 ## `hySpc.read.Witec`
 Still working on the `hySpc.read.Witec` function. Most of the parsing of the Witec_TrueMatch file has been done. Additionally, a number of unittest have been implemented. The next couple task are to:
 
 * <s>find out better name</s>
 * <s>provide axis labels</s>
-* x axis units are in $SpectrumHeader$XDataKind
-* allow users to specify extra data to keep
+* <s>x axis units are in $SpectrumHeader$XDataKind</s>
+* <s>allow users to specify extra data to keep</s>
 * <s>unit testing</s>
 * documentation
 
@@ -85,7 +127,7 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 }
 ```
 
-
+----
 
 # Report for Week of 6-29-20
 ## `hypSpc.read.Witec`
