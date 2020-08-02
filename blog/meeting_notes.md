@@ -1,3 +1,10 @@
+# Meeting notes for 8-3-20
+
+---
+# Meeting notes for 7-27-20
+Missed this meeting because I was sick. Notes have been archived on the trello board.
+
+---
 # Meeting notes for 7-20-20
 **What was decided:**
 * Chondro vignette with move to `hySpc.chondro` to `hySpc.pkgs`
