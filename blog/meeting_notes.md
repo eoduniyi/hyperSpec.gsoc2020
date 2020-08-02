@@ -1,3 +1,24 @@
+# Meeting notes for 7-20-20
+**What was decided:**
+* Chondro vignette with move to `hySpc.chondro` to `hySpc.pkgs`
+* Get rid of vignette dependencies
+* Different versions of `faux_cell`
+
+**What was discussed:**
+* Interpolated plotting
+* Translating .pdf and .html files to vignettes
+* `knitr`, `sweave`, and other document preparing engines.
+* Removing `rgl` depedency
+* How to get `plsr` to work with `hyperSpec`
+* Unit testing:
+    * General unittesting
+     * Checking if functions work
+    * Specific unittesting
+    * test against averages not specific numerical result
+    * testing the underlying functions
+
+---
+
 # Meeting notes for 7-15-20
 **What was decided:**
 * Add automated way to archive/past TODOs to past meetings list on Trello
@@ -36,6 +57,7 @@ CI/CD framework.
 * Removing dependencies
 
 ---
+
 # Meeting notes for 7-6-20
 **Things to do:**
 * Finish the todo list for the `hySpc.read.Witec` pkg
