@@ -1,4 +1,22 @@
 # Meeting notes for 8-3-20
+**What was decided:**
+* Turn unittest on back on for the `hySpc.read.Witec`
+* Avoid working with pca data and just use raw data
+* Write unittest in the meantime
+* Add expect_silent or TODO or FIXME labels
+* Find solutions to issue #212
+
+**What was discussed:**
+* Turn `hySpc.read.Witec` into `hySpc.read.txt`
+* Manufacturer specific file formats
+* Catch up on moving everything from `hyperSpec` related to `chondro` and `hySpc.chondro` to a separate branch of `hyperSpec`.
+* Automatically delete branches
+* Writing unittest
+ * Writing small unittest
+  * expect_silence
+  * Still need to check expect_equivalence and expect_equal
+* covr::report(covr::package_coverage("hyperSpec"))
+* Claudia going for her last bullet point
 
 ---
 # Meeting notes for 7-27-20
@@ -25,7 +43,6 @@ Missed this meeting because I was sick. Notes have been archived on the trello b
     * testing the underlying functions
 
 ---
-
 # Meeting notes for 7-15-20
 **What was decided:**
 * Add automated way to archive/past TODOs to past meetings list on Trello
