@@ -16,7 +16,7 @@ Worked on `hySpc.chondro` as my psychological weaknesses permitted.
 * Catch up on moving everything from `hyperSpec` related to `chondro` and `hySpc.chondro` to a separate branch of `hyperSpec`.
 * Automatically delete branches
 * Writing unittest
- * Writing small unittest
+ * Writing small unittestw
   * expect_silence
   * Still need to check expect_equivalence and expect_equal
 * covr::report(covr::package_coverage("hyperSpec"))
