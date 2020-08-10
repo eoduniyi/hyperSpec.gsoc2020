@@ -1,3 +1,17 @@
+# Meeting notes for 8-10-20
+**What was decided**
+
+Continue to make progress according to the Trello board.
+
+**What was discussed**
+* Permissions on `hySpc.testthat`, `hySpc.read.Witec`
+* Vil's changes:
+ * Adding and removing full stops from documentation
+ * Rename RStudio project name
+ * Deprecated ggplot2 functions
+* Deprecate functions from `hypSpc.read.Witec` and `hySpc.chondro`
+
+---
 # Meeting notes for 8-3-20
 **What was decided:**
 * Turn unittest on back on for the `hySpc.read.Witec`

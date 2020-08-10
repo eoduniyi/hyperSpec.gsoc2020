@@ -1,3 +1,6 @@
+# Report for Week of 8-3-20
+Worked on `hySpc.chondro` as my psychological weaknesses permitted. Vil is a monster, so we just need to polish the package and we're good to go!
+
 # Report for Week of 7-27-20
 Worked on `hySpc.chondro` as my psychological weaknesses permitted.
 
