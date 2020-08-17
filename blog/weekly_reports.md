@@ -1,3 +1,33 @@
+# Report for week of 8-16-20
+# Report for week of 8-11-20
+```R
+
+# Throw the Kitchen Sink at it
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_full.txt",  type = "map", hdr.label = TRUE, hdr.units = TRUE)
+#
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_label.txt", type = "map", hdr.label = TRUE, hdr.units = FALSE)
+#
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",  type = "map", hdr.label = FALSE, hdr.units = TRUE)
+#
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",
+#                type = "map", hdr.label = FALSE, hdr.units = TRUE,
+#                points.per.line = 5
+# )
+#
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt", type = "map", hdr.label = FALSE, hdr.units = FALSE)
+#
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
+#                type = "map", hdr.label = FALSE, hdr.units = FALSE,
+#                lines.per.image = 5
+# )
+#
+# read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
+#                type = "map", hdr.label = FALSE, hdr.units = FALSE,
+#                points.per.line = 5, lines.per.image = 5
+# )
+
+# Release data
+```
 # Report for Week of 8-3-20
 Worked on `hySpc.chondro` as my psychological weaknesses permitted. Vil is a monster, so we just need to polish the package and we're good to go!
 
