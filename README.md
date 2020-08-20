@@ -63,8 +63,6 @@ I'm going to need the `Deprecated.R` and `deprecation-messages.R`
 ```
 
 ---
-# [Meeting notes for 8-3-20](/blog/meeting_notes.md)
-# [Meeting notes for 8-17-20](/blog/meeting_notes.md)
 # [Meeting notes for 8-10-20](/blog/meeting_notes.md)
 **What was decided**
 
