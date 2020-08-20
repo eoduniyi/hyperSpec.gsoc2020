@@ -1,5 +1,9 @@
 # Meeting notes for 8-17-20
+Absent
+
+---
 # Meeting notes for 8-10-20
+
 **What was decided**
 
 Continue to make progress according to the Trello board.

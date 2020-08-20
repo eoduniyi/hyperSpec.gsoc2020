@@ -1,38 +1,72 @@
-# Report for week of 8-16-20
+# Report for week of 8-17-20
+Moving the remaining functions related to `read.txt` out of `hyperSpec` into `read.txt`: This will require that the functions in `hyperSpec` will become deprecated.
+
+## Moving functions from `hyperSpec` to `hySpc.read.txt`
+I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the following functions:
+
++ [ ] read.txt.Horiba.R
+    - [ ] `read.txt.Horiba`
+    - [ ] `read.txt.Horiba.xy`
+    - [ ] `read.txt.Horiba.t`
++ [ ] read.txt.long.R
+    - [ ] `read.txt.long`
++ [ ] read.txt.Renishaw.R
+    - [ ] `read.txt.Renishaw`
+    - [ ] `read.zip.Renishaw`
++ [ ] read.txt.Shimadzu.R
+    - [ ] `read.txt.Shimadzu`
++ [ ] read.txt.wide.R
+    - [ ] `read.txt.wide`
++ [ ] read.txt.Witec.R
+    - [ ] `read.txt.Witec`
+    - [ ] `read.dat.Witec`
+    - [ ] `read.txt.Witec.Graph`
++  ~~wc.R~~
+    - ~~`wc`~~
++ [ ] count_lines.R
+    - [ ] `count_lines`
++ [ ] read.asc.Andor.R
+    - [ ] `read.asc.Andor`
++ [ ] read.asc.PerkinElmer.R
+    - [ ] `read.asc.PerkinElmer`
+
+---
 # Report for week of 8-11-20
+Test cases for the remaining styles of `Witec`
+
 ```R
-
 # Throw the Kitchen Sink at it
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_full.txt",  type = "map", hdr.label = TRUE, hdr.units = TRUE)
-#
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_label.txt", type = "map", hdr.label = TRUE, hdr.units = FALSE)
-#
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",  type = "map", hdr.label = FALSE, hdr.units = TRUE)
-#
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",
-#                type = "map", hdr.label = FALSE, hdr.units = TRUE,
-#                points.per.line = 5
-# )
-#
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt", type = "map", hdr.label = FALSE, hdr.units = FALSE)
-#
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
-#                type = "map", hdr.label = FALSE, hdr.units = FALSE,
-#                lines.per.image = 5
-# )
-#
-# read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
-#                type = "map", hdr.label = FALSE, hdr.units = FALSE,
-#                points.per.line = 5, lines.per.image = 5
-# )
+read.txt.Witec("fileio/txt.Witec/Witec-Map_full.txt",  type = "map", hdr.label = TRUE, hdr.units = TRUE)
 
-# Release data
+read.txt.Witec("fileio/txt.Witec/Witec-Map_label.txt", type = "map", hdr.label = TRUE, hdr.units = FALSE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",  type = "map", hdr.label = FALSE, hdr.units = TRUE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",
+               type = "map", hdr.label = FALSE, hdr.units = TRUE,
+               points.per.line = 5
+)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt", type = "map", hdr.label = FALSE, hdr.units = FALSE)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
+               type = "map", hdr.label = FALSE, hdr.units = FALSE,
+               lines.per.image = 5
+)
+
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
+               type = "map", hdr.label = FALSE, hdr.units = FALSE,
+               points.per.line = 5, lines.per.image = 5
+)
 ```
-# Report for Week of 8-3-20
-Worked on `hySpc.chondro` as my psychological weaknesses permitted. Vil is a monster, so we just need to polish the package and we're good to go!
 
+---
+# Report for Week of 8-3-20
+Not much progress this week because of personal issues or for medical reasons.
+
+---
 # Report for Week of 7-27-20
-Worked on `hySpc.chondro` as my psychological weaknesses permitted.
+Not much progress this week because of personal issues or for medical reasons.
 
 ---
 # Report for Week of 7-13-20
@@ -52,7 +86,6 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 
  **To Do**
   * issue #208 - enforcing Tidyverse function naming style
-
 
 ---
 # Report for Week of 7-6-20
@@ -165,7 +198,6 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 ```
 
 ----
-
 # Report for Week of 6-29-20
 ## `hypSpc.read.Witec`
 This is the start of the file import output distillation process. Let the spectroscopy gods guide us.
@@ -513,21 +545,21 @@ transmute.hyperSpec <- function(.data, ...) {
   setLabels.select(.data, res)
 }
 ```
-#### Replace `chondro` with `fauxCell`
+#### Replace `chondro` with `faux_cell`
 I did not get very far with the replacement task. Though, now that I have taken a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
 
 ##### Updating .R files
-I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `fauxCell` did not have in its data slot.
+I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
 
 ##### Updating test
-For each file I needed to make sure that the test could pass with `fauxCell`. To do this, I ran the following function in the RStudio console:
+For each file I needed to make sure that the test could pass with `faux_cell`. To do this, I ran the following function in the RStudio console:
 ```R
 with_reporter(reporter = SummaryReporter$new(), start_end_reporter = TRUE, get.test(.nameoffunction)())
 ```
 Additionally, I performed the `make` -> `build` -> `check` after each updated file to ensure that everything was cool.
 
 ##### Keep track of updates
-Now that I've completed replacing `chondro` with `fauxCell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
+Now that I've completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
 
 The files that have a reference to `chondro`, but I did not touch are:
 `chondro.R`
@@ -547,12 +579,12 @@ This was actually the start of the first coding period, but A LOT was going on l
 # Report for Week of 5-25-20
 
 ## 1. Replacing `chondro`
-I need to replace all of the references of the `chondro` data set with the `fauxCell` data set
+I need to replace all of the references of the `chondro` data set with the `faux_cell` data set
 
 From Roman:
 
     @Erick Maybe you can start removal of chondro by first deleting the file chondro.R and the chondro vignette (the whole folder).
-    This will break everything. Then try to fix it by finding all occurrences of chondro in the code and replacing them with fauxCell.
+    This will break everything. Then try to fix it by finding all occurrences of chondro in the code and replacing them with faux_cell.
     It it works, you're done! :smile: If not, we'll have to check on a case-by-case basis.
 
 According to Roman, I need to update the examples, unit test, and then vignettes.
@@ -576,9 +608,7 @@ update.examples <- function(dir, new_ds, old_ds) {
 test("./hyperSpec")
 ```
 
-**Note:** Also, it might be a better idea to run test locally per file as opposed to at the directory level:
-```R
-```
+**Note:** Also, it might be a better idea to run test locally per file as opposed to at the directory level.
 
 The first thing that needs to be done from the #145 branch is:
 
@@ -589,7 +619,7 @@ The first thing that needs to be done from the #145 branch is:
 Then, one can open up RStudio and hit the `Load All` button under the `More` tab. To make sure everything is working properly:
 
 ```R
-> fauxCell
+> faux_cell
 hyperSpec object
    875 spectra
    4 data columns
@@ -613,9 +643,9 @@ data:  (875 rows x 5 columns)
    4. clusters: clusters [factor] matrix matrix ... lacuna + NA
    5. spc: I / a.u. [matrix, array300] 501.8194 500.4552 ... 169.2942
 ```
-As you can see from the above code snippet there are some differences between the `fauxCell` and `chondro` datasets (i.e., labels, name of data slots)...which could all potentially effect the replacement process.
+As you can see from the above code snippet there are some differences between the `faux_cell` and `chondro` datasets (i.e., labels, name of data slots)...which could all potentially effect the replacement process.
 
-At the end of the day I need to replace the `chondro` data set with the `fauxCell` data set because the former has such a large overhead. Great, that should be the easiest part of the job (replacement/substitution).
+At the end of the day I need to replace the `chondro` data set with the `faux_cell` data set because the former has such a large overhead. Great, that should be the easiest part of the job (replacement/substitution).
 
 The real work starts after the replacement happens. Because even IF, the two data sets are similar, there are a number of things that could break during the replacement process. In particular, the attached test, @examples, vignettes, and scattered references to `chondro`.
 
