@@ -1,4 +1,4 @@
-# Report for week of 8-16-20
+# [Report for week of 8-16-20](/blog/weekly_reports.md)
 # Report for week of 8-11-20
 ```R
 
@@ -30,8 +30,6 @@
 ```
 
 ---
-# [Meeting notes for 8-3-20](/blog/meeting_notes.md)
-# [Meeting notes for 8-17-20](/blog/meeting_notes.md)
 # [Meeting notes for 8-10-20](/blog/meeting_notes.md)
 **What was decided**
 
