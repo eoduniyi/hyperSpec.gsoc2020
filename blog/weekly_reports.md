@@ -62,11 +62,11 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 
 ---
 # Report for Week of 8-3-20
-Not much progress this week because of personal issues or for medical reasons.
+Not much progress this week because of personal issues/medical reasons.
 
 ---
 # Report for Week of 7-27-20
-Not much progress this week because of personal issues or for medical reasons.
+Not much progress this week because of personal issues/medical reasons.
 
 ---
 # Report for Week of 7-13-20
