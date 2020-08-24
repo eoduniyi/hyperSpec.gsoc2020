@@ -1,4 +1,4 @@
-# [Report for week of 8-17-20]((/blog/meeting_notes.md)
+# [Report for week of 8-17-20](/blog/weekly_reports.md)
 
 Moving the remaining functions related to `read.txt` out of `hyperSpec` into `read.txt`: This will require that the functions in `hyperSpec` will become deprecated.
 
