@@ -1,12 +1,25 @@
+September 8: Final Results
+All documentation, modules, and tests will be uploaded and Travis CI will be integrated into the
+project Github page. All the deliverables promised for R GSoC 2020 will be provided by this stage
+
+August 31 - September 7: Final Evaluations
+This period will be used to write a detailed report on the work done in Coding Period 3. All work
+completed will be uploaded and documented.
+Deliverables:
+• Fortify hyperSpec for baseline with bridge packages
+• Fortify hyperSpec for EMSC with bridge packages
+• Fortify hyperSpec for matrixStats with bridge packages
+
 # Report for week of 8-24-20 (Week 16)
 
-**Week-16-expected:**
+**Week-16-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a weekly report of progress made.
+Meet with mentors. (check-in with mentors as necessary)
 
 **Week-16-actual:**
 
 # Report for week of 8-17-20 (Week 15)
 
-**Week-15-expected:**
+**Week-15-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-15-actual:**
 
@@ -44,7 +57,7 @@ I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the f
 ---
 # Report for week of 8-11-20 (Week 14)
 
-**Week-14-expected:**
+**Week-14-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-14-actual:**
 
@@ -79,7 +92,8 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 ---
 # Report for Week of 8-3-20 (Week 13)
 
-**Week-13-expected:**
+**Week-13-expected:** Let the coding continue! Start making progress on Goal 3. Stick to the development cycle for all
+weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-13-actual:**
 
@@ -88,7 +102,15 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for Week of 7-27-20 (Week 12)
 
-**Week-12-expected:**
+**Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of
+progress made. Meet with mentors. (check-in with mentors as necessary)
+
+July 27 - July 31: Phase 2 Evaluations
+This period will be used to write a detailed report on the work done in Coding Period 2. All work
+completed will be uploaded and documented.
+Deliverables:
+• Shielded hyperSpec and associated hyperSpec packages
+• Fortified hyperSpec for tidyverse
 
 **Week-12-actual:**
 
@@ -97,7 +119,8 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for Week of 7-13-20 (Week 11)
 
-**Week-11-expected:**
+**Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of
+progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-11-actual:**
 
@@ -120,7 +143,16 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 ---
 # Report for Week of 7-6-20 (Week 10)
 
-**Week-10-expected:**
+**Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
+for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
+mentors as necessary)
+
+July 27 - July 31: Phase 2 Evaluations
+This period will be used to write a detailed report on the work done in Coding Period 2. All work
+completed will be uploaded and documented.
+Deliverables:
+• Shielded hyperSpec and associated hyperSpec packages
+• Fortified hyperSpec for tidyverse
 
 **Week-10-actual:**
 
@@ -234,7 +266,13 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 ----
 # Report for Week of 6-29-20 (Week 9)
 
-**Week-9-expected:**
+**Week-9-expected:** This period will be used to write a detailed report on the work done in Coding Period 1. All work
+completed will be uploaded and documented.
+
+Deliverables:
+• Distilled hyperSpec package
+• New specialized hyperSpec packages for file I/O
+• New implemented import filters for new file formats
 
 **Week-9-actual:**
 
@@ -328,7 +366,7 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
 
 # Report for Week of 6-22-20 (Week 8)
 
-**Week-8-expected:**
+**Week-8-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-8-actual:**
 
