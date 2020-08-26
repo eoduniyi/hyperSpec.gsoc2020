@@ -582,7 +582,7 @@ This was actually the start of the first coding period, but A LOT was going on l
 Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-3-actual:**
-Started replacing the `chondro` dataset with the `faux_cell` dataset,
+Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and looked into `pkgdown` and `drat`.
 
 
 ## 1. Replacing `chondro`
