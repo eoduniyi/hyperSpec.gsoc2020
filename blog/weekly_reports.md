@@ -572,7 +572,13 @@ Here is a table with my findings:
 The vignettes still make use of examples that reference `chondro`, so at some point that also needs to be updated.
 
 ---
-# Report for Week of 6-1-20
+# Report for Week of 6-1-20 (Week 4)
+
+**Week-4-expected:**
+Let the coding begin! Start making progress on Goal 1. Stick to the development cycle for all weekly tasks (i.e., describe, design, implement, quality check, test, document, deliver, and iterate). Compile
+a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-4-actual:**
 This was actually the start of the first coding period, but A LOT was going on locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
 
 ---
