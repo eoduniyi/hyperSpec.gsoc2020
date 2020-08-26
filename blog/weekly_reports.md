@@ -299,19 +299,42 @@ hySpc.read.Witec("name/of/Witec/file.R")
 
 ---
 
-# Report for Week of 6-15-20
-#### The Return of hyperSpec.skeleton (hySpc.skeleton)
-According to naming conventions, the hyperSpec skeleton package has changed from
-`hyperSpec.skeleton` to `hySpc.skeleton`
+# Report for Week of 6-15-20 (Week 6)
 
-The `hySpc.skeleton` package includes:
+**Week-6-expected:**
+Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-6-actual:**
+Worked on developing the `hySpc.skeleton` package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).**
+
+#### The Return of hyperSpec.skeleton (`hySpc.skeleton`)
+According to naming conventions, the hyperSpec skeleton package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people)
+
+The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package includes the following folders `/` and files:
+
+```
+/R
+/github-helpers
+/pkgdown
+/tests
+.travis.yml
+CONTRIBUTING.md
+DESCRIPTION
+LICENSE
+NEWS.md
+README.md
+_pkgdown.yml
+appveyor.yml
+codecov.yml
+project.Rproj
+```
+
 
 ---
 # Report for Week of 6-8-20 (Week 5)
 
 **Week-5-expected:**
-Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress
-made. Meet with mentors. (check-in with mentors as necessary)
+Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-5-actual:**
 Implemented [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R)  
@@ -360,9 +383,11 @@ The current implementation of  `mutate.R` is mostly expressed within the helper 
 ```R
 for (i in seq_along(args)) {
   expr <- quo_name(quo_get_expr(args[[i]]))
+
   # Process arguments with no names (assignments)
   if ("" %in% args_names[i]) {
     cols2get <- c(cols2get, expr)
+
     # Process matrix argument assignments
     # Manipulate `matrix column before passing it on to mutate/transmute
   } else if (args_names[i] %in% colnames(.data) && is.matrix(var_expr)) {
@@ -376,6 +401,7 @@ for (i in seq_along(args)) {
     tmp_hy@data[[args_names[i]]] <- .data@data[[args_names[i]]] # ensures operation on original column
     tmp_hy@data[[args_names[i]]] <- var_expr
     cols2get <- c(cols2get, args_names[i])
+
     # Process non matrix argument assignments
   } else {
     print("Here")
@@ -390,6 +416,7 @@ Let's try and distill the update as psuedo code:
 # If the argument has no name (only an expression)
 if (args_name[i] is empty_string) {
     if (expr is matrix) {
+
         # going to be hard to deal with
         if (expr contains `spc`+anything_else) {
                 stop("spc column can not be mutated")
@@ -409,6 +436,7 @@ if (args_name[i] is empty_string) {
         # Update tmp .data
         # Store expr as column
     }
+
 # If name of argument is not a column with row matrices    
 } else {
     # Create an assignment using paste
@@ -439,9 +467,7 @@ pre_mutation <- function(.data, ...) {
   # share the same index (i.e., args_name[i] is the expr for the variable names(args[i]))
   for (i in seq_along(args)) {
     expr <- quo_name(quo_get_expr(args[[i]]))
-    col_name <- trimws(gsub("[[:punct:]].*","", expr), "right") # "base" expr ~should~ be in colnames(.data)
-    # print(col_name)
-    # print(args_names[i])
+    col_name <- trimws(gsub("[[:punct:]].*","", expr), "right") # "base" expr
 
     # Capture expression value
     if (!grepl("\\D", expr)) {
@@ -759,18 +785,22 @@ get_args <- function(.data, ...) {
     # share the same index (i.e., args_name[i] is the expr for the variable names(args[i]))
     for (i in seq_along(args)) {
       expr <- quo_name(quo_get_expr(args[[i]]))
+
       # Process arguments with no names (assignments)
       if ('' %in% args_names[i]) {
         cols2get <- c(cols2get, expr)
+
       # Process matrix argument assignments
-      # Manipulate `matrix column before passing it on to mutate/transmute
+      # Manipulate matrix column before passing it on to mutate/transmute
       } else if (args_names[i] %in% colnames(.data) && is.matrix(.data@data$[args_names[i]])) {
           if (grepl("spc", expr) && !"spc" %in% args_names[i]) {
 
               # Throw an error
               stop("$spc can only be mutated from itself")
           }
-          tmp_hy@data[c(arg_names[i])] <- .data@data$[c(args_names[i])] # ensures operation on original column
+          tmp_hy@data[c(arg_names[i])] <- .data@data$[c(args_names[i])]
+
+          # ensures operation on original column
           eval(parse(text = paste("tmp_hy@data[c(", arg_names[i], ")]<-", "tmp_hy@data$", expr)))
           cols2get <- c(cols2get, arg_names[i])
         }
