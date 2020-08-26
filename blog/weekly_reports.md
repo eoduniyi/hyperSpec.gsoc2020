@@ -928,7 +928,7 @@ It is best to develop all packages from within RStudio:
 ##### 1.3.3 Set up `testthat` for unit testing
 The hyperSpec.skeleton repository comes with the necessary infrastructure for unit testing via the `testthat` package. See the [link](https://projector-video-pdf-converter.datacamp.com/5067/chapter4.pdf) for a **review on unit testing** and this [link](https://cran.r-project.org/web/packages/testthat/testthat.pdf) for the **`testthat` manual**.
 
-**Note:** Unit test are typically written within the same file as the function definition.
+**Note:** The `r-hyperspec` team has a standard of unit test written within the same file as the function definition.
 
 ##### 1.3.4 Set up CI
 All hyperSpec packages include CI via [Travis CI](https://travis-ci.com/) and [AppVeyor](https://www.appveyor.com/). The .yml files for both of these services are included in the package directory.
@@ -941,7 +941,7 @@ All hyperSpec packages report code coverage via [codecov.io](https://codecov.io/
 **Note:** You need to have a codecov.io account. Make sure the Codecov app is installed in the Github repository's settings.
 
 ##### 1.3.6 Adding badges
-Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyor, Codecov, and [repo status](https://www.repostatus.org/#wip) can be found on the service's respective website. Additionally, a comprehensive list of badges can be found at [Naereen/badges](https://github.com/Naereen/badges)
+Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyor, Codecov, and [repo status](https://www.repostatus.org/#wip) can be found on the service's respective website. Additionally, a comprehensive list of badges can be found at [Naereen/badges](https://github.com/Naereen/badges).
 
 ---
 # Report for Week of 5-4-20 (Week 1)
