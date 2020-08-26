@@ -299,21 +299,50 @@ hySpc.read.Witec("name/of/Witec/file.R")
 
 ---
 
-# Report for Week of 6-15-20
-#### Return of hyperSpec.skeleton (hySpc.skeleton)
-According to naming conventions, the hyperSpec skeleton package has changed from
-`hyperSpec.skeleton` to `hySpc.skeleton`
+# Report for Week of 6-15-20 (Week 6)
 
-The `hySpc.skeleton` package includes:
+**Week-6-expected:**
+Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-#### Github Actions vs. Travis CI vs. rhub vs. winBuilder
-#### Data package: drat, R.cache, piggyback
+**Week-6-actual:**
+Worked on developing the `hySpc.skeleton` package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).**
+
+#### The Return of hyperSpec.skeleton (`hySpc.skeleton`)
+According to naming conventions, the hyperSpec skeleton package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people)
+
+The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package includes the following folders `/` and files:
+
+```
+/R
+/github-helpers
+/pkgdown
+/tests
+.travis.yml
+CONTRIBUTING.md
+DESCRIPTION
+LICENSE
+NEWS.md
+README.md
+_pkgdown.yml
+appveyor.yml
+codecov.yml
+project.Rproj
+```
+
 
 ---
+# Report for Week of 6-8-20 (Week 5)
 
-# Report for Week of 6-8-20
+**Week-5-expected:**
+Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-#### Return of hyperSpec.mutate/transmute
+**Week-5-actual:**
+Implemented [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R)  
+`mutate` takes care of [issue #6](https://github.com/r-hyperspec/hySpc.dplyr/issues/6) and [issue #7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)  
+`setLabels` implements updating labels as discussed in [#7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)
+
+
+#### 1. The Return of `hyperSpec.mutate/transmute`
 Still need to finish fleshing out the details of the hyperSpec.mutate and hyperSpec.transmute functions. They're sooo close!!!
 
 According to our conversation, the generalized mutate/transmute allows and disallows the following:
@@ -354,9 +383,11 @@ The current implementation of  `mutate.R` is mostly expressed within the helper 
 ```R
 for (i in seq_along(args)) {
   expr <- quo_name(quo_get_expr(args[[i]]))
+
   # Process arguments with no names (assignments)
   if ("" %in% args_names[i]) {
     cols2get <- c(cols2get, expr)
+
     # Process matrix argument assignments
     # Manipulate `matrix column before passing it on to mutate/transmute
   } else if (args_names[i] %in% colnames(.data) && is.matrix(var_expr)) {
@@ -370,6 +401,7 @@ for (i in seq_along(args)) {
     tmp_hy@data[[args_names[i]]] <- .data@data[[args_names[i]]] # ensures operation on original column
     tmp_hy@data[[args_names[i]]] <- var_expr
     cols2get <- c(cols2get, args_names[i])
+
     # Process non matrix argument assignments
   } else {
     print("Here")
@@ -384,6 +416,7 @@ Let's try and distill the update as psuedo code:
 # If the argument has no name (only an expression)
 if (args_name[i] is empty_string) {
     if (expr is matrix) {
+
         # going to be hard to deal with
         if (expr contains `spc`+anything_else) {
                 stop("spc column can not be mutated")
@@ -403,6 +436,7 @@ if (args_name[i] is empty_string) {
         # Update tmp .data
         # Store expr as column
     }
+
 # If name of argument is not a column with row matrices    
 } else {
     # Create an assignment using paste
@@ -433,9 +467,7 @@ pre_mutation <- function(.data, ...) {
   # share the same index (i.e., args_name[i] is the expr for the variable names(args[i]))
   for (i in seq_along(args)) {
     expr <- quo_name(quo_get_expr(args[[i]]))
-    col_name <- trimws(gsub("[[:punct:]].*","", expr), "right") # "base" expr ~should~ be in colnames(.data)
-    # print(col_name)
-    # print(args_names[i])
+    col_name <- trimws(gsub("[[:punct:]].*","", expr), "right") # "base" expr
 
     # Capture expression value
     if (!grepl("\\D", expr)) {
@@ -545,10 +577,10 @@ transmute.hyperSpec <- function(.data, ...) {
   setLabels.select(.data, res)
 }
 ```
-#### Replace `chondro` with `faux_cell`
+#### 2. Replace `chondro` with `faux_cell`
 I did not get very far with the replacement task. Though, now that I have taken a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
 
-##### Updating .R files
+##### 3. Updating .R files
 I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
 
 ##### Updating test
@@ -559,7 +591,7 @@ with_reporter(reporter = SummaryReporter$new(), start_end_reporter = TRUE, get.t
 Additionally, I performed the `make` -> `build` -> `check` after each updated file to ensure that everything was cool.
 
 ##### Keep track of updates
-Now that I've completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
+Now that I have completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
 
 The files that have a reference to `chondro`, but I did not touch are:
 `chondro.R`
@@ -572,11 +604,24 @@ Here is a table with my findings:
 The vignettes still make use of examples that reference `chondro`, so at some point that also needs to be updated.
 
 ---
-# Report for Week of 6-1-20
-This was actually the start of the first coding period, but A LOT was going on locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
+# Report for Week of 6-1-20 (Week 4)
+
+**Week-4-expected:**
+Let the coding begin! Start making progress on Goal 1. Stick to the development cycle for all weekly tasks (i.e., describe, design, implement, quality check, test, document, deliver, and iterate). Compile
+a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-4-actual:**
+This was actually the start of the first coding period, but [A LOT](https://en.wikipedia.org/wiki/Killing_of_George_Floyd#:~:text=On%20May%2025%2C%202020%2C%20George,allegedly%20using%20a%20counterfeit%20bill.&text=The%20three%20other%20officers%20were,and%20abetting%20second%2Ddegree%20murder.) was going on locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
 
 ---
-# Report for Week of 5-25-20
+# Report for Week of 5-25-20 (Week 3)
+
+**Week-3-expected:**
+Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-3-actual:**
+Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and looked into `pkgdown` and `drat`.
+
 
 ## 1. Replacing `chondro`
 I need to replace all of the references of the `chondro` data set with the `faux_cell` data set
@@ -588,6 +633,7 @@ From Roman:
     It it works, you're done! :smile: If not, we'll have to check on a case-by-case basis.
 
 According to Roman, I need to update the examples, unit test, and then vignettes.
+
 ```R
 # update.examples expects a directory of .R files where the examples exist
 # name of the new dataset
@@ -602,7 +648,7 @@ update.examples <- function(dir, new_ds, old_ds) {
 
 # Assumptions: The old_dt and new_dt exist in the package
 ```
-**Note:** So, the first thing I'm going to do is test the entire package (you can submit a package without passing all of the unittest?):
+**Note:** So, the first thing I am going to do is test the entire package (you can submit a package without passing all of the unittest?):
 
 ```R
 test("./hyperSpec")
@@ -649,7 +695,7 @@ At the end of the day I need to replace the `chondro` data set with the `faux_ce
 
 The real work starts after the replacement happens. Because even IF, the two data sets are similar, there are a number of things that could break during the replacement process. In particular, the attached test, @examples, vignettes, and scattered references to `chondro`.
 
-**Note:** Examples exist in within the .R files, man pages, and in the vignettes.
+**Note:** Examples exist within the .R files, man pages, and in the vignettes.
 
 **General Questions:**
 * #145 will also be a large commit...not sure how one can avoid this.
@@ -739,22 +785,26 @@ get_args <- function(.data, ...) {
     # share the same index (i.e., args_name[i] is the expr for the variable names(args[i]))
     for (i in seq_along(args)) {
       expr <- quo_name(quo_get_expr(args[[i]]))
+
       # Process arguments with no names (assignments)
       if ('' %in% args_names[i]) {
         cols2get <- c(cols2get, expr)
+
       # Process matrix argument assignments
-      # Manipulate `matrix column before passing it on to mutate/transmute
+      # Manipulate matrix column before passing it on to mutate/transmute
       } else if (args_names[i] %in% colnames(.data) && is.matrix(.data@data$[args_names[i]])) {
           if (grepl("spc", expr) && !"spc" %in% args_names[i]) {
 
               # Throw an error
               stop("$spc can only be mutated from itself")
           }
-          tmp_hy@data[c(arg_names[i])] <- .data@data$[c(args_names[i])] # ensures operation on original column
+          tmp_hy@data[c(arg_names[i])] <- .data@data$[c(args_names[i])]
+
+          # ensures operation on original column
           eval(parse(text = paste("tmp_hy@data[c(", arg_names[i], ")]<-", "tmp_hy@data$", expr)))
           cols2get <- c(cols2get, arg_names[i])
         }
-      # Process non matrix argument assignments
+      # Process non-matrix argument assignments
       } else {
         assign <- paste(args_names[i],'=', expr, sep='')
         cols2get <- c(cols2get, assign)
@@ -866,13 +916,13 @@ It's a good idea to install the [full MacTex2020](http://www.tug.org/mactex/mact
     # In Terminal within the directory of hyperSpec run make
     make
 
-Update the config file to reflect your user credentials
+Update the config file to reflect your user credentials.
 
-### #. PCA
+<!-- ### #. PCA
 
 <s>TODO: I should install the R development branch via subversion</s>
 TODO: Read "An Introduction to PCA"
-TODO: Read "Evaluating the Design of the R language"
+TODO: Read "Evaluating the Design of the R language" -->
 
 ---
 # Report for Week of 5-11-20 (Week 2)
@@ -955,9 +1005,3 @@ Created a clear communication schedule for weekly meetings, protocols for check-
 etc.).
 
 ---
-# **!!! Dear `r-hyperspec` team this would be an example of linking my code contributions with my blog:**
-
-### Ex. mutate.R and setLabels.R
-Implemented [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R)  
-`mutate` takes care of [issue #6](https://github.com/r-hyperspec/hySpc.dplyr/issues/6) and [issue #7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)  
-`setLabels` implements updating labels as discussed in [#7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)
