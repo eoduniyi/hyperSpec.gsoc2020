@@ -559,7 +559,7 @@ with_reporter(reporter = SummaryReporter$new(), start_end_reporter = TRUE, get.t
 Additionally, I performed the `make` -> `build` -> `check` after each updated file to ensure that everything was cool.
 
 ##### Keep track of updates
-Now that I've completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
+Now that I have completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
 
 The files that have a reference to `chondro`, but I did not touch are:
 `chondro.R`
@@ -576,7 +576,14 @@ The vignettes still make use of examples that reference `chondro`, so at some po
 This was actually the start of the first coding period, but A LOT was going on locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
 
 ---
-# Report for Week of 5-25-20
+# Report for Week of 5-25-20 (Week 3)
+
+**Week-3-expected:**
+Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-3-actual:**
+Started replacing the `chondro` dataset with the `faux_cell` dataset,
+
 
 ## 1. Replacing `chondro`
 I need to replace all of the references of the `chondro` data set with the `faux_cell` data set
@@ -588,6 +595,7 @@ From Roman:
     It it works, you're done! :smile: If not, we'll have to check on a case-by-case basis.
 
 According to Roman, I need to update the examples, unit test, and then vignettes.
+
 ```R
 # update.examples expects a directory of .R files where the examples exist
 # name of the new dataset
@@ -602,7 +610,7 @@ update.examples <- function(dir, new_ds, old_ds) {
 
 # Assumptions: The old_dt and new_dt exist in the package
 ```
-**Note:** So, the first thing I'm going to do is test the entire package (you can submit a package without passing all of the unittest?):
+**Note:** So, the first thing I am going to do is test the entire package (you can submit a package without passing all of the unittest?):
 
 ```R
 test("./hyperSpec")
@@ -649,7 +657,7 @@ At the end of the day I need to replace the `chondro` data set with the `faux_ce
 
 The real work starts after the replacement happens. Because even IF, the two data sets are similar, there are a number of things that could break during the replacement process. In particular, the attached test, @examples, vignettes, and scattered references to `chondro`.
 
-**Note:** Examples exist in within the .R files, man pages, and in the vignettes.
+**Note:** Examples exist within the .R files, man pages, and in the vignettes.
 
 **General Questions:**
 * #145 will also be a large commit...not sure how one can avoid this.
@@ -866,13 +874,13 @@ It's a good idea to install the [full MacTex2020](http://www.tug.org/mactex/mact
     # In Terminal within the directory of hyperSpec run make
     make
 
-Update the config file to reflect your user credentials
+Update the config file to reflect your user credentials.
 
-### #. PCA
+<!-- ### #. PCA
 
 <s>TODO: I should install the R development branch via subversion</s>
 TODO: Read "An Introduction to PCA"
-TODO: Read "Evaluating the Design of the R language"
+TODO: Read "Evaluating the Design of the R language" -->
 
 ---
 # Report for Week of 5-11-20 (Week 2)
