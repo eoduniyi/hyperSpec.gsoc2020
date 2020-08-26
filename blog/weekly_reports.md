@@ -1,6 +1,15 @@
 # Report for week of 8-24-20 (Week 16)
 
+**Week-16-expected:**
+
+**Week-16-actual:**
+
 # Report for week of 8-17-20 (Week 15)
+
+**Week-15-expected:**
+
+**Week-15-actual:**
+
 Moving the remaining functions related to `read.txt` out of `hyperSpec` into `read.txt`: This will require that the functions in `hyperSpec` will become deprecated.
 
 ## Moving functions from `hyperSpec` to `hySpc.read.txt`
@@ -34,6 +43,11 @@ I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the f
 
 ---
 # Report for week of 8-11-20 (Week 14)
+
+**Week-14-expected:**
+
+**Week-14-actual:**
+
 Test cases for the remaining styles of `Witec`
 
 ```R
@@ -64,14 +78,28 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 
 ---
 # Report for Week of 8-3-20 (Week 13)
+
+**Week-13-expected:**
+
+**Week-13-actual:**
+
 Not much progress this week because of personal issues/medical reasons.
 
 ---
 # Report for Week of 7-27-20 (Week 12)
+
+**Week-12-expected:**
+
+**Week-12-actual:**
+
 Not much progress this week because of personal issues/medical reasons.
 
 ---
 # Report for Week of 7-13-20 (Week 11)
+
+**Week-11-expected:**
+
+**Week-11-actual:**
 
 ## Labels
 Okay, for whatever reason I have been letting a couple of things on the Trello "In Progress" list for a little too long. So, I want to try and go ahead and clean up some of these task if not finish this week:
@@ -91,6 +119,10 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 
 ---
 # Report for Week of 7-6-20 (Week 10)
+
+**Week-10-expected:**
+
+**Week-10-actual:**
 
 ## Github Actions and `pkgdown`
 To be honest, the whole devops side of the project (and software development in general) has been lost of me. I don't really understand what Github Actions or Github workflows are or why they're useful. I don't really understand how to use `pkgdown`. So, today we must do research into the nature of both of these systems.
@@ -201,6 +233,11 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 
 ----
 # Report for Week of 6-29-20 (Week 9)
+
+**Week-9-expected:**
+
+**Week-9-actual:**
+
 ## `hypSpc.read.Witec`
 This is the start of the file import output distillation process. Let the spectroscopy gods guide us.
 
@@ -291,6 +328,10 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
 
 # Report for Week of 6-22-20 (Week 8)
 
+**Week-8-expected:**
+
+**Week-8-actual:**
+
 ### `hySpc.read.Witec`
 `hySpc.read.Witec` is a bridge package for managing all kinds of files produced by Witec instruments. The application of this package is the following:
 ```R
@@ -303,10 +344,10 @@ hySpc.read.Witec("name/of/Witec/file.R")
 
 # Report for Week of 6-15-20 (Week 7)
 
-**Week-6-expected:**
+**Week-7-expected:**
 Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-**Week-6-actual:**
+**Week-7-actual:**
 Worked on developing the `hySpc.skeleton` package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).**
 
 #### The Return of hyperSpec.skeleton (`hySpc.skeleton`)
@@ -335,10 +376,10 @@ project.Rproj
 ---
 # Report for Week of 6-8-20 (Week 6)
 
-**Week-5-expected:**
+**Week-6-expected:**
 Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-**Week-5-actual:**
+**Week-6-actual:**
 Implemented [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R)  
 `mutate` takes care of [issue #6](https://github.com/r-hyperspec/hySpc.dplyr/issues/6) and [issue #7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)  
 `setLabels` implements updating labels as discussed in [#7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)
@@ -608,20 +649,20 @@ The vignettes still make use of examples that reference `chondro`, so at some po
 ---
 # Report for Week of 6-1-20 (Week 5)
 
-**Week-4-expected:**
+**Week-5-expected:**
 Let the coding begin! Start making progress on Goal 1. Stick to the development cycle for all weekly tasks (i.e., describe, design, implement, quality check, test, document, deliver, and iterate). Compile
 a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-**Week-4-actual:**
+**Week-5-actual:**
 This was actually the start of the first coding period, but [A LOT](https://en.wikipedia.org/wiki/Killing_of_George_Floyd#:~:text=On%20May%2025%2C%202020%2C%20George,allegedly%20using%20a%20counterfeit%20bill.&text=The%20three%20other%20officers%20were,and%20abetting%20second%2Ddegree%20murder.) was going on locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
 
 ---
 # Report for Week of 5-25-20 (Week 4)
 
-**Week-3-expected:**
+**Week-4-expected:**
 Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-**Week-3-actual:**
+**Week-4-actual:**
 Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and looked into `pkgdown` and `drat`.
 
 
@@ -705,6 +746,11 @@ The real work starts after the replacement happens. Because even IF, the two dat
 
 ---
 # Report for Week of 5-18-20 (Week 3)
+
+**Week-3-expected:**
+Finalize development tools and workflow for contributing to the project over the summer. Inquire  about helpful R programming and spectroscopy resources from mentors and digest them.
+
+**Week-3-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building.
 
 ### 1. Generalizing mutate.R and improving setLabels.R
 
