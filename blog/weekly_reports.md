@@ -814,7 +814,7 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
  And honestly, I'm not even sure what the difference between _3)_ and _2)_ is. Even still, we are making our way to completing deliverables on time.
 
  ---
- # Report for Week of 7-6-20 (Week 10)
+# Report for Week of 7-6-20 (Week 10)
 
  **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
  for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
@@ -856,7 +856,7 @@ jobs:
 
 There are a number of open-source .yml solutions, as well as, configurations one can specify.
 
-### Secrets
+### Let me tell you a secret
 So, what is the difference between "personal access tokens", "Github secrets", "keys", etc.
 
 * Personal Access Tokens - Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
