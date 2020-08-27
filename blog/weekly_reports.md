@@ -1,15 +1,12 @@
-September 8: Final Results
-All documentation, modules, and tests will be uploaded and Travis CI will be integrated into the
-project Github page. All the deliverables promised for R GSoC 2020 will be provided by this stage
+# September 8: Final Results
+All documentation, code modules (files, packages, etc.), and their associated tests have been uploaded. Excluding the three deliverables promised at the end of the third coding period:
+* Fortified `hyperSpec` for `baseline` with bridge packages
+* Fortified `hyperSpec` for `EMSC` with bridge packages
+* Fortified `hyperSpec` for `matrixStats` with bridge packages.
 
-August 31 - September 7: Final Evaluations
-This period will be used to write a detailed report on the work done in Coding Period 3. All work
-completed will be uploaded and documented.
-Deliverables:
-• Fortify hyperSpec for baseline with bridge packages
-• Fortify hyperSpec for EMSC with bridge packages
-• Fortify hyperSpec for matrixStats with bridge packages
+And so, with the support of the `r-hyperspec` team all other deliverables promised for R GSoC 2020 have been...delivered. Furthermore, I plan on continuing to work with the `r-hyperspec` team for the foreseeable future. That is, the remaining deliverables, issues, features, and their associated documentation will continue to be worked on by me and the `r-hyperspec` team as time permits.
 
+---
 # Report for week of 8-24-20 (Week 16)
 
 **Week-16-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a weekly report of progress made.
@@ -17,6 +14,7 @@ Meet with mentors. (check-in with mentors as necessary)
 
 **Week-16-actual:**
 
+---
 # Report for week of 8-17-20 (Week 15)
 
 **Week-15-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
@@ -28,31 +26,31 @@ Moving the remaining functions related to `read.txt` out of `hyperSpec` into `re
 ## Moving functions from `hyperSpec` to `hySpc.read.txt`
 I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the following functions:
 
-+ [ ] read.txt.Horiba.R
-    - [ ] `read.txt.Horiba`
-    - [ ] `read.txt.Horiba.xy`
-    - [ ] `read.txt.Horiba.t`
-+ [ ] read.txt.long.R
-    - [ ] `read.txt.long`
-+ [ ] read.txt.Renishaw.R
-    - [ ] `read.txt.Renishaw`
-    - [ ] `read.zip.Renishaw`
-+ [ ] read.txt.Shimadzu.R
-    - [ ] `read.txt.Shimadzu`
-+ [ ] read.txt.wide.R
-    - [ ] `read.txt.wide`
-+ [ ] read.txt.Witec.R
-    - [ ] `read.txt.Witec`
-    - [ ] `read.dat.Witec`
-    - [ ] `read.txt.Witec.Graph`
++ [x] read.txt.Horiba.R
+    - [x] `read.txt.Horiba`
+    - [x] `read.txt.Horiba.xy`
+    - [x] `read.txt.Horiba.t`
++ [x] read.txt.long.R
+    - [x] `read.txt.long`
++ [x] read.txt.Renishaw.R
+    - [x] `read.txt.Renishaw`
+    - [x] `read.zip.Renishaw`
++ [x] read.txt.Shimadzu.R
+    - [x] `read.txt.Shimadzu`
++ [x] read.txt.wide.R
+    - [x] `read.txt.wide`
++ [x] read.txt.Witec.R
+    - [x] `read.txt.Witec`
+    - [x] `read.dat.Witec`
+    - [x] `read.txt.Witec.Graph`
 +  ~~wc.R~~
     - ~~`wc`~~
-+ [ ] count_lines.R
-    - [ ] `count_lines`
-+ [ ] read.asc.Andor.R
-    - [ ] `read.asc.Andor`
-+ [ ] read.asc.PerkinElmer.R
-    - [ ] `read.asc.PerkinElmer`
++ [x] count_lines.R
+    - [x] `count_lines`
++ [x] read.asc.Andor.R
+    - [x] `read.asc.Andor`
++ [x] read.asc.PerkinElmer.R
+    - [x] `read.asc.PerkinElmer`
 
 ---
 # Report for week of 8-11-20 (Week 14)
@@ -364,6 +362,7 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
 
  And honestly, I'm not even sure what the difference between _3)_ and _2)_ is. Even still, we are making our way to completing deliverables on time.
 
+---
 # Report for Week of 6-22-20 (Week 8)
 
 **Week-8-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
