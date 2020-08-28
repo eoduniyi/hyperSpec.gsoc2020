@@ -8,6 +8,29 @@ etc.).
 Created a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling,
 etc.).
 
+# 1. Infrastructure for R Open-source Contribution
+
+Before contributing or creating a repository, there must be an individual or team that manages  **contributions** and the people that make them: **contributors** - _A person, or organization responsible for making contributions to the repository_ (open-source projects don't write themselves, really). And so, we'll specify that contributions can come in the form of **coding contributions** (CCs) and **non-coding contributions** (NCCs):
+
+* coding contributions - _contributions that consist of the addition or deletion of code_
+
+* non-coding contributions - _contributions that support the open-source project that are not CCs_
+
+From the perspective of projects hosted on [Github](https//:github.com), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, and _contributor access_. For this first week (or at the beginning of any project) the `r-hyperspec` team focused on NCCs.
+
+## 1.2. Social and Team Infrastructure (Project managment)
+For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing issues). However, there are a number of tools that IMHO significantly  aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions (or CCs), and various other "behind the scene" task that aid the CCs and social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kisilev_ aided the team with developing and managing such team infrastructures:
+
+### 1.2.1. Trello
+Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially host public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
+
+### 1.2.2. Github
+Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [this](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
+
+### 1.2.3. Trello + GitHub integration
+Roman also showed the team how we could integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). To be honest, from my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that it's use decreased slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
+
+
 ---
 # Report for Week of 5-11-20 (Week 2)
 
@@ -824,8 +847,9 @@ mentors as necessary)
 This period will be used to write a detailed report on the work done in Coding Period 2. All work
 completed will be uploaded and documented.
 Deliverables:
-• Shielded hyperSpec and associated hyperSpec packages
-• Fortified hyperSpec for tidyverse
+
+* Shielded hyperSpec and associated hyperSpec packages
+* Fortified hyperSpec for tidyverse
 
 **Week-10-actual:**
 
