@@ -816,18 +816,18 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
  ---
 # Report for Week of 7-6-20 (Week 10)
 
- **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
- for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
- mentors as necessary)
+**Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
+for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
+mentors as necessary)
 
- July 27 - July 31: Phase 2 Evaluations
- This period will be used to write a detailed report on the work done in Coding Period 2. All work
- completed will be uploaded and documented.
- Deliverables:
- • Shielded hyperSpec and associated hyperSpec packages
- • Fortified hyperSpec for tidyverse
+**July 27 - July 31: Phase 2 Evaluations:**
+This period will be used to write a detailed report on the work done in Coding Period 2. All work
+completed will be uploaded and documented.
+Deliverables:
+• Shielded hyperSpec and associated hyperSpec packages
+• Fortified hyperSpec for tidyverse
 
- **Week-10-actual:**
+**Week-10-actual:**
 
 ## Github Actions and `pkgdown`
 To be honest, the whole devops side of the project (and software development in general) has been lost of me. I don't really understand what Github Actions or Github workflows are or why they're useful. I don't really understand how to use `pkgdown`. So, today we must do research into the nature of both of these systems.
@@ -866,7 +866,6 @@ So, what is the difference between "personal access tokens", "Github secrets", "
 ### `pkgdown`
 According to the main website for `pkgdown`
 > pkgdown is designed to make it quick and easy to build a website for your package.
-
 
 ### `drat`
 According to the maintainers, "Drat is an R package which makes it really easy to provide R packages via a repository, and also makes it easy to use such repositories for package installation and upgrades." via:
