@@ -8,13 +8,35 @@ etc.).
 Created a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling,
 etc.).
 
+# 1. Infrastructure for Open-source Contribution
+
+Before contributing or creating a repository, there must be an individual or team that manages  **contributions** and the people that make them: **contributors** - _A person, or organization responsible for making contributions to the repository_ (open-source projects don't write themselves, really). And so, we'll specify that contributions can come in the form of **coding contributions** (CCs) and **non-coding contributions** (NCCs):
+
+* coding contributions - _contributions that consist of the addition or deletion of code_
+
+* non-coding contributions - _contributions that support the open-source project that are not CCs_
+
+From the perspective of a team hosting their project on [Github](https://github.com/), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, and _contributor access_. For this first week (or at the beginning of any project) the `r-hyperspec` team focused on NCCs.
+
+## 1.2. Social and Team Infrastructure (Project managment)
+For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing issues). However, there are a number of tools that IMHO significantly  aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions (or CCs), and various other "behind the scene" task that aid the CCs and social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kisilev_ aided the team with developing and managing such team infrastructures:
+
+### 1.2.1. Trello
+Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially host public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
+
+### 1.2.2. Github
+Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [this](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
+
+### 1.2.3. Trello + GitHub integration
+Roman also showed the team how we could integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). To be honest, from my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that it's use decreased slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
+
 ---
 # Report for Week of 5-11-20 (Week 2)
 
 **Week-2-expected:**
 Finalize development tools and workflow for contributing to the project over the summer. Inquire  about helpful R programming and spectroscopy resources from mentors and digest them.
 
-**Week-2-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building.
+**Week-2-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Finally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](https://github.com/eoduniyi/hyperSpec.gsoc2020/blob/develop/test.md) were merged. That was a particularly large commit because of the nature of the changes.
 
 ### 1. Package skeleton (template repo)
 
@@ -34,7 +56,7 @@ git remote add template [URL of the template repo]
 
 Now, changes made to the template can be propagated to the derived repo by fetching and pulling in the changes.
 
-#### 1.3 Creating a hyperSpec package skeleton
+#### 1.3. Creating a hyperSpec package skeleton
 Because I will be creating a lot of R packages there should be a package pattern to ensure a consistent infrastructure style is present across the hyperSpec ecosystem. Every hyperSpec package should then include the following components:
 
   1. Github repository
@@ -43,10 +65,10 @@ Because I will be creating a lot of R packages there should be a package pattern
   4. continuous integration (CI) via [Travis CI](https://travis-ci.com/) and [AppVeyor](https://www.appveyor.com/)
   5. code coverage via `covr` and [Codecov](https://codecov.io/)
 
-##### 1.3.1 Create a Github repository
-Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton). commit/publish local repository.
+##### 1.3.1. Create a Github repository
+Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton)(now the [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package. commit/publish local repository.
 
-##### 1.3.2 Create a R package via RStudio
+##### 1.3.2. Create a R package via RStudio
 It is best to develop all packages from within RStudio:
 
 1. Create a new RStudio project from the existing local repository.
@@ -59,22 +81,22 @@ It is best to develop all packages from within RStudio:
 
 **Note:** Should have the `devtools`, `roxygen2`, `covr`, and `testthat` R packages installed.
 
-##### 1.3.3 Set up `testthat` for unit testing
+##### 1.3.3. Set up `testthat` for unit testing
 The hyperSpec.skeleton repository comes with the necessary infrastructure for unit testing via the `testthat` package. See the [link](https://projector-video-pdf-converter.datacamp.com/5067/chapter4.pdf) for a **review on unit testing** and this [link](https://cran.r-project.org/web/packages/testthat/testthat.pdf) for the **`testthat` manual**.
 
 **Note:** The `r-hyperspec` team has a standard of unit test written within the same file as the function definition.
 
-##### 1.3.4 Set up CI
+##### 1.3.4. Set up CI
 All hyperSpec packages include CI via [Travis CI](https://travis-ci.com/) and [AppVeyor](https://www.appveyor.com/). The .yml files for both of these services are included in the package directory.
 
 **Note:** You need to have a Travis CI and AppVeyor account. Make sure the Travis CI and AppVeyor apps are installed in the Github repository's settings.
 
-##### 1.3.5 Set up code coverage
+##### 1.3.5. Set up code coverage
 All hyperSpec packages report code coverage via [codecov.io](https://codecov.io/). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual](https://cran.r-project.org/web/packages/covr/covr.pdf).
 
 **Note:** You need to have a codecov.io account. Make sure the Codecov app is installed in the Github repository's settings.
 
-##### 1.3.6 Adding badges
+##### 1.3.6. Adding badges
 Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyor, Codecov, and [repo status](https://www.repostatus.org/#wip) can be found on the service's respective website. Additionally, a comprehensive list of badges can be found at [Naereen/badges](https://github.com/Naereen/badges).
 
 ---
@@ -645,17 +667,17 @@ transmute.hyperSpec <- function(.data, ...) {
 #### 2. Replace `chondro` with `faux_cell`
 I did not get very far with the replacement task. Though, now that I have taken a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
 
-##### 3. Updating .R files
+#### 3. Updating .R files
 I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
 
-##### Updating test
+#### 4. Updating test
 For each file I needed to make sure that the test could pass with `faux_cell`. To do this, I ran the following function in the RStudio console:
 ```R
 with_reporter(reporter = SummaryReporter$new(), start_end_reporter = TRUE, get.test(.nameoffunction)())
 ```
 Additionally, I performed the `make` -> `build` -> `check` after each updated file to ensure that everything was cool.
 
-##### Keep track of updates
+#### 5. Keep track of updates
 Now that I have completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
 
 The files that have a reference to `chondro`, but I did not touch are:
@@ -665,7 +687,7 @@ The files that have a reference to `chondro`, but I did not touch are:
 Here is a table with my findings:
 [table](/img/feature_145-chondro-replace-summary - Sheet1.pdf)
 
-##### What else?
+#### 6. What else?
 The vignettes still make use of examples that reference `chondro`, so at some point that also needs to be updated.
 
 ---
@@ -814,25 +836,26 @@ Currently at the very beginning of _2)_. At the moment, four new packages have b
  And honestly, I'm not even sure what the difference between _3)_ and _2)_ is. Even still, we are making our way to completing deliverables on time.
 
  ---
- # Report for Week of 7-6-20 (Week 10)
+# Report for Week of 7-6-20 (Week 10)
 
- **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
- for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
- mentors as necessary)
+**Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
+for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
+mentors as necessary)
 
- July 27 - July 31: Phase 2 Evaluations
- This period will be used to write a detailed report on the work done in Coding Period 2. All work
- completed will be uploaded and documented.
- Deliverables:
- • Shielded hyperSpec and associated hyperSpec packages
- • Fortified hyperSpec for tidyverse
+**July 27 - July 31: Phase 2 Evaluations:**
+This period will be used to write a detailed report on the work done in Coding Period 2. All work
+completed will be uploaded and documented.
+Deliverables:
 
- **Week-10-actual:**
+* Shielded hyperSpec and associated hyperSpec packages
+* Fortified hyperSpec for tidyverse
 
-## Github Actions and `pkgdown`
+**Week-10-actual:**
+
+## 1. Github Actions and `pkgdown`
 To be honest, the whole devops side of the project (and software development in general) has been lost of me. I don't really understand what Github Actions or Github workflows are or why they're useful. I don't really understand how to use `pkgdown`. So, today we must do research into the nature of both of these systems.
 
-### Github Actions
+### 1.1. Github Actions
 Well, to get started with Github Actions (GA) - _A way to trigger (workflow) task when one or more events (pull request, issue, merging) have occurred within a repo_. one needs a Github repo. Additionally Within that repo a .yml file is specified (workflow.yml):
 
 ```
@@ -856,29 +879,28 @@ jobs:
 
 There are a number of open-source .yml solutions, as well as, configurations one can specify.
 
-### Secrets
+### 1.2. Let me tell you a secret
 So, what is the difference between "personal access tokens", "Github secrets", "keys", etc.
 
 * Personal Access Tokens - Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
 
 * Secrets -
 
-### `pkgdown`
+### 1.3. `pkgdown`
 According to the main website for `pkgdown`
 > pkgdown is designed to make it quick and easy to build a website for your package.
 
-
-### `drat`
+### 1.4. `drat`
 According to the maintainers, "Drat is an R package which makes it really easy to provide R packages via a repository, and also makes it easy to use such repositories for package installation and upgrades." via:
 > Drat tries to help here and supports two principal modes:
 >
 > * GitHub by leveraging gh-pages
 > * Other repos by using other storage where you can write and provide html access
 
-### Issue #2: Use Github Actions to Move .tar.gz over to hySpc.pkgs
+### 1.5. Issue #2: Use Github Actions to Move .tar.gz over to hySpc.pkgs
 According to Bryan, the team will be using `drat` and `hySpc.pkgs` to, "[hold] certain packages in the `r-hyperspec` series (in particular, data-rich packages that are too large to be distributed on CRAN)." The purpose of this is to avoid using git-lfs, and `make` and so that users can just install these large than life pkgs directly: `install_github(hySpc.pkgs)`. With that being said, we will still need CI/CD via GA. So, to test this out we're going to move `hySpc.read.Witec` to `hySpc.pkgs`
 
-#### Issue #2: Chef Hanson, Chef Oduniyi -- Serving up some actions
+#### 1.6. Issue #2: Chef Hanson, Chef Oduniyi -- Serving up some actions
 Over the weekend Bryan and I worked on fleshing out our drat formula, which basically looks like this, but in GA/.yml speak:
 
 ```R
@@ -894,7 +916,7 @@ else {
 
 A lot of these `hySpc.pkgs` are will be data packages.
 
-## `hySpc.read.Witec`
+## 2. `hySpc.read.Witec`
 Still working on the `hySpc.read.Witec` function. Most of the parsing of the Witec_TrueMatch file has been done. Additionally, a number of unittest have been implemented. The next couple task are to:
 
 * <s>find out better name</s>
