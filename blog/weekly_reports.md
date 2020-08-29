@@ -36,7 +36,7 @@ Roman also showed the team how we could integrate the [two](https://blog.trello.
 **Week-2-expected:**
 Finalize development tools and workflow for contributing to the project over the summer. Inquire  about helpful R programming and spectroscopy resources from mentors and digest them.
 
-**Week-2-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Finally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](https://github.com/eoduniyi/hyperSpec.gsoc2020/blob/develop/test.md) were merged. That was a particularly large commit because of the nature of the changes.
+**Week-2-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Finally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](/test.md) were merged. That was a particularly large commit because of the nature of the changes.
 
 ### 1. Package skeleton (template repo)
 
