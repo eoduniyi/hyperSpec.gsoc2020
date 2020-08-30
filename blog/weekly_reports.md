@@ -1,7 +1,7 @@
 [A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, and Light](introduction.md)  
 
 ---
-[Goals of GSoC2020](application/Erick_Proposal_-_Fortification_of_hyperSpec.pdf)
+[Goals of GSoC2020](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
 
 ---
 [Days Before GSoC2020](test.md)
