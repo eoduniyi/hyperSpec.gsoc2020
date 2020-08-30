@@ -869,7 +869,7 @@ for all weekly tasks. Compile a weekly report of progress made. Meet with mentor
 mentors as necessary)
 
 **Week-10-actual:**
-* Continued to flesh out the `hySpc.read.Witec` package and worked on drat strategy for automated resource moving.
+* Continued to flesh out the `hySpc.read.Witec` package (it was renamed later to `hySpc.read.txt`) and worked on drat strategy for automated resource moving.
 
     * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi)
 
