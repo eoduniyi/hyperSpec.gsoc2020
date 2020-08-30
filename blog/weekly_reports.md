@@ -4,7 +4,7 @@
 [Goals of GSoC2020](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
 
 ---
-[Days Before GSoC2020](test.md)
+[Days Before GSoC2020 - solutions of the entrance test](test.md)
 
 ---
 # Report for Week of 5-4-20 (Week 1)
