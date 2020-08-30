@@ -117,7 +117,7 @@ Finalize development tools and workflow for contributing to the project over the
 
  * Bryan A. Hanson's [blog](https://chemospec.org/)  
 
- * Bryan also pointed me to this [gem](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/resources/Design%20of%20R%20Language.pdf)
+ * Bryan also pointed me to this gem - [Design of R language](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/resources/Design%20of%20R%20Language.pdf)
 
 ### 1. Generalizing mutate.R and improving setLabels.R
 
