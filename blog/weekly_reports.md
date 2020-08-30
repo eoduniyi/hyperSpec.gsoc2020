@@ -1,8 +1,10 @@
-[Here "A light introduction to spectroscopy" will go]  
-[Here "A short introduction to R" will go]  
-[Here "A short introduction to Git" will go]  
-[Here "Days Before GSoC2020" will go]  
-[Here "Goal of RGSoC2020" will go]
+[A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, and Light](introduction.md)  
+
+---
+[Goals of GSoC2020](application/Erick_Proposal_-_Fortification_of_hyperSpec.pdf)
+
+---
+[Days Before GSoC2020](test.md)
 
 ---
 # Report for Week of 5-4-20 (Week 1)
@@ -23,7 +25,7 @@ Before contributing or creating a repository, there must be an individual or tea
 From the perspective of a team hosting their project on [Github](https://github.com/), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, _contributor access_, and _code reviews_. For this first week (and at the beginning of any project) the `r-hyperspec` team focused on NCCs.
 
 ## 1.2. Social and Team Infrastructure (Project managment)
-For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing [issues](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue)). However, there are a number of tools that IMHO significantly aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions, and various other "behind the scene" task that not only aid the CCs but also the social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kisilev_ aided the team with developing and managing such team infrastructures:
+For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing [issues](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue)). However, there are a number of tools that IMHO significantly aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions, and various other "behind the scene" task that not only aid the CCs but also the social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kiselev_ aided the team with developing and managing such team infrastructures:
 
 ### 1.2.1. Trello
 Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially host public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
@@ -810,7 +812,7 @@ for (s in seq_along(i_spectra)) {
 ```
 
 ### 1.2. Developing `hySpc.read.Witec` for non-spc columns
-Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the Witec_TrueMatch format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. And I think while I don't understand all of the details the current `hySpc.read.Witec::read_txt_Witec_TrueMatch()` function has a lot of guides for parsing the remainder of the header information.
+Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the `Witec` format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. And I think while I don't understand all of the details the current `hySpc.read.Witec::read_txt_Witec_TrueMatch()` function has a lot of guides for parsing the remainder of the header information.
 
 In fact, let's following the guidance left for us:
 ```R
