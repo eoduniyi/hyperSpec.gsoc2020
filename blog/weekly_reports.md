@@ -512,7 +512,7 @@ for (i in seq_along(args)) {
 }
 ```
 
-Let's try and distill the update as psuedo-code:
+Let's try and distill the update as pseudo-code:
 
 ```R
 # If the argument has no name (only an expression)
@@ -685,7 +685,7 @@ transmute.hyperSpec <- function(.data, ...) {
 Now that I have had a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
 
 ## 3. Updating .R files
-I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
+I used a [script](https://gist.github.com/eoduniyi/2e40e1ffc2f22d6872fa16dd2caf01d0) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
 
 ## 4. Updating test
 For each file I needed to make sure that the test could pass with `faux_cell`. To do this, I ran the following function in the RStudio console:
