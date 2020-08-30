@@ -1,6 +1,9 @@
 [Here "A light introduction to spectroscopy" will go]
+
 [Here "A short introduction to R" will go]
+
 [Here "Days Before GSoC2020" will go]
+
 [Here "Goal of RGSoC2020" will go]
 
 ---
@@ -111,7 +114,9 @@ Finalize development tools and workflow for contributing to the project over the
 **Week-3-actual:** The `r-hyperspec` team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Reviewed one [PRs](https://github.com/cbeleites/hyperSpec/pull/133) in the `hyperSpec` repository. Worked on the `hySpc.skeleton` framework where in theory a derived package, say [`hyperSpec.derivedpkg`](https://github.com/eoduniyi/hyperSpec.derivedpkg) or `hySpc.*` would collect the changes committed to the skeleton as specified in the last week. Then, I began working on generalizing [`mutate.R`](https://github.com/r-hyperspec/hySpc.dplyr/commits/develop/R/mutate.R). Finally, I did some research into `drat` and `pkgdown`, and worked on trying to get `hyperSpec` to build correctly.
 
 **Helpful resources**:
+
  * Bryan A. Hanson's [blog](https://chemospec.org/)
+ 
  * Bryan also pointed me to this [gem](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/resources/Design%20of%20R%20Language.pdf)
 
 ### 1. Generalizing mutate.R and improving setLabels.R
@@ -746,8 +751,11 @@ The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package in
 completed will be uploaded and documented.
 
 Deliverables:
+
 • Distilled `hyperSpec` package
+
 • New specialized `hyperSpec` packages for file I/O
+
 • New implemented import filters for new file formats
 
 **Week-9-actual:**
@@ -981,11 +989,17 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 
 **In Progress**
  * Check performance of different ways to import the text data
+ 
  * Attach labels to hySpc.testthat and hySpc.dplyr
+ 
  * Update hySpc.skeleton documentation to `hyperSpec` repo quality
+ 
  * `hySpc.read.Witec`
+ 
  * `hySpc.JCAMP-DX`
+ 
  * skeleton package and usethis strategy
+ 
  * Start making sure test coverage is at least 60% for `hyperSpec`
 
 ---
@@ -1006,8 +1020,10 @@ weekly tasks. Compile a weekly report of progress made. Meet with mentors. (chec
 This period will be used to write a detailed report on the work done in Coding Period 2. All work
 completed will be uploaded and documented.
 Deliverables:
-• Shielded `hyperSpec` and associated `hyperSpec` packages
-• Fortified `hyperSpec` for `tidyverse`
+
+* Shielded `hyperSpec` and associated `hyperSpec` packages
+
+* Fortified `hyperSpec` for `tidyverse`
 
 **Week-13-actual:**
 Not much progress this week because of personal issues/medical reasons.
@@ -1019,20 +1035,29 @@ Not much progress this week because of personal issues/medical reasons.
 **Week-14-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-14-actual:**
+
 * Closed a few of issues:
+
  * [Create separate data package (hySpc.chondro) for chondro](https://github.com/r-hyperspec/hySpc.chondro/issues/1) in `hySpc.chondro`
+ 
  * [Error with pandoc-citeproc ](https://github.com/r-hyperspec/hySpc.chondro/issues/13) in `hySpc.chondro`
+ 
  * [Renaming `hySpc.read.Witec` to `hySpc.read.txt`](https://github.com/r-hyperspec/hySpc.read.txt/issues/11) in `hySpc.read.txt`
  
 * Opened an issue:
+
  * [Formality of vignettes](https://github.com/cbeleites/hyperSpec/issues/266) in `hyperSpec`
  
 * Completed small PRs related to `hySpc.chondro`
+
  * [Update DESCRIPTION](https://github.com/r-hyperspec/hySpc.chondro/pull/2)
+ 
  * [Chondro related functions](https://github.com/r-hyperspec/hySpc.chondro/pull/3)
+ 
  * [Added basic chondro documentation](https://github.com/r-hyperspec/hySpc.chondro/pull/4)
  
 * Deleted a PR related to `hySpc.chondro`
+
  * [Documentation ](https://github.com/r-hyperspec/hySpc.chondro/pull/12)
 
 ---
@@ -1071,19 +1096,28 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 **Week-16-actual:**
 
 * Reviewed PRs related to `hyperSpec`
+
  * [Update DESCRIPTION](https://github.com/r-hyperspec/hySpc.chondro/pull/2)
+ 
  * [Chondro related functions](https://github.com/r-hyperspec/hySpc.chondro/pull/3)
+ 
  * [Added basic chondro documentation](https://github.com/r-hyperspec/hySpc.chondro/pull/4)
  
 * Completed small PRs related to `hyperSpec`
+
  * [Change "I" to "We" to make it sound like a team project](https://github.com/cbeleites/hyperSpec/pull/265)
+ 
  * [Feature/vign edits](https://github.com/cbeleites/hyperSpec/pull/269)
 
 * Completed PRs related to `hySpc.read.txt`
  * [Feature/io compare](https://github.com/r-hyperspec/hySpc.read.txt/pull/20)
+ 
  * [Issue/12 rename.2](https://github.com/r-hyperspec/hySpc.read.txt/pull/23)
+ 
  * [Issue/22 move copy](https://github.com/r-hyperspec/hySpc.read.txt/pull/24)
+ 
  * [Update count_lines.R, read_asc_Andor, & Perkin from `hyperSpec`](https://github.com/r-hyperspec/hySpc.read.txt/pull/26)
+ 
  * [Feature/vign edits](https://github.com/r-hyperspec/hySpc.read.txt/pull/28)
  
 ## Moving functions from `hyperSpec` to `hySpc.read.txt`
@@ -1127,8 +1161,11 @@ With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspe
 ---
 # September 8: Final Results
 All documentation, code modules (files, packages, etc.), and their associated tests have been uploaded. Excluding the three deliverables promised at the end of the third coding period:
+
 * Fortified `hyperSpec` for `baseline` with bridge packages
+
 * Fortified `hyperSpec` for `EMSC` with bridge packages
+
 * Fortified `hyperSpec` for `matrixStats` with bridge packages.
 
 And so, with the support of the `r-hyperspec` team all other deliverables promised for R GSoC 2020 have been...delivered. Furthermore, I plan on continuing to work with the `r-hyperspec` team for the foreseeable future. That is, the remaining deliverables, issues, features, and their associated documentation will continue to be worked on by me and the `r-hyperspec` team as time permits.
