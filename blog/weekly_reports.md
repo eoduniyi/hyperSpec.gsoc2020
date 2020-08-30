@@ -408,7 +408,7 @@ data:  (875 rows x 5 columns)
    4. clusters: clusters [factor] matrix matrix ... lacuna + NA
    5. spc: I / a.u. [matrix, array300] 501.8194 500.4552 ... 169.2942
 ```
-As you can see from the above code snippet there are some differences between the `faux_cell` and `chondro` datasets (i.e., labels, name of data slots)...which could all potentially effect the replacement process.
+As you can see from the above code snippet there are some differences between the `faux_cell` and `chondro` datasets (i.e., labels, name of data slots)...which could all potentially affect the replacement process.
 
 At the end of the day I need to replace the `chondro` data set with the `faux_cell` data set because the former has such a large overhead. Great, that should be the easiest part of the job (replacement/substitution).
 
