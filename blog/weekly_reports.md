@@ -24,14 +24,14 @@ Before contributing or creating a repository, there must be an individual or tea
 
 From the perspective of a team hosting their project on [Github](https://github.com/), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, _contributor access_, and _code reviews_. For this first week (and at the beginning of any project) the `r-hyperspec` team focused on NCCs.
 
-## 1.2. Social and Team Infrastructure (Project managment)
+## 1.2. Social and Team Infrastructure (Project management)
 For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing [issues](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue)). However, there are a number of tools that IMHO significantly aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions, and various other "behind the scene" task that not only aid the CCs but also the social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kiselev_ aided the team with developing and managing such team infrastructures:
 
 ### 1.2.1. Trello
-Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially host public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
+Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially hosts public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
 
 ### 1.2.2. Github
-Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [this](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
+Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [Why you should not use (long-lived) feature branches](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
 
 ### 1.2.3. Trello + GitHub integration
 Roman also showed the team how to integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). From my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that its use decreases slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
