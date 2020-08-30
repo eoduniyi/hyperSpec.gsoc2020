@@ -1030,7 +1030,7 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 **Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-12-actual:**
-Not much progress this week because of personal issues/medical reasons:
+Not much progress this week because of personal issues/medical reasons.
 
 ---
 # Report for Week of 8-27-20 (Week 13)
@@ -1181,7 +1181,7 @@ Moving the remaining functions related to `read.txt` out of `hyperSpec` into `re
 Meet with mentors. (check-in with mentors as necessary)
 
 **Week-17-actual:**
-With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people) I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here]().
+With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people) I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here](https://developers.google.com/open-source/gsoc/help/work-product).
 
 ---
 # September 8: Final Results
