@@ -290,7 +290,7 @@ pkgdown::build_site()
 ```
 
 #### 2.2. `drat`
-For an overview of `drat`, see the archived repo for the [here](https://github.com/eddelbuettel/drat)
+For an overview of `drat`, see this [link](https://github.com/eddelbuettel/drat)
 
 ### 3. Flesh hyperSpec.skeleton Github repository
 Add template [labels](https://docs.github.com/en/github/building-a-strong-community/encouraging-helpful-contributions-to-your-project-with-labels) to `hyperSpec.skeleton` so that the `hyperSpec` ecosystem has a consistent set of labels.
@@ -725,7 +725,12 @@ hySpc.read.Witec("name/of/Witec/file.R")
 Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-8-actual:**
-Worked on developing the `hySpc.skeleton` package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).** Finally, the [PR](https://github.com/r-hyperspec/hySpc.dplyr/pull/24) relating to the generalization of `mutate()` was merged.
+
+* Worked on developing the `hySpc.skeleton` package.
+
+    * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).
+
+* Finally, the [PR](https://github.com/r-hyperspec/hySpc.dplyr/pull/24) relating to the generalization of `mutate()` was merged.
 
 ## 1. The Return of `hyperSpec.skeleton` (`hySpc.skeleton`)
 According to [naming conventions](https://github.com/cbeleites/hyperSpec/issues/140), the `hyperSpec.skeleton` package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people)
@@ -769,6 +774,7 @@ _Deliverables_:
 
 ## 1. `hypSpc.read.Witec`
 This is the start of the file import output distillation process. Let the spectroscopy gods guide us.  
+
 * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi)
 
 
@@ -861,7 +867,7 @@ for all weekly tasks. Compile a weekly report of progress made. Meet with mentor
 mentors as necessary)
 
 **Week-10-actual:**
-* Cotinued to flesh out the `hySpc.read.Witec` package and worked on drat strategy for automated resource moving.
+* Continued to flesh out the `hySpc.read.Witec` package and worked on drat strategy for automated resource moving.
 
     * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi)
 
@@ -1040,7 +1046,9 @@ _Deliverables_:
 
 **Week-13-actual:**
 Not much progress this week because of personal issues/medical reasons.
-* Worked on the [`hySpc.chondro`](https://github.com/r-hyperspec/hySpc.chondro) package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.chondro/commits?author=eoduniyi)
+* Worked on the [`hySpc.chondro`](https://github.com/r-hyperspec/hySpc.chondro) package.
+
+    * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.chondro/commits?author=eoduniyi)
 
 ---
 # Report for week of 8-3-20 (Week 14)
