@@ -52,7 +52,7 @@ In general, a template is pattern for a repeatable format for a document or file
 #### 1.2 Template repository
 A template repository can be made in Github by going to the settings of the repository and checking the template repository box. Then, you can generate new repositories by using the url-end point:
 
-`https://github.com/username/repoistory.name/generate`
+`https://github.com/username/repository.name/generate`
 
 This is equivalent to clicking the "Use this template" button in the repository's code tab. Once, the derived repository is created, it's a good idea to set the template repository as a remote via:
 
@@ -72,7 +72,7 @@ Because I will be creating a lot of R packages there should be a package pattern
   5. code coverage via `covr` and [Codecov](https://codecov.io/)
 
 ##### 1.3.1. Create a Github repository
-Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton)(now the [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package. commit/publish local repository.
+Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton) (now the [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package. Commit/publish local repository.
 
 ##### 1.3.2. Create a R package via RStudio
 It is best to develop all packages from within RStudio:
