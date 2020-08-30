@@ -1,25 +1,28 @@
+[Here "A light introduction to spectroscopy" will go]
+[Here "A short introduction to R" will go]
+[Here "Days Before GSoC2020" will go]
+[Here "Goal of RGSoC2020" will go]
+
+---
 # Report for Week of 5-4-20 (Week 1)
 
 **Week-1-expected:**
-Create a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling,
-etc.).
+Create a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling, etc.).
 
 **Week-1-actual:**
-Created a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling,
-etc.).
+Created a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling, etc.).
 
 # 1. Infrastructure for Open-source Contribution
-
 Before contributing or creating a repository, there must be an individual or team that manages  **contributions** and the people that make them: **contributors** - _A person, or organization responsible for making contributions to the repository_ (open-source projects don't write themselves, really). And so, we'll specify that contributions can come in the form of **coding contributions** (CCs) and **non-coding contributions** (NCCs):
 
 * coding contributions - _contributions that consist of the addition or deletion of code_
 
-* non-coding contributions - _contributions that support the open-source project that are not CCs_
+* non-coding contributions - _contributions that support the project that are not CCs_
 
-From the perspective of a team hosting their project on [Github](https://github.com/), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, and _contributor access_. For this first week (or at the beginning of any project) the `r-hyperspec` team focused on NCCs.
+From the perspective of a team hosting their project on [Github](https://github.com/), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, _contributor access_, and _code reviews_. For this first week (and at the beginning of any project) the `r-hyperspec` team focused on NCCs.
 
 ## 1.2. Social and Team Infrastructure (Project managment)
-For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing issues). However, there are a number of tools that IMHO significantly  aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions (or CCs), and various other "behind the scene" task that aid the CCs and social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kisilev_ aided the team with developing and managing such team infrastructures:
+For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing [issues](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue)). However, there are a number of tools that IMHO significantly aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions, and various other "behind the scene" task that not only aid the CCs but also the social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kisilev_ aided the team with developing and managing such team infrastructures:
 
 ### 1.2.1. Trello
 Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially host public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
@@ -28,7 +31,7 @@ Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hypers
 Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [this](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
 
 ### 1.2.3. Trello + GitHub integration
-Roman also showed the team how we could integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). To be honest, from my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that it's use decreased slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
+Roman also showed the team how to integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). From my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that its use decreases slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
 
 ---
 # Report for Week of 5-11-20 (Week 2)
@@ -36,7 +39,7 @@ Roman also showed the team how we could integrate the [two](https://blog.trello.
 **Week-2-expected:**
 Finalize development tools and workflow for contributing to the project over the summer. Inquire  about helpful R programming and spectroscopy resources from mentors and digest them.
 
-**Week-2-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Finally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](test.md) were merged. That was a particularly large commit because of the nature of the changes.
+**Week-2-actual:** The `r-hyperspec` team discussed project licenses, our public trello board, contributors guidelines, Github workflows, template repositories, and general R package building. Aditionally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](test.md) were merged. That was a particularly large commit because of the nature of the changes. Finally, I opened an [issue](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue) about a problem that I found particularly challenging related to [`hySpc.dplyr`](https://github.com/r-hyperspec/hySpc.dplyr)([Generalizing transmute.R to other columns that contain matrices](https://github.com/r-hyperspec/hySpc.dplyr/issues/12)). In fact, this issue would not be resolved ("closed") until June 13, 2020. 
 
 ### 1. Package skeleton (template repo)
 
@@ -56,8 +59,8 @@ git remote add template [URL of the template repo]
 
 Now, changes made to the template can be propagated to the derived repo by fetching and pulling in the changes.
 
-#### 1.3. Creating a hyperSpec package skeleton
-Because I will be creating a lot of R packages there should be a package pattern to ensure a consistent infrastructure style is present across the hyperSpec ecosystem. Every hyperSpec package should then include the following components:
+#### 1.3. Creating a `hyperSpec` package skeleton
+Because I will be creating a lot of R packages there should be a package pattern to ensure a consistent infrastructure style is present across the `r-hyperspec` ecosystem. Every `hyperSpec` package should then include the following components:
 
   1. Github repository
   2. R project file
@@ -82,17 +85,17 @@ It is best to develop all packages from within RStudio:
 **Note:** Should have the `devtools`, `roxygen2`, `covr`, and `testthat` R packages installed.
 
 ##### 1.3.3. Set up `testthat` for unit testing
-The hyperSpec.skeleton repository comes with the necessary infrastructure for unit testing via the `testthat` package. See the [link](https://projector-video-pdf-converter.datacamp.com/5067/chapter4.pdf) for a **review on unit testing** and this [link](https://cran.r-project.org/web/packages/testthat/testthat.pdf) for the **`testthat` manual**.
+The `hyperSpec.skeleton` repository comes with the necessary infrastructure for unit testing via the `testthat` package. See the [link](https://projector-video-pdf-converter.datacamp.com/5067/chapter4.pdf) for a **review on unit testing** and this [link](https://cran.r-project.org/web/packages/testthat/testthat.pdf) for the **`testthat` manual**.
 
 **Note:** The `r-hyperspec` team has a standard of unit test written within the same file as the function definition.
 
 ##### 1.3.4. Set up CI
-All hyperSpec packages include CI via [Travis CI](https://travis-ci.com/) and [AppVeyor](https://www.appveyor.com/). The .yml files for both of these services are included in the package directory.
+All `r-hyperspec` packages include CI via [Travis CI](https://travis-ci.com/) and [AppVeyor](https://www.appveyor.com/). The .yml files for both of these services are included in the package directory.
 
 **Note:** You need to have a Travis CI and AppVeyor account. Make sure the Travis CI and AppVeyor apps are installed in the Github repository's settings.
 
 ##### 1.3.5. Set up code coverage
-All hyperSpec packages report code coverage via [codecov.io](https://codecov.io/). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual](https://cran.r-project.org/web/packages/covr/covr.pdf).
+All `r-hyperspec` packages report code coverage via [codecov.io](https://codecov.io/). The .yml file for this service is included in the package directory. For generating code coverage reports from within R, see the `covr` [github repository](https://github.com/r-lib/covr) and the [package manual](https://cran.r-project.org/web/packages/covr/covr.pdf).
 
 **Note:** You need to have a codecov.io account. Make sure the Codecov app is installed in the Github repository's settings.
 
@@ -103,14 +106,18 @@ Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyo
 # Report for Week of 5-18-20 (Week 3)
 
 **Week-3-expected:**
-Finalize development tools and workflow for contributing to the project over the summer. Inquire  about helpful R programming and spectroscopy resources from mentors and digest them.
+Finalize development tools and workflow for contributing to the project over the summer. Inquire about helpful R programming and spectroscopy resources from mentors and digest them.
 
-**Week-3-actual:** The r-hyperspec team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building.
+**Week-3-actual:** The `r-hyperspec` team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Reviewed one [PRs](https://github.com/cbeleites/hyperSpec/pull/133) in the `hyperSpec` repository. Worked on the `hySpc.skeleton` framework where in theory a derived package, say [`hyperSpec.derivedpkg`](https://github.com/eoduniyi/hyperSpec.derivedpkg) or `hySpc.*` would collect the changes committed to the skeleton as specified in the last week. Then, I began working on generalizing [`mutate.R`](https://github.com/r-hyperspec/hySpc.dplyr/commits/develop/R/mutate.R). Finally, I did some research into `drat` and `pkgdown`, and worked on trying to get `hyperSpec` to build correctly.
+
+**Helpful resources**:
+ * Bryan A. Hanson's [blog](https://chemospec.org/)
+ * Bryan also pointed me to this [gem](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/resources/Design%20of%20R%20Language.pdf)
 
 ### 1. Generalizing mutate.R and improving setLabels.R
 
 #### 1.1. `mutate`
-I need to update mutate.R so that it accounts for hyperSpec objects that have other data slot columns with matrices. At the moment, mutate.R only checks to see if the `spc` column is being mutated/transmuted. Then, if it is, it "manually" assigns the value to be:
+I need to update mutate.R so that it accounts for `hyperSpec` objects that have other data slot columns with matrices. At the moment, `mutate.R` only checks to see if the `spc` column is being mutated/transmuted. Then, if it is, it "manually" assigns the value to be:
 
 ```R
 .data@data$spc <- .data@data$spc*2
@@ -280,12 +287,13 @@ pkgdown::build_site()
 ```
 
 #### 2.2. `drat`
+For an overview of `drat`, see the archived repo for the [here](https://github.com/eddelbuettel/drat)
 
 ### 3. Flesh hyperSpec.skeleton Github repository
-Add template labels to hyperSpec.skeleton so that the hyperSpec ecosystem has a consistent set of labels.
+Add template [labels](https://docs.github.com/en/github/building-a-strong-community/encouraging-helpful-contributions-to-your-project-with-labels) to `hyperSpec.skeleton` so that the `hyperSpec` ecosystem has a consistent set of labels.
 
 #### 3.1 shell script for fetching template labels
-Each derived repository should include a file (shell script) that retrieves the hyperSpec.skeleton Github repository configuration (i.e., labels, pull request templates, issue templates)
+Each derived repository should include a file (shell script) that retrieves the `hyperSpec.skeleton` Github repository configuration (i.e., labels, pull request templates, issue templates)
 
 
     # hyperSpec.skeleton shell script
@@ -305,13 +313,12 @@ Each derived repository should include a file (shell script) that retrieves the 
     # Pass the skeleton labels to the derived package repo
     labels -c hyperSpec.skeleton.labels.json pkg_repo -t token
 
-
-### 4. Figure out the build/make issue of hyperSpec on macOS
-
+### 4. Figure out the build/make issue of `hyperSpec` on macOS
 ```R
 # In R install the tinytex package
 install_packages("tinytex")
 ```
+
 It's a good idea to install the [full MacTex2020](http://www.tug.org/mactex/mactex-download.html) pkg as well.
 
     # In Terminal within the directory of hyperSpec run make
@@ -326,8 +333,7 @@ Update the config file to reflect your user credentials.
 Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-4-actual:**
-Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and looked into `pkgdown` and `drat`.
-
+Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and continued to look into `pkgdown` and `drat`.
 
 ## 1. Replacing `chondro`
 I need to replace all of the references of the `chondro` data set with the `faux_cell` data set
@@ -354,6 +360,7 @@ update.examples <- function(dir, new_ds, old_ds) {
 
 # Assumptions: The old_dt and new_dt exist in the package
 ```
+
 **Note:** So, the first thing I am going to do is test the entire package (you can submit a package without passing all of the unittest?):
 
 ```R
@@ -401,11 +408,7 @@ At the end of the day I need to replace the `chondro` data set with the `faux_ce
 
 The real work starts after the replacement happens. Because even IF, the two data sets are similar, there are a number of things that could break during the replacement process. In particular, the attached test, @examples, vignettes, and scattered references to `chondro`.
 
-**Note:** Examples exist within the .R files, man pages, and in the vignettes.
-
-**General Questions:**
-* #145 will also be a large commit...not sure how one can avoid this.
-* Are the examples in the vignettes manually added? If so, does that mean I need to update the vignettes and then `R CMD check hyperSpec...`?
+**Note:** Examples exist within the [.R files](https://fileinfo.com/extension/r#:~:text=An%20R%20file%20is%20a,visualizations%20of%20the%20computed%20data.), [man pages](https://en.wikipedia.org/wiki/Man_page), and in the [vignettes](http://r-pkgs.had.co.nz/vignettes.html).
 
 ---
 # Report for Week of 6-1-20 (Week 5)
@@ -424,15 +427,16 @@ This was actually the start of the first coding period, but [A LOT](https://en.w
 Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-6-actual:**
-Implemented [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R)  
-`mutate` takes care of [issue #6](https://github.com/r-hyperspec/hySpc.dplyr/issues/6) and [issue #7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)  
-`setLabels` implements updating labels as discussed in [#7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)
+* Reviewed a [PR related to a quosure bugfix](https://github.com/cbeleites/hyperSpec/pull/150)
+* Implemented [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R). Please take a look at the PR [here](https://github.com/r-hyperspec/hySpc.dplyr/pull/24)
+ * `mutate` takes care of [issue #6](https://github.com/r-hyperspec/hySpc.dplyr/issues/6) and [issue #7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)  
+ * `setLabels` implements updating labels as discussed in [#7](https://github.com/r-hyperspec/hySpc.dplyr/issues/7) of [hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr)
+ * Worked on replacing `chondro` with `faux_cell` in `hyperSpec` and submitted a [PR](https://github.com/cbeleites/hyperSpec/pull/156)
 
+## 1. The Return of `hyperSpec.mutate/transmute`
+Still need to finish fleshing out the details of the `hyperSpec.mutate()` and `hyperSpec.transmute()` functions. They're sooo close!!!
 
-#### 1. The Return of `hyperSpec.mutate/transmute`
-Still need to finish fleshing out the details of the hyperSpec.mutate and hyperSpec.transmute functions. They're sooo close!!!
-
-According to our conversation, the generalized mutate/transmute allows and disallows the following:
+According to our monday meeting, the generalized mutate/transmute allows and disallows the following:
 ```R
 # Is allowed:
 hyperSpec.obj %>%
@@ -499,6 +503,7 @@ for (i in seq_along(args)) {
 ```
 
 Let's try and distill the update as psuedo code:
+
 ```R
 # If the argument has no name (only an expression)
 if (args_name[i] is empty_string) {
@@ -632,9 +637,10 @@ pre_mutation <- function(.data, ...) {
     return(list(tmp_data = tmp_hy@data, args = paste(cols2get, collapse=", ")))
 
 ```
+
 Well, according to [dplyr 1.0.0](https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/). `mutate` and `transmute` now support operations on columns with matrices. So, this basically means the above work is unnecessary _el o el_:
 
-`mutate.R` for hyperSpec object:
+`mutate.R` for `hyperSpec` object:
 
 ```R
 mutate.hyperSpec <- function(.data, ...) {
@@ -664,30 +670,28 @@ transmute.hyperSpec <- function(.data, ...) {
   setLabels.select(.data, res)
 }
 ```
-#### 2. Replace `chondro` with `faux_cell`
-I did not get very far with the replacement task. Though, now that I have taken a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
 
-#### 3. Updating .R files
+## 2. Replace `chondro` with `faux_cell`
+Now that I have had a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
+
+## 3. Updating .R files
 I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
 
-#### 4. Updating test
+## 4. Updating test
 For each file I needed to make sure that the test could pass with `faux_cell`. To do this, I ran the following function in the RStudio console:
 ```R
 with_reporter(reporter = SummaryReporter$new(), start_end_reporter = TRUE, get.test(.nameoffunction)())
 ```
 Additionally, I performed the `make` -> `build` -> `check` after each updated file to ensure that everything was cool.
 
-#### 5. Keep track of updates
+## 5. Keep track of updates
 Now that I have completed replacing `chondro` with `faux_cell` in the files that reference `chondro`. Before committing I made sure the test and examples passed with the update. If it did not, I just skipped. Though, the only file that occurred in was `spc.fit.poly.R`
 
 The files that have a reference to `chondro`, but I did not touch are:
 `chondro.R`
 `read.txt.Reinshaw.R`
 
-Here is a table with my findings:
-[table](/img/feature_145-chondro-replace-summary - Sheet1.pdf)
-
-#### 6. What else?
+## 6. What else?
 The vignettes still make use of examples that reference `chondro`, so at some point that also needs to be updated.
 
 ---
@@ -695,10 +699,11 @@ The vignettes still make use of examples that reference `chondro`, so at some po
 
 **Week-8-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-**Week-8-actual:**
+**Week-8-actual:** 
+Started implementing the [`hySpc.read.Witec`](https://github.com/eoduniyi/hySpc.read.Witec) package (this package would later come to be known as `hySpc.read.txt`).
 
-### `hySpc.read.Witec`
-`hySpc.read.Witec` is a bridge package for managing all kinds of files produced by Witec instruments. The application of this package is the following:
+## `hySpc.read.Witec`
+`hySpc.read.Witec` is a bridge package for managing all kinds of files produced by [Witec instruments](https://www.witec.de/products/?gclid=CjwKCAjwnK36BRBVEiwAsMT8WA5ReYiZQJOexlBJun1zxRQ4wif0XUwKY_ElMT20t5LFLIE_Txi6QhoCz6MQAvD_BwE). The application of this package is the following:
 ```R
 install.packages("hySpc.read.Witec")
 library("hySpc.read.Witec")
@@ -712,10 +717,10 @@ hySpc.read.Witec("name/of/Witec/file.R")
 Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-7-actual:**
-Worked on developing the `hySpc.skeleton` package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).**
+Worked on developing the `hySpc.skeleton` package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).** Finally, the [PR](https://github.com/r-hyperspec/hySpc.dplyr/pull/24) relating to the generalization of `mutate()` was merged.
 
-#### The Return of hyperSpec.skeleton (`hySpc.skeleton`)
-According to naming conventions, the hyperSpec skeleton package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people)
+## 1. The Return of `hyperSpec.skeleton` (`hySpc.skeleton`)
+According to [naming conventions](https://github.com/cbeleites/hyperSpec/issues/140), the `hyperSpec.skeleton` package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people)
 
 The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package includes the following folders `/` and files:
 
@@ -741,15 +746,18 @@ The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package in
 completed will be uploaded and documented.
 
 Deliverables:
-• Distilled hyperSpec package
-• New specialized hyperSpec packages for file I/O
+• Distilled `hyperSpec` package
+• New specialized `hyperSpec` packages for file I/O
 • New implemented import filters for new file formats
 
 **Week-9-actual:**
+* Got more clarification about the [`hySpc.testthat`](https://github.com/r-hyperspec/hySpc.testthat/issues/3) package.
 
-## `hypSpc.read.Witec`
-This is the start of the file import output distillation process. Let the spectroscopy gods guide us.
+## 1. `hypSpc.read.Witec`
+This is the start of the file import output distillation process. Let the spectroscopy gods guide us. **[Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi)
 
+
+### 1.1. Reading in ini files
 ```R
 library(ini)
 ini_file <- read.ini("/path/to/ini/file.txt")
@@ -759,7 +767,7 @@ ini_file$SpectrumMetaData
 read.table(file = textConnection(unlist(ini_file))
 names(ini_file)
 
-# I need to cleanly extract the name-value pairs from the ini file, then format it in such a way that it can be used to create a hyperSpec object
+# I need to cleanly extract the name-value pairs from the ini file, then format it in such a way that it can be used to create a `hyperSpec` object
 ```
 
 To get the spectrum data from the header information:
@@ -780,8 +788,8 @@ for (s in seq_along(i_spectra)) {
 }
 ```
 
-### Developing `hySpc.read.Witec` for non-spc columns
-Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the Witec_TrueMatch format. The work that Claudia did to get from the Header information of the example file to a complete hyperSpec object was pretty brilliant to watch. And I think while I don't understand all of the details the current `hySpc.read.Witec::read_txt_Witec_TrueMatch()` function has a lot of guides for parsing the remainder of the header information.
+### 1.2. Developing `hySpc.read.Witec` for non-spc columns
+Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the Witec_TrueMatch format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. And I think while I don't understand all of the details the current `hySpc.read.Witec::read_txt_Witec_TrueMatch()` function has a lot of guides for parsing the remainder of the header information.
 
 In fact, let's following the guidance left for us:
 ```R
@@ -811,52 +819,45 @@ sapply
 
 use `which` to find out which of the names equals the spectrum header. Each of the spectrum has three list element (header, meta data, spectrum data). Then, loop over all of the spectrum and convert each of them to a.
 
-## Completition of GSoC Coding Period 1
-
+## 2. Completition of GSoC Coding Period 1
 Last week was not as productive as I hoped. This week marks the end of the first coding period. So, I wanted to review the outlined deliverables in the proposal for:
 
  1. Distilled `hypSpec` package
  2. New specialized `hyperSpec` packages for file I/O
  3. New implemented import filters for new file formats
 
-As far as _1)_ is concerned, the team has managed to remove the use of Makefiles, which we believed was a critical component in distilling the original hyperSpec package. With this removal came others: `chondro` data set, the use of git-lfs. Moreover, the documentation infrastructure has been further developed, so that the  documentation can be built online, separately (i.e., through browser).
+As far as _1)_ is concerned, the team has managed to remove the use of Makefiles, which we believed was a critical component in distilling the original `hyperSpec` package. With this removal came others: `chondro` data set, the use of git-lfs. Moreover, the documentation infrastructure has been further developed, so that the  documentation can be built online, separately (i.e., through browser).
 
 Currently at the very beginning of _2)_. At the moment, four new packages have been created: `hySpc.dplyr`, `hySpc.testthat`, `hySpc.read.Witec`, `hySpc.skeleton`, and `hySpc.pkgs`.
 
- * `hySpc.dplyr`: Bridge and fortification package for the `tidyverse::dplyr` universe. Implements all of the standard data wrangling grammars (`rename`, `select`, `mutate/transmute`, `filter`, `between`, `slice`, etc.) for hyperSpec objects.
+ * `hySpc.dplyr`: Bridge and fortification package for the `tidyverse::dplyr` universe. Implements all of the standard data wrangling grammars (`rename`, `select`, `mutate/transmute`, `filter`, `between`, `slice`, etc.) for `hyperSpec` objects.
 
- * `hySpc.testthat`: Infrastructure package for attaching unittest to functions as is standard in the hyperSpec series (keeps unittest close to the functions - same file). This package is currently on CRAN.
+ * `hySpc.testthat`: Infrastructure package for attaching unittest to functions as is standard in the `r-hyperspec` series (keeps unittest close to the functions - same file). This package is currently on CRAN.
 
  * `hySpc.read.Witec`: Distill package for managing files produced by Witec instruments.
 
- * `hySpc.pkgs`: "repository holding certain packages in the r-hyperspec series (in particular, data-rich packages that are too large to be distributed on CRAN)."
+ * `hySpc.pkgs`: "repository holding certain packages in the `r-hyperspec` series (in particular, data-rich packages that are too large to be distributed on CRAN)."
 
- So although there are still approximately the same number of .R files, there has been a considerable effort to develop a leaner contribution, documentation, testing infrastructure, so that more concentrated hyperSpec distillation can be performed reliably and more efficiently.
+So although there are still approximately the same number of .R files, there has been a considerable effort to develop a leaner contribution, documentation, testing infrastructure, so that more concentrated `hyperSpec` distillation can be performed reliably and more efficiently.
 
- And honestly, I'm not even sure what the difference between _3)_ and _2)_ is. Even still, we are making our way to completing deliverables on time.
+And honestly, I'm not even sure what the difference between _3)_ and _2)_ is. Even still, we are making our way to completing deliverables on time.
 
- ---
+---
 # Report for Week of 7-6-20 (Week 10)
 
 **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
 for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
 mentors as necessary)
 
-**July 27 - July 31: Phase 2 Evaluations:**
-This period will be used to write a detailed report on the work done in Coding Period 2. All work
-completed will be uploaded and documented.
-Deliverables:
-
-* Shielded hyperSpec and associated hyperSpec packages
-* Fortified hyperSpec for tidyverse
-
 **Week-10-actual:**
+* Cotinued to flesh out the `hySpc.read.Witec` package and worked on drat strategy for automated resource moving. **[Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi) 
+* Submitted a [PR](https://github.com/r-hyperspec/hySpc.read.txt/pull/3) for the [`read_txt_WitecTrueMatch.R`](https://github.com/r-hyperspec/hySpc.read.txt/blob/develop/R/read_txt_Witec_TrueMatch.R)
 
 ## 1. Github Actions and `pkgdown`
-To be honest, the whole devops side of the project (and software development in general) has been lost of me. I don't really understand what Github Actions or Github workflows are or why they're useful. I don't really understand how to use `pkgdown`. So, today we must do research into the nature of both of these systems.
+To be honest, the whole [DevOps](https://en.wikipedia.org/wiki/DevOps) side of the project (and software development in general) has been lost of me. I don't really understand what [Github Actions](https://github.com/features/actions) or [Github workflows](https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) are or why they're useful. I also don't really understand how to use `pkgdown`. So, today we must do research into the nature of both of these systems.
 
 ### 1.1. Github Actions
-Well, to get started with Github Actions (GA) - _A way to trigger (workflow) task when one or more events (pull request, issue, merging) have occurred within a repo_. one needs a Github repo. Additionally Within that repo a .yml file is specified (workflow.yml):
+Well, to get started with Github Actions (GA) - _A way to trigger task (workflow) when one or more events (pull request, issue, merging) have occurred within a repo_. one needs a Github repo. Additionally Within that repo a .yml file is specified (workflow.yml):
 
 ```
 name: hyperSpec CI
@@ -877,14 +878,14 @@ jobs:
      - run: ..
 ```
 
-There are a number of open-source .yml solutions, as well as, configurations one can specify.
+There are a [number](https://github.com/learn/devops?utm_source=google&utm_medium=ppc&utm_campaign=devops_campaign_q1_IDCreport_ggl&utm_content=version1&gclid=CjwKCAjwnK36BRBVEiwAsMT8WIQtciCdDbJNTJ9Yq7H3cbMA7IeqVoYyKN4p18xJM_y3nXgPBayqjRoCIYEQAvD_BwE#idcreport) of open-source .yml solutions, as well as, configurations one can specify.
 
 ### 1.2. Let me tell you a secret
-So, what is the difference between "personal access tokens", "Github secrets", "keys", etc.
+So, what is the difference between ["personal access tokens"](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token), ["Github secrets"](https://docs.github.com/en/rest/reference/actions#secrets), "keys", etc.
 
-* Personal Access Tokens - Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.
+* Personal Access Tokens - _Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line._
 
-* Secrets -
+* Secrets - _Secrets allow the storing of sensitive information_
 
 ### 1.3. `pkgdown`
 According to the main website for `pkgdown`
@@ -914,7 +915,7 @@ else {
 }
 ```
 
-A lot of these `hySpc.pkgs` are will be data packages.
+A lot of these `hySpc.pkgs` will be data packages.
 
 ## 2. `hySpc.read.Witec`
 Still working on the `hySpc.read.Witec` function. Most of the parsing of the Witec_TrueMatch file has been done. Additionally, a number of unittest have been implemented. The next couple task are to:
@@ -969,75 +970,93 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-11-actual:**
+* Reviewed Bryan's [PR](https://github.com/r-hyperspec/hySpc.read.txt/pull/4) for the deploy-pkg branch of `hySpc.read.txt`. 
+* Learned how to update labels for a repo using the [GitHub Label Manager](http://www.dorukdestan.com/github-label-manager/)
+ * All the labels for the `r-hyperspec` ecosystem are now "synced".
+* Made some small [commits](https://github.com/r-hyperspec/hySpc.pkgs/commits?author=eoduniyi) to the [`hySpc.pkgs`](https://github.com/r-hyperspec/hySpc.pkgs) package
+* Made some small [commits](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi) to `hySpc.read.txt`
 
-## Labels
+## 1. Labels
 Okay, for whatever reason I have been letting a couple of things on the Trello "In Progress" list for a little too long. So, I want to try and go ahead and clean up some of these task if not finish this week:
 
 **In Progress**
  * Check performance of different ways to import the text data
  * Attach labels to hySpc.testthat and hySpc.dplyr
- * Update hySpc.skeleton documentation to hyperSpec repo quality
- hySpc.read.Witec
- * hySpc.JCAMP-DX
+ * Update hySpc.skeleton documentation to `hyperSpec` repo quality
+ * `hySpc.read.Witec`
+ * `hySpc.JCAMP-DX`
  * skeleton package and usethis strategy
- * Start making sure test coverage is at least 60% for hyperSpec
-
- **To Do**
-  * issue #208 - enforcing Tidyverse function naming style
+ * Start making sure test coverage is at least 60% for `hyperSpec`
 
 ---
-# Report for Week of 7-27-20 (Week 12)
+# Report for Week of 7-20-20 (Week 12)
 
 **Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-12-actual:**
+Not much progress this week because of personal issues/medical reasons:
+
+---
+# Report for Week of 8-27-20 (Week 13)
+
+**Week-13-expected:** Let the coding continue! Start making progress on Goal 3. Stick to the development cycle for all
+weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **July 27 - July 31: Phase 2 Evaluations**
 This period will be used to write a detailed report on the work done in Coding Period 2. All work
 completed will be uploaded and documented.
 Deliverables:
-• Shielded hyperSpec and associated hyperSpec packages
+• Shielded `hyperSpec` and associated `hyperSpec` packages
 • Fortified `hyperSpec` for `tidyverse`
-
-**Week-12-actual:**
-Not much progress this week because of personal issues/medical reasons.
-
----
-# Report for Week of 8-3-20 (Week 13)
-
-**Week-13-expected:** Let the coding continue! Start making progress on Goal 3. Stick to the development cycle for all
-weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-13-actual:**
 Not much progress this week because of personal issues/medical reasons.
+* Worked on the [`hySpc.chondro`](https://github.com/r-hyperspec/hySpc.chondro) package. **Please see my contributions to this package [here](https://github.com/r-hyperspec/hySpc.chondro/commits?author=eoduniyi)
 
 ---
-# Report for week of 8-11-20 (Week 14)
+# Report for week of 8-3-20 (Week 14)
 
 **Week-14-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-14-actual:**
+* Closed a few of issues:
+ * [Create separate data package (hySpc.chondro) for chondro](https://github.com/r-hyperspec/hySpc.chondro/issues/1) in `hySpc.chondro`
+ * [Error with pandoc-citeproc ](https://github.com/r-hyperspec/hySpc.chondro/issues/13) in `hySpc.chondro`
+ * [Renaming `hySpc.read.Witec` to `hySpc.read.txt`](https://github.com/r-hyperspec/hySpc.read.txt/issues/11) in `hySpc.read.txt`
+ 
+* Opened an issue:
+ * [Formality of vignettes](https://github.com/cbeleites/hyperSpec/issues/266) in `hyperSpec`
+ 
+* Completed small PRs related to `hySpc.chondro`
+ * [Update DESCRIPTION](https://github.com/r-hyperspec/hySpc.chondro/pull/2)
+ * [Chondro related functions](https://github.com/r-hyperspec/hySpc.chondro/pull/3)
+ * [Added basic chondro documentation](https://github.com/r-hyperspec/hySpc.chondro/pull/4)
+ 
+* Deleted a PR related to `hySpc.chondro`
+ * [Documentation ](https://github.com/r-hyperspec/hySpc.chondro/pull/12)
 
-Test cases for the remaining styles of `Witec`
+---
+# Report for week of 8-10-20 (Week 15)
+
+**Week-15-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+
+**Week-15-actual:**
+Test cases for the remaining styles of `Witec`...these test were taken from the original `hyperSpec` repo:
 
 ```R
-# Throw the Kitchen Sink at it
+# Throw the kitchen sink at it!
 read.txt.Witec("fileio/txt.Witec/Witec-Map_full.txt",  type = "map", hdr.label = TRUE, hdr.units = TRUE)
-
 read.txt.Witec("fileio/txt.Witec/Witec-Map_label.txt", type = "map", hdr.label = TRUE, hdr.units = FALSE)
-
 read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",  type = "map", hdr.label = FALSE, hdr.units = TRUE)
-
-read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt",
+read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt", type = "map", hdr.label = FALSE, hdr.units = FALSE)
+read.txt.Witec("fileio/txt.Witec/Witec-Map_unit.txt", 
                type = "map", hdr.label = FALSE, hdr.units = TRUE,
                points.per.line = 5
 )
-
-read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt", type = "map", hdr.label = FALSE, hdr.units = FALSE)
-
 read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
                type = "map", hdr.label = FALSE, hdr.units = FALSE,
                lines.per.image = 5
 )
-
 read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
                type = "map", hdr.label = FALSE, hdr.units = FALSE,
                points.per.line = 5, lines.per.image = 5
@@ -1045,16 +1064,30 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 ```
 
 ---
-# Report for week of 8-17-20 (Week 15)
+# Report for week of 8-17-20 (Week 16)
 
-**Week-15-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+**Week-16-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
-**Week-15-actual:**
+**Week-16-actual:**
 
-Moving the remaining functions related to `read.txt` out of `hyperSpec` into `read.txt`: This will require that the functions in `hyperSpec` will become deprecated.
+* Reviewed PRs related to `hyperSpec`
+ * [Update DESCRIPTION](https://github.com/r-hyperspec/hySpc.chondro/pull/2)
+ * [Chondro related functions](https://github.com/r-hyperspec/hySpc.chondro/pull/3)
+ * [Added basic chondro documentation](https://github.com/r-hyperspec/hySpc.chondro/pull/4)
+ 
+* Completed small PRs related to `hyperSpec`
+ * [Change "I" to "We" to make it sound like a team project](https://github.com/cbeleites/hyperSpec/pull/265)
+ * [Feature/vign edits](https://github.com/cbeleites/hyperSpec/pull/269)
 
+* Completed PRs related to `hySpc.read.txt`
+ * [Feature/io compare](https://github.com/r-hyperspec/hySpc.read.txt/pull/20)
+ * [Issue/12 rename.2](https://github.com/r-hyperspec/hySpc.read.txt/pull/23)
+ * [Issue/22 move copy](https://github.com/r-hyperspec/hySpc.read.txt/pull/24)
+ * [Update count_lines.R, read_asc_Andor, & Perkin from `hyperSpec`](https://github.com/r-hyperspec/hySpc.read.txt/pull/26)
+ * [Feature/vign edits](https://github.com/r-hyperspec/hySpc.read.txt/pull/28)
+ 
 ## Moving functions from `hyperSpec` to `hySpc.read.txt`
-I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the following functions:
+Moving the remaining functions related to `read.txt` out of `hyperSpec` into `read.txt`: This will require that the functions in `hyperSpec` will become deprecated. I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the following functions:
 
 + [x] read.txt.Horiba.R
     - [x] `read.txt.Horiba`
@@ -1083,12 +1116,13 @@ I'm going to need the `Deprecated.R` and `deprecation-messages.R` and copy the f
     - [x] `read.asc.PerkinElmer`
 
 ---
-# Report for week of 8-24-20 (Week 16)
+# Report for week of 8-24-20 (Week 17)
 
-**Week-16-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a weekly report of progress made.
+**Week-17-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a weekly report of progress made.
 Meet with mentors. (check-in with mentors as necessary)
 
-**Week-16-actual:**    
+**Week-17-actual:**
+With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people) I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here]().
 
 ---
 # September 8: Final Results
@@ -1098,3 +1132,7 @@ All documentation, code modules (files, packages, etc.), and their associated te
 * Fortified `hyperSpec` for `matrixStats` with bridge packages.
 
 And so, with the support of the `r-hyperspec` team all other deliverables promised for R GSoC 2020 have been...delivered. Furthermore, I plan on continuing to work with the `r-hyperspec` team for the foreseeable future. That is, the remaining deliverables, issues, features, and their associated documentation will continue to be worked on by me and the `r-hyperspec` team as time permits.
+
+---
+# Final Notes
+"_There is no such thing as perfect and no plan is ever problem-free. Life does not wait for coding projects or internships to finish. So, if there is a decline in health or other personal and family issues arise, [you] should take a deep breath and let [your] mentors know what is going on without TMI. If [you] foresee a setback in development, make sure to communicate [your] difficulties and get suggestions on how to pivot from mentors so that milestones and deliverables can still be met in a timely manner._" - E. Oduniyi
