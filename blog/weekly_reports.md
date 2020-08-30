@@ -840,7 +840,7 @@ spc@data$header_variable <- value
 sapply
 ```
 
-## 2. Completition of GSoC Coding Period 1
+## 2. Completion of GSoC Coding Period 1
 Last week was not as productive as I hoped. This week marks the end of the first coding period. So, I wanted to review the outlined deliverables in the proposal for:
 
  1. Distilled `hypSpec` package
