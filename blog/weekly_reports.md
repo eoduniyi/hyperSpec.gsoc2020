@@ -1,10 +1,26 @@
-[A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, & Light](introduction.md)  
+#### [A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, and Light](introduction.md)  
 
 ---
-[Goals of GSoC2020 - RGSoC2020 application proposal ](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
+#### [Goals of GSoC2020 - RGSoC2020 application proposal](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
 
 ---
-[Days Before GSoC2020 - Solutions of the entrance test](test.md)
+#### [Days Before GSoC2020 - Solutions to the entrance exam](test.md)
+
+---
+# My Commits During GSoC2020
+* repo [cbeleites/hyperSpec](https://github.com/cbeleites/hyperSpec/commits?author=eoduniyi) 
+
+* repo [r-hyperspec/hySpc.skeleton](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi)
+
+* repo [r-hyperspec/hySpc.pkgs](https://github.com/r-hyperspec/hySpc.pkgs/commits?author=eoduniyi)
+
+* repo [r-hyperspec/hySpc.read.txt](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi)
+
+* repo [r-hyperspec/hySpc.chondro](https://github.com/r-hyperspec/hySpc.chondro/commits?author=eoduniyi)
+
+* repo [r-hyperspec/hySpc.read.mat](https://github.com/r-hyperspec/hySpc.read.mat/commits?author=eoduniyi)
+
+* repo [r-hyperspec/hySpc.dplyr](https://github.com/r-hyperspec/hySpc.dplyr/commits?author=eoduniyi)
 
 ---
 # Report for Week of 5-4-20 (Week 1)
@@ -44,7 +60,16 @@ Roman also showed the team how to integrate the [two](https://blog.trello.com/gi
 > **Week-2-expected:**
 > Finalize development tools and workflow for contributing to the project over the summer. Inquire about helpful R programming and spectroscopy resources from mentors and digest them.
 
-**Week-2-actual:** The `r-hyperspec` team discussed project licenses, our public trello board, contributors guidelines, Github workflows, template repositories, and general R package building. Aditionally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](test.md) were merged. That was a particularly large commit because of the nature of the changes. Finally, I opened an [issue](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue) about a problem that I found particularly challenging related to [`hySpc.dplyr`](https://github.com/r-hyperspec/hySpc.dplyr)([Generalizing transmute.R to other columns that contain matrices](https://github.com/r-hyperspec/hySpc.dplyr/issues/12)). In fact, this issue would not be resolved ("closed") until June 13, 2020.
+**Week-2-actual:** 
+* The `r-hyperspec` team discussed project licenses, our public trello board, contributors guidelines, Github workflows, template repositories, and general R package building.
+
+* I worked on turning the offline `hyperSpec` legacy Makefile system (which ran some test) to what would eventually become the current online [CI](https://en.wikipedia.org/wiki/Continuous_integration) `r-hyperspec` ecosystem.
+
+* My [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](test.md) was merged. That was a particularly large commit because of the nature of the changes.
+
+* I opened an [issue](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue) about a problem that I found particularly challenging related to [`hySpc.dplyr`](https://github.com/r-hyperspec/hySpc.dplyr)([Generalizing transmute.R to other columns that contain matrices](https://github.com/r-hyperspec/hySpc.dplyr/issues/12))
+
+    * In fact, this issue would not be resolved ("closed") until June 13, 2020.
 
 ### 1. Package skeleton (template repo)
 
