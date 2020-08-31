@@ -21,13 +21,13 @@ _By Erick O. Oduniyi_]()
 >
 
 ___
-**Electromagnetic Radiation (EM):**
-> Atomic decay of electrons.
+**Electromagnetic Radiation (EM | EMR):**
+> **Waves** or their **quanta** (**photons**) that are created as a result of oscillations between an **electric field** and a **magnetic field**. -- [_Wikipedia_](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
 
 ---
 **Information:**
-> "The average uncertainty in a random variable."
-> --  _Claude Shannon_
+> "The resolution of uncertainty; it is that which answers the question of 'What an entity is' and thus defines both its essence and nature of its characteristics."
+> --  [_Wikipedia_](https://en.wikipedia.org/wiki/Information)
 
 ---
 **energy:**
@@ -58,11 +58,11 @@ ___
 > }
 > ```
 
-The `result` retrieved from `Spectroscopy` is **data**.
+The `result` formed from `Spectroscopy` is **data**.
 
 ---
 **Intelligence (Creativity):**
-> To go from `result` (data) to **insight** (understanding) there must be some intermediary system that posses **intelligence** and or **creativity**. Here's a difficult problem: _adequately defining intelligence, creativity, and insight_.
+> To go from `result` (data) to **insight** (understanding) there must be some intermediary system that posses **intelligence** and or **creativity**. Though, here's a difficult problem: _adequately defining intelligence, creativity, and insight_.
 
 
 ---
