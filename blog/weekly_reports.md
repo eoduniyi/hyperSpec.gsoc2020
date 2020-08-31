@@ -4,7 +4,7 @@
 [Goals of GSoC2020](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
 
 ---
-[Days Before GSoC2020](test.md)
+[Days Before GSoC2020 - solutions of the entrance test](test.md)
 
 ---
 # Report for Week of 5-4-20 (Week 1)
@@ -24,14 +24,14 @@ Before contributing or creating a repository, there must be an individual or tea
 
 From the perspective of a team hosting their project on [Github](https://github.com/), this means managing code repositories and their associated _issues_, _pull request_ (PRs), _code_, _branches_, _contributor access_, and _code reviews_. For this first week (and at the beginning of any project) the `r-hyperspec` team focused on NCCs.
 
-## 1.2. Social and Team Infrastructure (Project managment)
+## 1.2. Social and Team Infrastructure (Project management)
 For the `r-hyperspec` team, the infrastructure for CCs is Git/GitHub. Though, Github also provides infrastructure for NCCs (e.g., opening, commenting, and closing [issues](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue)). However, there are a number of tools that IMHO significantly aid with managing NCCs. Such tools help with the organization of knowledge, planning of contributions, implementation of contributions, and various other "behind the scene" task that not only aid the CCs but also the social dynamics between the contributors. The `r-hyperspec` GSoC2020 mentor _Roman Kiselev_ aided the team with developing and managing such team infrastructures:
 
 ### 1.2.1. Trello
-Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially host public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
+Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hyperspec` team. Trello essentially hosts public and private **kanban boards** - _"an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow)"_.
 
 ### 1.2.2. Github
-Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [this](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
+Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [Why you should not use (long-lived) feature branches](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
 
 ### 1.2.3. Trello + GitHub integration
 Roman also showed the team how to integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). From my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that its use decreases slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
@@ -52,7 +52,7 @@ In general, a template is pattern for a repeatable format for a document or file
 #### 1.2 Template repository
 A template repository can be made in Github by going to the settings of the repository and checking the template repository box. Then, you can generate new repositories by using the url-end point:
 
-`https://github.com/username/repoistory.name/generate`
+`https://github.com/username/repository.name/generate`
 
 This is equivalent to clicking the "Use this template" button in the repository's code tab. Once, the derived repository is created, it's a good idea to set the template repository as a remote via:
 
@@ -72,7 +72,7 @@ Because I will be creating a lot of R packages there should be a package pattern
   5. code coverage via `covr` and [Codecov](https://codecov.io/)
 
 ##### 1.3.1. Create a Github repository
-Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton)(now the [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package. commit/publish local repository.
+Make a new Github repository for the package to be. Clone the Github repository locally. Clone the [hyperSpec.skeleton repository](https://github.com/eoduniyi/hyperSpec.skeleton) (now the [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package. Commit/publish local repository.
 
 ##### 1.3.2. Create a R package via RStudio
 It is best to develop all packages from within RStudio:
@@ -117,7 +117,7 @@ Finalize development tools and workflow for contributing to the project over the
 
  * Bryan A. Hanson's [blog](https://chemospec.org/)  
 
- * Bryan also pointed me to this [gem](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/resources/Design%20of%20R%20Language.pdf)
+ * Bryan also pointed me to this gem - [Design of R language](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/resources/Design%20of%20R%20Language.pdf)
 
 ### 1. Generalizing mutate.R and improving setLabels.R
 
@@ -408,7 +408,7 @@ data:  (875 rows x 5 columns)
    4. clusters: clusters [factor] matrix matrix ... lacuna + NA
    5. spc: I / a.u. [matrix, array300] 501.8194 500.4552 ... 169.2942
 ```
-As you can see from the above code snippet there are some differences between the `faux_cell` and `chondro` datasets (i.e., labels, name of data slots)...which could all potentially effect the replacement process.
+As you can see from the above code snippet there are some differences between the `faux_cell` and `chondro` datasets (i.e., labels, name of data slots)...which could all potentially affect the replacement process.
 
 At the end of the day I need to replace the `chondro` data set with the `faux_cell` data set because the former has such a large overhead. Great, that should be the easiest part of the job (replacement/substitution).
 
@@ -512,7 +512,7 @@ for (i in seq_along(args)) {
 }
 ```
 
-Let's try and distill the update as psuedo-code:
+Let's try and distill the update as pseudo-code:
 
 ```R
 # If the argument has no name (only an expression)
@@ -685,7 +685,7 @@ transmute.hyperSpec <- function(.data, ...) {
 Now that I have had a moment to collect my thoughts, I realize that it's actually not that difficult of a task.
 
 ## 3. Updating .R files
-I used a [script](https://hyperspec.slack.com/archives/C010YFB5RQQ/p1591715140124200?thread_ts=1591714902.123500&cid=C010YFB5RQQ) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
+I used a [script](https://gist.github.com/eoduniyi/2e40e1ffc2f22d6872fa16dd2caf01d0) to update the majority of the files and then did an inspection of each file to make sure that they weren't referencing anything that `faux_cell` did not have in its data slot.
 
 ## 4. Updating test
 For each file I needed to make sure that the test could pass with `faux_cell`. To do this, I ran the following function in the RStudio console:
@@ -840,7 +840,7 @@ spc@data$header_variable <- value
 sapply
 ```
 
-## 2. Completition of GSoC Coding Period 1
+## 2. Completion of GSoC Coding Period 1
 Last week was not as productive as I hoped. This week marks the end of the first coding period. So, I wanted to review the outlined deliverables in the proposal for:
 
  1. Distilled `hypSpec` package
@@ -869,7 +869,7 @@ for all weekly tasks. Compile a weekly report of progress made. Meet with mentor
 mentors as necessary)
 
 **Week-10-actual:**
-* Continued to flesh out the `hySpc.read.Witec` package and worked on drat strategy for automated resource moving.
+* Continued to flesh out the `hySpc.read.Witec` package (it was renamed later to `hySpc.read.txt`) and worked on drat strategy for automated resource moving.
 
     * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.read.txt/commits?author=eoduniyi)
 
@@ -1030,7 +1030,7 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 **Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-12-actual:**
-Not much progress this week because of personal issues/medical reasons:
+Not much progress this week because of personal issues/medical reasons.
 
 ---
 # Report for Week of 8-27-20 (Week 13)
@@ -1181,7 +1181,7 @@ Moving the remaining functions related to `read.txt` out of `hyperSpec` into `re
 Meet with mentors. (check-in with mentors as necessary)
 
 **Week-17-actual:**
-With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people) I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here]().
+With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people) I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here](https://developers.google.com/open-source/gsoc/help/work-product).
 
 ---
 # September 8: Final Results

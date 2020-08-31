@@ -1,6 +1,6 @@
 # R GSoC 2020 hyperSpec
 <p style="line-height:12px"> <b>Student:</b> <i>Erick Oduniyi</i>; <b>Project:</b> <i>hyperSpec</i></p>
-This README contains notes and solutions for the R GSoC 2020 hyperSpec test.
+hyperSpec maintainers organized an entrance test for potential GSoC 2020 students. These are my notes and solutions for the R GSoC 2020 hyperSpec entrance test.
 
 ## 1. Easy
 **Task:** _Install `hyperSpec`, `covr` and `lintr` from CRAN and `hyperSpec.tidyverse` from github._
@@ -113,7 +113,7 @@ Additionally, `lintr` can be integrated with Atom's **Linter** for "on the fly l
 
 ![atom-lintr-example](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/atom-lintr-example.png)
 
-While lintr gives you comments and suggestions related to your code, itself does not make any changes. Hence, the user must decide whether the changes should be made or rejected. Though this is mostly a good thing, if your code base contains more than 100 files that need to be linted, reviewing and manually implementing these suggestions can be cumbersome. Luckily, [issue #96 - Consistent code style](https://github.com/cbeleites/hyperSpec/issues/96) hints at using the `styler` package.  
+While lintr gives you comments and suggestions related to your code, itself does not make any changes. Hence, the user must decide whether the changes should be made or rejected. Though this is mostly a good thing, but if your code base contains more than 100 files that need to be linted, reviewing and manually implementing these suggestions can be cumbersome. Luckily, [issue #96 - Consistent code style](https://github.com/cbeleites/hyperSpec/issues/96) hints at using the `styler` package.  
 
 ### 2.3. Applying `styler` to hyperSpec
 The `styler` package helps R user systematically enfore style across single R files and even entire packages or directories.
@@ -130,7 +130,7 @@ install.packages("styler")
     	/var/folders/4_/gg3mjn693bz4v5w1sxh71rtc0000gp/T//RtmpltRTPs/downloaded_packages
 
 
-The `styler` pacakge has a lot of customaization capability, and so it's possible to define your own style guide or style transformers that the package will enforce when styling code. For testing purposes, we'll adhere to the tidyverse style guidelines:
+The `styler` package has a lot of customization capability, and so it's possible to define your own style guide or style transformers that the package will enforce when styling code. For testing purposes, we'll adhere to the tidyverse style guidelines:
 
 ```R
 # Load styler library
@@ -622,7 +622,7 @@ See Hadley Wickham's [Testing chapter](https://r-pkgs.org/tests.html) to get mor
 Because the column renaming functionality is provided by `dplyr::rename()` I don't need to test if that works (it's already being [tested](https://github.com/tidyverse/dplyr/blob/master/tests/testthat/test-rename.R)). Instead, the main things I want to test is that `rename()` doesn't allow the renaming of `spc` and that when the columns of the data frame are renamed the labels are correctly updated:
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/rename.hyperSpec.unittest.png)
 
-Certainly there are more test I could write for `rename()`, but I think these three are a good start. We can use `covr` to check the testing coverage:
+Certainly there are more tests I could write for `rename()`, but I think these three are a good start. We can use `covr` to check the testing coverage:
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/hyperSpec.test-coverage.png)
 
 **Note:** _"One hundred percent unit test coverage does not mean we had good tests, or even that the tests are complete. The tests could be missing important data and only testing with data that succeeds, failing to test data that causes failures. One hundred percent unit test coverage doesn’t say anything about missing code, missing error handling, or missing requirements."_ -  John Ruberto
@@ -650,7 +650,7 @@ So, the main thing I'm trying to understand is how does one test a plotting func
 </p>
 
 #### 4.1. `qplotspc()` usage
-See how `qplotspc` and other plotting functions are used on[hyperSpec Plotting Examples with ggplot2](https://gegznav.github.io/spHelper/articles/v3_Plotting_Examples_gg_hy.html)
+See how `qplotspc` and other plotting functions are used on [hyperSpec Plotting Examples with ggplot2](https://gegznav.github.io/spHelper/articles/v3_Plotting_Examples_gg_hy.html)
 
 #### 4.2. `qplotspc()` parameters
 The parameters of qplotspc are the following:
@@ -812,7 +812,7 @@ if(!is.null(df$.wl.range))
 p
 ```
 <p align="justify">
-Alright! So I broke the function into six parts, which were divided according the start of control structures (i.e., if()). This was done to better understand how the function arguments were being handled based on the input given by the user. This was also done to try and develop more comprehensive unittest. Now, hopefully it's a little more clearer how to test each part of the code.
+All right! So I broke the function into six parts, which were divided according the start of control structures (i.e., if()). This was done to better understand how the function arguments were being handled based on the input given by the user. This was also done to try and develop more comprehensive unittest. Now, hopefully it's a little more clearer how to test each part of the code.
 </p>
 
 #### 4.4. Writing unit test for `qplotspc`
