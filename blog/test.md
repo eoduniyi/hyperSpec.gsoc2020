@@ -1,6 +1,7 @@
-# R GSoC 2020 hyperSpec
+# RGSoC2020 `hyperSpec`
 <p style="line-height:12px"> <b>Student:</b> <i>Erick Oduniyi</i>; <b>Project:</b> <i>hyperSpec</i></p>
-This README contains notes and solutions for the R GSoC 2020 hyperSpec test.
+
+[This .md](test.md) file contains notes and solutions for the RGSoC2020 `hyperSpec` test.
 
 ## 1. Easy
 **Task:** _Install `hyperSpec`, `covr` and `lintr` from CRAN and `hyperSpec.tidyverse` from github._
@@ -42,16 +43,14 @@ remotes::install_github("cbeleites/hyperSpec.tidyverse")
 
 ---
 
-### 2.1. The nature of linting
-<p align="justify">
-In general, linting is a way to automatically debug code (i.e., error checking and code standardization) without executing the program. Linters aren't intelligent, so it only tries to adhere to a grammar and thus can only check for potential errors. There are two categories of linting: code style linting and syntax linting. There is no right or wrong way to lint, so it's important to choose a linting style (i.e., style convention) that fits the project.
-</p>
+### 2.1. The nature of linting tools
+In general, **linting** is a way to automatically debug code (i.e., error checking and code standardization) without executing the program. Linters aren't intelligent, so it only tries to adhere to a grammar and thus can only check for potential errors.
 
-<p align="justify">
-So, linting is super helpful because it helps programmers adhere to style conventions. In the context of working on open source projects, this can add a bit of confidence to a programmers contribution, which of course is related to unit testing and continuous integration.
-</p>
+There are two categories of linting: **code style linting** and **syntax linting**. There is no right or wrong way to lint, so it's important to choose a linting style (i.e., style convention) that fits the project.
 
-### 2.2. Applying `lintr` to hyperSpec
+Linting is super helpful because it helps programmers adhere to style conventions. In the context of working on open source projects, this can add a bit of confidence to a programmers contribution, which of course is related to unit testing and continuous integration.
+
+### 2.2. Applying `lintr` to `hyperSpec`
 The `lintr` package is a very nice way to checks adherence to a given style, syntax errors and possible semantic issues.
 
 
@@ -65,7 +64,6 @@ setwd("/path/to/directory/R")
 # Check directory
 list.files()
 ```
-<!-- <ol class=list-inline><li>'aggregate.R'</li><li>'all.equal.R'</li><li>'apply.R'</li><li>'Arith.R'</li><li>'as.data.frame.R'</li><li>'barbiturates.R'</li><li>'bind.R'</li><li>'call.list.R'</li><li>'chk.hy.R'</li><li>'chondro.R'</li><li>'collapse.R'</li><li>'colMeans.R'</li><li>'Compare.R'</li><li>'count_lines.R'</li><li>'cov.R'</li><li>'decomposition.R'</li><li>'deprecated.R'</li><li>'dim.R'</li><li>'dimnames.R'</li><li>'DollarNames.R'</li><li>'droplevels.R'</li><li>'empty.R'</li><li>'extract.R'</li><li>'factor2num.R'</li><li>'fileio.optional.R'</li><li>'fix_spc_colnames.R'</li><li>'flu.R'</li><li>'getbynames.R'</li><li>'guesswavelength.R'</li><li>'hyperspec-class.R'</li><li>'hyperspec-package.R'</li><li>'initialize.R'</li><li>'labels.R'</li><li>'laser.R'</li><li>'levelplot.R'</li><li>'makeraster.R'</li><li>'map.identify.R'</li><li>'map.sel.poly.R'</li><li>'mark.dendrogram.R'</li><li>'mark.peak.R'</li><li>'Math.R'</li><li>'matlab.palette.R'</li><li>'mean_sd.R'</li><li>'merge.R'</li><li>'mvtnorm.R'</li><li>'normalize01.R'</li><li>'options.R'</li><li>'orderwl.R'</li><li>'paracetamol.R'</li><li>'paste.row.R'</li><li>'pearson.dist.R'</li><li>'plot.R'</li><li>'plotc.R'</li><li>'plotmap.R'</li><li>'plotmat.R'</li><li>'plotspc.R'</li><li>'plotvoronoi.R'</li><li>'qplot.R'</li><li>'qplotmixmap.R'</li><li>'quantile.R'</li><li>'rbind.fill.R'</li><li>'read.asc.Andor.R'</li><li>'read.asc.PerkinElmer.R'</li><li>'read.ENVI.HySpex.R'</li><li>'read.ENVI.Nicolet.R'</li><li>'read.ENVI.R'</li><li>'read.ini.R'</li><li>'read.jdx.R'</li><li>'read.mat.Cytospec.R'</li><li>'read.mat.Witec.R'</li><li>'read.spc.Kaiser.R'</li><li>'read.spc.R'</li><li>'read.spc.Shimadzu.R'</li><li>'read.spe.R'</li><li>'read.txt.Horiba.R'</li><li>'read.txt.long.R'</li><li>'read.txt.Renishaw.R'</li><li>'read.txt.Shimadzu.R'</li><li>'read.txt.wide.R'</li><li>'read.txt.Witec.R'</li><li>'regexps.R'</li><li>'replace.R'</li><li>'sample.R'</li><li>'scale.R'</li><li>'seq.R'</li><li>'show.R'</li><li>'spc.bin.R'</li><li>'spc.fit.poly.R'</li><li>'spc.identify.R'</li><li>'spc.loess.R'</li><li>'spc.NA.approx.R'</li><li>'spc.rubberband.R'</li><li>'spc.spline.R'</li><li>'split.R'</li><li>'split.string.R'</li><li>'splitdots.R'</li><li>'subset.R'</li><li>'Summary.R'</li><li>'sweep.R'</li><li>'trellis.factor.key.R'</li><li>'units.R'</li><li>'unittest.R'</li><li>'validate.R'</li><li>'vandermonde.R'</li><li>'wc.R'</li><li>'wl.R'</li><li>'wl2i.R'</li><li>'wleval.R'</li><li>'write.txt.long.R'</li><li>'write.txt.wide.R'</li><li>'y-pastenames.R'</li><li>'zzz.R'</li></ol> -->
 
 ```R
 # Try using the lintr package on a single file
@@ -113,11 +111,10 @@ Additionally, `lintr` can be integrated with Atom's **Linter** for "on the fly l
 
 ![atom-lintr-example](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/atom-lintr-example.png)
 
-While lintr gives you comments and suggestions related to your code, itself does not make any changes. Hence, the user must decide whether the changes should be made or rejected. Though this is mostly a good thing, if your code base contains more than 100 files that need to be linted, reviewing and manually implementing these suggestions can be cumbersome. Luckily, [issue #96 - Consistent code style](https://github.com/cbeleites/hyperSpec/issues/96) hints at using the `styler` package.  
+While `lintr` gives you comments and suggestions related to your code, itself does not make any changes. Hence, the user must decide whether the changes should be made or rejected. Though this is mostly a good thing, if your code base contains more than 100 files that need to be lint, reviewing and manually implementing these suggestions can be cumbersome. Luckily, [issue #96 - Consistent code style](https://github.com/cbeleites/hyperSpec/issues/96) hints at using the `styler` package.  
 
-### 2.3. Applying `styler` to hyperSpec
-The `styler` package helps R user systematically enfore style across single R files and even entire packages or directories.
-
+### 2.3. Applying `styler` to `hyperSpec`
+The `styler` package helps R user systematically _enforce style_ across single R files and even entire packages and directories.
 
 ```R
 # Install the styler package from CRAN
@@ -127,10 +124,10 @@ install.packages("styler")
     also installing the dependencies ‘R.methodsS3’, ‘R.oo’, ‘R.utils’, ‘R.cache’, ‘rematch2’
 
     The downloaded binary packages are in
-    	/var/folders/4_/gg3mjn693bz4v5w1sxh71rtc0000gp/T//RtmpltRTPs/downloaded_packages
+    	/var/folders/4_/gg3mjn693bz4v5w1sxh71rtc0000gp/T/RtmpltRTPs/downloaded_packages
 
 
-The `styler` pacakge has a lot of customaization capability, and so it's possible to define your own style guide or style transformers that the package will enforce when styling code. For testing purposes, we'll adhere to the tidyverse style guidelines:
+The `styler` package has a lot of customization capability, and so it's possible to define your own style guide or style transformers that the package will enforce when styling code. For testing purposes, we'll adhere to the `tidyverse` style guidelines:
 
 ```R
 # Load styler library
@@ -274,30 +271,33 @@ style_dir(getwd(), transformers = tidyverse)
 
 Neat! `styler` outputs the changes it made and encourages users to review changes carefully!
 
+---
 ## 3. Hard
-**Task:** _Tackle one of the "good first issues" in the hyperSpec.tidyverse issue thread_
+> **Task:** Tackle one of the "good first issues" in the `hyperSpec.tidyverse` issue thread.
 
 ---
 
-### 3.1. Contributing to the hyperSpec.tidyverse project
-The goal of the hyperSpec.tidyverse project is to create an R package that makes hyperSpec (hyperSpec objects) work smoothly with the **tidyverse**. Practically, this means making analog **tidyverse/dplyr** functions (e.g., `select()`, `rename()`, `mutate()`, `transmute()`, etc.) for hyperSpec objects. In the end, the hope is to support "wrangling of hyperSpec objects in a `dplyr`-like style".
+### 3.1. Contributing to the `hyperSpec.tidyverse` project
+The goal of the `hyperSpec.tidyverse` repo is to create an R package that makes `hyperSpec` (`hyperSpec` objects) work smoothly with the **tidyverse**. Practically, this means making analog **tidyverse/dplyr** functions (e.g., `select()`, `rename()`, `mutate()`, `transmute()`, etc.) for `hyperSpec` objects. In the end, the hope is to support "wrangling of `hyperSpec` objects in a `dplyr`-like style".
+
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/dplyr.functions.png)
 
 ### 3.2. Picking a "good first issue"
-I decided to tackle [issue #5 - `dplyr::rename()`](https://github.com/cbeleites/hyperSpec.tidyverse/issues/5) because it was the first "good first issue" and although I'm not super familiar with tidyverse/dplyr, `rename()` seems like a straightforward function to implement.
+I decided to tackle [issue #5 - `dplyr::rename()`](https://github.com/cbeleites/hyperSpec.tidyverse/issues/5) because it was the first "good first issue" and although I'm not super familiar with `tidyverse/dplyr`, `rename()` seems like a straightforward function to implement.
+
 ![github-issue](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/github-good-issue.png)
 
 ### 3.3. Creating a structure to work on hyperSpec.tidyverse
-I like to use [Atom](https://en.wikipedia.org/wiki/Atom_(text_editor)) to manage projects and quickly develop coding ideas and RStudio for concrete implementation. Of course, before I can start working on my contribution I need to do:
-* Fork hyperSpec.tidyverse repository
-* Clone hyperSpec.tidyverse repository locally (i.e., computer hardrive)
+I like to use [Atom](https://en.wikipedia.org/wiki/Atom_(text_editor)) to manage projects and quickly develop coding ideas and [RStudio](https://rstudio.com/) for concrete implementation. Of course, before I can start working on my contribution I need to do:
+* Fork the `hyperSpec.tidyverse` repository
+* Clone the `hyperSpec.tidyverse` repository locally
 * View project in Atom
 * Open project in RStudio
 
 ### 3.4. Software Description
-The task is to create a fortified version of `dplyr::rename()` so that it works smoothly with hyperSpec objects.
-
-<img src="https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/use-case-rename.png">
+The task is to create a fortified version of `dplyr::rename()` so that it works smoothly with `hyperSpec` objects.
+<!-- <img src="https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/use-case-rename.png"> -->
+![use-case-rename](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/use-case-rename.png)
 
 #### 3.4.1. The nature of `rename()` and `select()`
 The `dplyr` package is a grammar of data manipulation. This makes common data manipulation task intuitive. Unsurprisingly, R users often want to rename the columns of their data frames or even select subsets of their tables to do more fine-grained analysis. It turns outs, these two operations are pretty similar.
@@ -419,21 +419,21 @@ df %>% select(YearNewColName = Year)
 #### 3.5.1. The nature of `rename()` and `select()` cont.
 While both `rename()` and `select()` operate on data frames (i.e., tables with column names) the difference between the two functions is that the former only changes column names of the data frame while the latter creates a subset of the data frame; in doing so, the names (column names) of these subsets can be changed as well.
 
-#### 3.5.2. `rename()` and `select()` for hyperSpec
-What does this mean for hyperSpec objects? Well, hyperSpec objects are a S4 class that contain 4 slots:
+#### 3.5.2. `rename()` and `select()` for `hyperSpec`
+What does this mean for `hyperSpec` objects? Well, `hyperSpec` objects are a S4 class that contain 4 slots:
 
 * **@wavelength** - numeric vector
 * **@data** - a data frame with the spectra matrix ($spc)
 * **@labels** - list of appropriate labels
 * **@log** - ...
 
-#### 3.5.3. Nature of hyperSpec objects
-In fact, the hyperSpec packages comes with five data sets (hyperSpec objects):
+#### 3.5.3. Nature of `hyperSpec` objects
+In fact, the `hyperSpec` package comes with five data sets (hyperSpec objects):
 * **chondro** - a Raman map of chondrocytes in cartilage
 * **flu** - a set of fluorescence spectra of a calibration series
 * **laser** - a time series of an unstable laser emission
 * **paracetamol** - a Raman spectrum of paracetamol (acetaminophene) ranging from 100 to 3200 cm−1 with overlapping wavelength ranges.
-* **barbiturates** - GC-MS spectra with differing wavelength axes as a list of 286 hyperSpec objects
+* **barbiturates** - GC-MS spectra with differing wavelength axes as a list of 286 `hyperSpec` objects
 
 Let's take a look at the structure of these objects:
 
@@ -476,7 +476,7 @@ explore.object(paracetamol)
        3. filename: filename [character] rawdata/chondro.txt rawdata/chondro.txt ... rawdata/chondro.txt
        4. clusters: clusters [factor] matrix matrix ... lacuna + NA
        5. spc: I / a.u. [matrix300] 501.8194 500.4552 ... 169.2942
-![](./img/chondro-graph.png)
+![chondro-graph](/img/chondro-graph.png)
 
     [1] "flu"
     hyperSpec object
@@ -488,7 +488,7 @@ explore.object(paracetamol)
         1. spc: I[fl]/"a.u." [matrix181] 27.15000 66.80133 ... 294.6495
         2. filename: filename [character] rawdata/flu1.txt rawdata/flu2.txt ... rawdata/flu6.txt
         3. c: c / (mg / l) [numeric] 0.05 0.10 ... 0.3
-![](./img/flu-graph.png)
+![flu-graph](/img/flu-graph.png)
 
     [1] "laser"
     hyperSpec object
@@ -500,7 +500,7 @@ explore.object(paracetamol)
         1. t: t / s [numeric] 0 2 ... 5722
         2. spc: I / a.u. [matrix36] 164.650 179.724 ... 112.086
         3. filename: filename [character] rawdata/laser.txt.gz rawdata/laser.txt.gz ... rawdata/laser.txt.gz
-![](./img/laser-graph.png)
+![laser-graph](/img/laser-graph.png)
 
     [1] "paracetamol"
     hyperSpec object
@@ -511,9 +511,9 @@ explore.object(paracetamol)
     data:  (1 rows x 2 columns)
         1. spc: I / a.u. [matrix4064] 2056.50 2224.84 ... 299.229
         2. filename: filename [character] txt.Renishaw/paracetamol.txt
-![](./img/paracetamol-graph.png)
+![paracetamol-graph](/img/paracetamol-graph.png)
 
-So, not only does a hyperSpec object have to contain the 4 slots mentioned above, the `@data` slot must also contain the spectra matrix (`hyperSpecObject@data$spc`). Accordingly, the dplyr operations `rename()` and `select()` should only augment the `@data` slot. However, augmenting the data slot augments the `@label` slot. In other words, if I'm going to create a function that changes the column names of the data frame using `dplyr::rename()`, the function must also ensure that the spc column is **not** renamed and that the labels are correctly updated. Then, a function design (pseudo-code) for `rename.hyperSpec()` should look like this:
+So, not only does a `hyperSpec` object have to contain the 4 slots mentioned above, the `@data` slot must also contain the spectra matrix (`hyperSpecObject@data$spc`). Accordingly, the dplyr operations `rename()` and `select()` should only augment the `@data` slot. However, augmenting the data slot augments the `@label` slot. In other words, if I'm going to create a function that changes the column names of the data frame using `dplyr::rename()`, the function must also ensure that the `spc` column is **not** renamed and that the labels are correctly updated. Then, a function design (pseudo-code) for `rename.hyperSpec()` should look like this:
 
 ```{R}
 # Function design for rename.hyperSpec()
@@ -538,8 +538,9 @@ rename.hyperSpec() <- function(hyperSpecObject, NewColName = OldColName, ...){
 ```
 
 ### 3.6. Function Implementation
-A few `dplyr` operations have already been implemented for hyperSpec (e.g., `filter.hyperSpec()` and `select.hyperSpec()`). Fortunately, `dplyr::select()` and `dplyr::rename()` are similar operations, so hyperSpec's implementation of `select()` should be a good guide to follow for `rename()`.
-![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/select.hyperSpec.example.png)
+A few `dplyr` operations have already been implemented for `hyperSpec` (e.g., `filter.hyperSpec()` and `select.hyperSpec()`). Fortunately, `dplyr::select()` and `dplyr::rename()` are similar operations, so hyperSpec's implementation of `select()` should be a good guide to follow for `rename()`:
+
+![select-example](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/select.hyperSpec.example.png)
 
 Using the above-mentioned function requirements and function design for `rename.hyperSpec()` and `select.hyperSpec()` as a guide, an implementation of `rename()` could be the following:
 
@@ -620,9 +621,11 @@ See Hadley Wickham's [Testing chapter](https://r-pkgs.org/tests.html) to get mor
 
 #### 3.7.2. Writing unit test for `rename.hyperSpec()`
 Because the column renaming functionality is provided by `dplyr::rename()` I don't need to test if that works (it's already being [tested](https://github.com/tidyverse/dplyr/blob/master/tests/testthat/test-rename.R)). Instead, the main things I want to test is that `rename()` doesn't allow the renaming of `spc` and that when the columns of the data frame are renamed the labels are correctly updated:
+
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/rename.hyperSpec.unittest.png)
 
 Certainly there are more test I could write for `rename()`, but I think these three are a good start. We can use `covr` to check the testing coverage:
+
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/hyperSpec.test-coverage.png)
 
 **Note:** _"One hundred percent unit test coverage does not mean we had good tests, or even that the tests are complete. The tests could be missing important data and only testing with data that succeeds, failing to test data that causes failures. One hundred percent unit test coverage doesn’t say anything about missing code, missing error handling, or missing requirements."_ -  John Ruberto
@@ -636,6 +639,7 @@ The documentation output generated by `roxygen` can be viewed [here](https://sto
 
 ### 3.9. Submitting a pull request for `rename.R`
 The last thing to do is commit and then submit a pull request for rename.R and wait for a code review
+
 ![](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/rename.hyperSpec.pull.png)
 
 ### 4. Very Hard
@@ -643,18 +647,17 @@ The last thing to do is commit and then submit a pull request for rename.R and w
 
 ---
 
-I chose `qplotspc` because it seemed simple and because I wanted to know more about the spectra within the hyperSpec objects.
+I chose `qplotspc` because it seemed simple and because I wanted to know more about the spectra within the `hyperSpec` objects.
 
-<p align="justify">
-So, the main thing I'm trying to understand is how does one test a plotting function (maybe the ggplot2 repo has some good resources). Furthermore, I need to understand what the function does and how the function does it. Basically, I need to understand the parameters/arguments and how they get processed in the function body.
-</p>
+
+The main thing I'm trying to understand is how does one test a plotting function (maybe the `ggplot2` repo has some good resources). Furthermore, I need to understand what the function does and how the function does it. Basically, I need to understand the parameters/arguments and how they get processed in the function body.
 
 #### 4.1. `qplotspc()` usage
-See how `qplotspc` and other plotting functions are used on[hyperSpec Plotting Examples with ggplot2](https://gegznav.github.io/spHelper/articles/v3_Plotting_Examples_gg_hy.html)
+See [Vilmantas Gegzna's](https://github.com/GegznaV) post: [hyperSpec Plotting Examples with ggplot2](https://gegznav.github.io/spHelper/articles/v3_Plotting_Examples_gg_hy.html) to get familiar with `qplotspc` and other `hyperSpec` plotting functions.
 
 #### 4.2. `qplotspc()` parameters
-The parameters of qplotspc are the following:
-* **x** - hyperSpec object
+The parameters of `qplotspc` are the following:
+* **x** - `hyperSpec` object
 * **wl.range** -  wavelength ranges to plot
 * **mapping** - uses gpgplot's geom_line?
 * **spc.nmax** -  maximum number of spectra to plot
@@ -721,7 +724,7 @@ qplotspc <- function(x,
 }
 ```
 #### 4.3.1. Understanding the pieces of `qplotspc`
-Okay, clearly there is a bunch of stuff going on in this function, so let's try and break this into pieces first:
+Okay, clearly there is a bunch of stuff going on in this function, so let's try and break this into pieces:
 
 piece_1: parameters list
 ```R
@@ -735,13 +738,13 @@ function(x, # expects a hyperSpec object
        )
 ```
 
-piece_2: checking hyperSpec object
+piece_2: checking validity of `hyperSpec` object
 ```R
 chk.hy(x)
 validObject(x)
 ```
 
-piece_3: transforming hyperSpec object into a data frame
+piece_3: transforming `hyperSpec` object into a data frame
 ```R
 # Collect the first spc.nmax number of spectra
 if(nrow(x) > spc.nmax)
@@ -811,18 +814,19 @@ if(!is.null(df$.wl.range))
 # Return plot
 p
 ```
-<p align="justify">
-Alright! So I broke the function into six parts, which were divided according the start of control structures (i.e., if()). This was done to better understand how the function arguments were being handled based on the input given by the user. This was also done to try and develop more comprehensive unittest. Now, hopefully it's a little more clearer how to test each part of the code.
-</p>
+
+In conclusion, we broke down `qplotspc()` into six pieces, divided according to the start of control structures (i.e., `if()`). This was done to better understand how the function arguments were being handled based on the user's input. This was also done to try and develop a more comprehensive unit test. Now, hopefully, it's a little more clear how to test each part of the code.
 
 #### 4.4. Writing unit test for `qplotspc`
 Again, the plan is to write one unit test for each part of the function:
-![](./img/qplotspc.unittest.png)
 
-[See](./veryhard.R) for the remaining unittest
+![](/img/qplotspc.unittest.png)
+
+[See](/veryhard.R) for the remaining unittest
 
 Finally, check package coverage:
-![](./img/qplotspc.test-coverage.png)
+
+![](/img/qplotspc.test-coverage.png)
 
 ---
 

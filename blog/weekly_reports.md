@@ -1,16 +1,18 @@
-[A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, and Light](introduction.md)  
+[A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, & Light](introduction.md)  
 
 ---
-[Goals of GSoC2020](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
+[Goals of GSoC2020 - RGSoC2020 application proposal ](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
 
 ---
-[Days Before GSoC2020 - solutions of the entrance test](test.md)
+[Days Before GSoC2020 - Solutions of the entrance test](test.md)
 
 ---
 # Report for Week of 5-4-20 (Week 1)
 
-**Week-1-expected:**
-Create a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling, etc.).
+> **Week-1-expected:**
+> Create a clear communication schedule for weekly meetings, protocols for check-ins,
+> and a high-level road map for successful contribution to the `hyperSpec` project
+> (e.g., forking, merging, pulling, etc.).
 
 **Week-1-actual:**
 Created a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling, etc.).
@@ -34,13 +36,13 @@ Roman created a [Trello board](https://trello.com/en-US/guide) for the `r-hypers
 Throughout the summer Roman and the rest of the `r-hyperspec` team would attach GitHub issues and useful resources and to the board such as this: [Why you should not use (long-lived) feature branches](https://www.freecodecamp.org/news/why-you-should-not-use-feature-branches-a86950126124/). GitHub resources like that were super helpful as references for contributors that are familiar and unfamiliar with Github.
 
 ### 1.2.3. Trello + GitHub integration
-Roman also showed the team how to integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). From my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that its use decreases slowly over time (as I am a slow learner). The `r-hyperspec` Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
+Roman also showed the team how to integrate the [two](https://blog.trello.com/github-and-trello-integrate-your-commits). From my perspective, this feature was essentially training wheels for me as I was the most inexperienced with Git/Github and project management. In fact, if one looks at the use of this feature throughout the summer via the public trello board or GitHub, they would find that its use decreases slowly over time (as I am a slow learner). The `r-hyperspec` team Trello board can be viewed [here](https://trello.com/b/L1SzTFfO/hyperspec-gsoc).
 
 ---
 # Report for Week of 5-11-20 (Week 2)
 
-**Week-2-expected:**
-Finalize development tools and workflow for contributing to the project over the summer. Inquire  about helpful R programming and spectroscopy resources from mentors and digest them.
+> **Week-2-expected:**
+> Finalize development tools and workflow for contributing to the project over the summer. Inquire about helpful R programming and spectroscopy resources from mentors and digest them.
 
 **Week-2-actual:** The `r-hyperspec` team discussed project licenses, our public trello board, contributors guidelines, Github workflows, template repositories, and general R package building. Aditionally, my [PR](https://github.com/cbeleites/hyperSpec/pull/117) from [the days before GSoC](test.md) were merged. That was a particularly large commit because of the nature of the changes. Finally, I opened an [issue](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue) about a problem that I found particularly challenging related to [`hySpc.dplyr`](https://github.com/r-hyperspec/hySpc.dplyr)([Generalizing transmute.R to other columns that contain matrices](https://github.com/r-hyperspec/hySpc.dplyr/issues/12)). In fact, this issue would not be resolved ("closed") until June 13, 2020.
 
@@ -63,11 +65,13 @@ git remote add template [URL of the template repo]
 Now, changes made to the template can be propagated to the derived repo by fetching and pulling in the changes.
 
 #### 1.3. Creating a `hyperSpec` package skeleton
-Because I will be creating a lot of R packages there should be a package pattern to ensure a consistent infrastructure style is present across the `r-hyperspec` ecosystem. Every `hyperSpec` package should then include the following components:
+Because I will be creating a lot of R packages there should be a package pattern to ensure a consistent infrastructure style is present across the `r-hyperspec` ecosystem.
+
+Then, every `hyperSpec` package should include the following components:
 
   1. Github repository
   2. R project file
-  3. unit test via `testthat`
+  3. unit test via [`hySpc.testthat()`]()
   4. continuous integration (CI) via [Travis CI](https://travis-ci.com/) and [AppVeyor](https://www.appveyor.com/)
   5. code coverage via `covr` and [Codecov](https://codecov.io/)
 
@@ -108,8 +112,10 @@ Badges for the packages go in the READEME.md file. Badges for Travis CI, AppVeyo
 ---
 # Report for Week of 5-18-20 (Week 3)
 
-**Week-3-expected:**
-Finalize development tools and workflow for contributing to the project over the summer. Inquire about helpful R programming and spectroscopy resources from mentors and digest them.
+> **Week-3-expected:**
+> Finalize development tools and workflow for contributing to the project over the
+> summer. Inquire about helpful R programming and spectroscopy resources from mentors
+> and digest them.
 
 **Week-3-actual:** The `r-hyperspec` team discussed project licenses, public trello board, contributors guideline, Github workflow, template repositories, and general R package building. Reviewed one [PRs](https://github.com/cbeleites/hyperSpec/pull/133) in the `hyperSpec` repository. Worked on the `hySpc.skeleton` framework where in theory a derived package, say [`hyperSpec.derivedpkg`](https://github.com/eoduniyi/hyperSpec.derivedpkg) or `hySpc.*` would collect the changes committed to the skeleton as specified in the last week. Then, I began working on generalizing [`mutate.R`](https://github.com/r-hyperspec/hySpc.dplyr/commits/develop/R/mutate.R). Finally, I did some research into `drat` and `pkgdown`, and worked on trying to get `hyperSpec` to build correctly.
 
@@ -142,7 +148,7 @@ is.matrix(.data@data$var) # returns true if it is a matrix
 Which means, I could just devise a helper function that checks if the "expression" is a matrix and then accordingly updates the "name":
 
 ```R
-if(args_name[i] in colnames(tmp_hy)) {
+if (args_name[i] in colnames(tmp_hy)) {
     tmp_hy@data[c(args_name[i])] <- .data@data[c(args_name[i])]
 }
 
@@ -150,7 +156,7 @@ if(args_name[i] in colnames(tmp_hy)) {
 .
 .
 
-if(args_names %in% colnames(.data)) {
+if (args_names %in% colnames(.data)) {
   # create a tmp var
   tmp_var <- tmp_var
   tmp_var <- eval(parse(text = paste(".data@data$", args_names[i]))) # What needs to be saved
@@ -335,8 +341,9 @@ Update the config file to reflect your user credentials.
 ---
 # Report for Week of 5-25-20 (Week 4)
 
-**Week-4-expected:**
-Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-4-expected:**
+> Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly
+> report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-4-actual:**
 Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and continued to look into `pkgdown` and `drat`.
@@ -419,18 +426,21 @@ The real work starts after the replacement happens. Because even IF, the two dat
 ---
 # Report for Week of 6-1-20 (Week 5)
 
-**Week-5-expected:**
-Let the coding begin! Start making progress on Goal 1. Stick to the development cycle for all weekly tasks (i.e., describe, design, implement, quality check, test, document, deliver, and iterate). Compile
-a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-5-expected:**
+> Let the coding begin! Start making progress on Goal 1. Stick to the development cycle > for all weekly tasks (i.e., describe, design, implement, quality check, test,
+> document, deliver, and iterate).
+> Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-5-actual:**
-This was actually the start of the first coding period, but [A LOT](https://en.wikipedia.org/wiki/Killing_of_George_Floyd#:~:text=On%20May%2025%2C%202020%2C%20George,allegedly%20using%20a%20counterfeit%20bill.&text=The%20three%20other%20officers%20were,and%20abetting%20second%2Ddegree%20murder.) was going on locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
+This was actually the start of the first coding period, but A LOT is going on
+locally, nationally, and globally, so I honestly took this week to mediate and organize. Pretty hard to be productive. Hopefully I can get back to it properly next week.
 
 ---
 # Report for Week of 6-8-20 (Week 6)
 
-**Week-6-expected:**
-Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-6-expected:**
+> Let the coding continue! Continue making progress on Goal 1. Compile a weekly report
+> of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-6-actual:**
 * Reviewed a [PR related to a quosure bugfix](https://github.com/cbeleites/hyperSpec/pull/150)
@@ -445,7 +455,7 @@ Let the coding continue! Continue making progress on Goal 1. Compile a weekly re
 ## 1. The Return of `hyperSpec.mutate/transmute`
 Still need to finish fleshing out the details of the `hyperSpec.mutate()` and `hyperSpec.transmute()` functions.
 
-According to our Monday meeting, the generalized mutate/transmute allows and disallows the following:
+According to our Monday meeting, the generalized `mutate/transmute` should allow and disallow the following:
 
 ```R
 # Is allowed:
@@ -707,7 +717,8 @@ The vignettes still make use of examples that reference `chondro`, so at some po
 ---
 # Report for Week of 6-22-20 (Week 7)
 
-**Week-7-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-7-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a
+> weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-7-actual:**
 Started implementing the [`hySpc.read.Witec`](https://github.com/eoduniyi/hySpc.read.Witec) package (this package would later come to be known as `hySpc.read.txt`).
@@ -717,25 +728,27 @@ Started implementing the [`hySpc.read.Witec`](https://github.com/eoduniyi/hySpc.
 ```R
 install.packages("hySpc.read.Witec")
 library("hySpc.read.Witec")
-hySpc.read.Witec("name/of/Witec/file.R")
+hySpc.read.Witec("name/of/Witec/file")
 ```
 
 ---
 # Report for Week of 6-15-20 (Week 8)
 
-**Week-8-expected:**
-Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-8-expected:**
+> Let the coding continue! Continue making progress on Goal 1. Compile a weekly report
+> of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-8-actual:**
 
-* Worked on developing the `hySpc.skeleton` package.
+* Worked on developing the `hySpc.skeleton` package
 
-    * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi).
+    * [Please see my contributions to this package here](https://github.com/r-hyperspec/hySpc.skeleton/commits?author=eoduniyi)
 
-* Finally, the [PR](https://github.com/r-hyperspec/hySpc.dplyr/pull/24) relating to the generalization of `mutate()` was merged.
+
+* Finally, the [PR](https://github.com/r-hyperspec/hySpc.dplyr/pull/24) relating to the generalization of `mutate()` was merged
 
 ## 1. The Return of `hyperSpec.skeleton` (`hySpc.skeleton`)
-According to [naming conventions](https://github.com/cbeleites/hyperSpec/issues/140), the `hyperSpec.skeleton` package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people)
+According to [naming conventions](https://github.com/cbeleites/hyperSpec/issues/140), the `hyperSpec.skeleton` package has changed from `hyperSpec.skeleton` to `hySpc.skeleton`. Much of the work on this package was done with the gracious help of the rest of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people).
 
 The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package includes the following folders `/` and files:
 
@@ -757,8 +770,8 @@ The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package in
 ----
 # Report for Week of 6-29-20 (Week 9)
 
-**Week-9-expected:** This period will be used to write a detailed report on the work done in Coding Period 1. All work
-completed will be uploaded and documented.
+> **Week-9-expected:** This period will be used to write a detailed report on the work
+> done in Coding Period 1. All work completed will be uploaded and documented.
 
 **June 29 - July 3: Phase 1 Evaluations**
 
@@ -772,7 +785,7 @@ _Deliverables_:
 
 **Week-9-actual:**
 
-* Got more clarification about the [`hySpc.testthat`](https://github.com/r-hyperspec/hySpc.testthat/issues/3) package.
+* Got more clarification about the [`hySpc.testthat`](https://github.com/r-hyperspec/hySpc.testthat/issues/3) package
 
 ## 1. `hypSpc.read.Witec`
 This is the start of the file import output distillation process. Let the spectroscopy gods guide us.  
@@ -812,7 +825,8 @@ for (s in seq_along(i_spectra)) {
 ```
 
 ### 1.2. Developing `hySpc.read.Witec` for non-spc columns
-Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the `Witec` format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. And I think while I don't understand all of the details the current `hySpc.read.Witec::read_txt_Witec_TrueMatch()` function has a lot of guides for parsing the remainder of the header information.
+Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the `Witec` format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. While I don't understand all of the details the current `read_txt_Witec_TrueMatch()`
+function has a lot of guides for parsing the remainder of the header information.
 
 In fact, let's following the guidance left for us:
 ```R
@@ -864,9 +878,8 @@ So although there are still approximately the same number of .R files, there has
 ---
 # Report for Week of 7-6-20 (Week 10)
 
-**Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle
-for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with
-mentors as necessary)
+> **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. > Stick to the development cycle for all weekly tasks. Compile a weekly report of
+> progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-10-actual:**
 * Continued to flesh out the `hySpc.read.Witec` package (it was renamed later to `hySpc.read.txt`) and worked on drat strategy for automated resource moving.
@@ -990,11 +1003,9 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 ---
 # Report for Week of 7-13-20 (Week 11)
 
-**Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of
-progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors > as necessary)
 
 **Week-11-actual:**
-
 * Reviewed Bryan's [PR](https://github.com/r-hyperspec/hySpc.read.txt/pull/4) for the deploy-pkg branch of `hySpc.read.txt`.
 
     * Learned how to update labels for a repo using the [GitHub Label Manager](http://www.dorukdestan.com/github-label-manager/)
@@ -1012,22 +1023,22 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 **In Progress**
  * Check performance of different ways to import the text data
 
- * Attach labels to hySpc.testthat and hySpc.dplyr
+ * Attach labels to `hySpc.testthat` and `hySpc.dplyr`
 
- * Update hySpc.skeleton documentation to `hyperSpec` repo quality
+ * Update `hySpc.skeleton` documentation to `hyperSpec` repo quality
 
  * `hySpc.read.Witec`
 
  * `hySpc.JCAMP-DX`
 
- * skeleton package and usethis strategy
+ * skeleton package and `usethis` strategy
 
  * Start making sure test coverage is at least 60% for `hyperSpec`
 
 ---
 # Report for Week of 7-20-20 (Week 12)
 
-**Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors > as necessary)
 
 **Week-12-actual:**
 Not much progress this week because of personal issues/medical reasons.
@@ -1035,8 +1046,8 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for Week of 8-27-20 (Week 13)
 
-**Week-13-expected:** Let the coding continue! Start making progress on Goal 3. Stick to the development cycle for all
-weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-13-expected:** Let the coding continue! Start making progress on Goal 3.
+> Stick to the development cycle for all weekly tasks (be adaptable too). Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **July 27 - July 31: Phase 2 Evaluations**
 
@@ -1055,10 +1066,9 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for week of 8-3-20 (Week 14)
 
-**Week-14-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-14-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-14-actual:**
-
 * Closed a few of issues:
 
     * [Create separate data package (hySpc.chondro) for chondro](https://github.com/r-hyperspec/hySpc.chondro/issues/1) in `hySpc.chondro`
@@ -1087,7 +1097,8 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for week of 8-10-20 (Week 15)
 
-**Week-15-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-15-expected:** Let the coding continue! Continue making progress on Goal 3.
+> Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-15-actual:**
 Test cases for the remaining styles of `Witec`...these test were taken from the original `hyperSpec` repo:
@@ -1115,10 +1126,10 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 ---
 # Report for week of 8-17-20 (Week 16)
 
-**Week-16-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-16-expected:** Let the coding continue! Continue making progress on Goal 3.
+> Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-16-actual:**
-
 * Reviewed PRs related to `hyperSpec`
 
     * [Update DESCRIPTION](https://github.com/r-hyperspec/hySpc.chondro/pull/2)
@@ -1177,11 +1188,11 @@ Moving the remaining functions related to `read.txt` out of `hyperSpec` into `re
 ---
 # Report for week of 8-24-20 (Week 17)
 
-**Week-17-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a weekly report of progress made.
-Meet with mentors. (check-in with mentors as necessary)
+> **Week-17-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a
+> weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-17-actual:**
-With the guidance of the [`r-hyperspec` team](https://github.com/orgs/r-hyperspec/people) I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here](https://developers.google.com/open-source/gsoc/help/work-product).
+With the guidance of the `r-hyperspec` team I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here](https://developers.google.com/open-source/gsoc/help/work-product).
 
 ---
 # September 8: Final Results

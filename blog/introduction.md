@@ -1,5 +1,5 @@
 [A Short Introduction to Spectroscopy:  
-_Notes on Information, Energy, Matter, and Light_  
+_Notes on Information, Energy, Matter, & Light_  
 _By Erick O. Oduniyi_]()  
 
 ---
@@ -22,7 +22,8 @@ _By Erick O. Oduniyi_]()
 
 ___
 **Electromagnetic Radiation (EM | EMR):**
-> **Waves** or their **quanta** (**photons**) that are created as a result of oscillations between an **electric field** and a **magnetic field**. -- [_Wikipedia_](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
+> **Waves** or their **quanta** (**photons**) that are created as a result of oscillations between an **electric field** and a **magnetic field**.
+> -- [_Wikipedia_](https://en.wikipedia.org/wiki/Electromagnetic_radiation)
 
 ---
 **Information:**
@@ -62,7 +63,7 @@ The `result` formed from `Spectroscopy` is **data**.
 
 ---
 **Intelligence (Creativity):**
-> To go from `result` (data) to **insight** (understanding) there must be some intermediary system that posses **intelligence** and or **creativity**. Though, here's a difficult problem: _adequately defining intelligence, creativity, and insight_.
+> To go from `result` (data) to **insight** (understanding) there must be some intermediary system that posses **intelligence** and or **creativity**. Though, here's a difficult problem: _adequately defining intelligence and or creativity_.
 
 
 ---
