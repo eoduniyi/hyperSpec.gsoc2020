@@ -1220,7 +1220,7 @@ Moving the remaining functions related to `read.txt` out of `hyperSpec` into `re
 With the guidance of the `r-hyperspec` team I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here](https://developers.google.com/open-source/gsoc/help/work-product).
 
 ---
-# September 8: Final Results
+# August 31: Final Results
 All documentation, code modules (files, packages, etc.), and their associated tests have been uploaded. Excluding the three deliverables promised at the end of the third coding period:
 
 * Fortified `hyperSpec` for `baseline` with bridge packages
