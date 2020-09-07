@@ -1234,3 +1234,33 @@ And so, with the support of the `r-hyperspec` team all other deliverables promis
 ---
 # Final Notes
 "_There is no such thing as perfect and no plan is ever problem-free. Life does not wait for coding projects or internships to finish. So, if there is a decline in health or other personal and family issues arise, [you] should take a deep breath and let [your] mentors know what is going on without TMI. If [you] foresee a setback in development, make sure to communicate [your] difficulties and get suggestions on how to pivot from mentors so that milestones and deliverables can still be met in a timely manner._" - E. Oduniyi
+
+--- 
+# Beginning a new journey with the `r-hyperspec` team
+
+
+In conclusion, for the summer of 2020 I participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/) (GSoC or GSOC) 4-month bootcamp. GSOC is a "global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school." This was an exciting opportunity because I'm a senior studying computer engineering, and I still don't feel super comfortable working on public (open-source) projects. I thought this program would help build my confidence as a computer and software engineer. Moreover:
+
+* I wanted to work with the `R` organization because that is my favorite programming language
+
+* I wanted to work with`r-hyperspec` because I thought that would be the most impactful in terms of practicing project management and software ecosystem development:
+    * Became proficient using `Git/Github`
+    * Became proficient in using **Trello**
+    * Became proficient in using `R`
+    * Became familiar with the spectroscopy community
+    * Became inspired to code more
+    * Became inspired to document and write more my open source projects.
+    * Became excited to collaborate more across various industrial, academic, and community domains. 
+
+And through a lot of hard work all of those things came to be (i.e., practicing software development skills). And truthfully, event though the summer project was successful there is still a lot of work to do: 
+
+* Fortified `hyperSpec` for `baseline` with bridge packages
+* Fortified `hyperSpec` for `EMSC` with bridge packages
+* Fortified `hyperSpec` for `matrixStats` with bridge packages.
+
+So, I'm excited to continue to work with the team! I think there are a ton of ideas I and the team have and hopefully will get explore in deeper context. Speaking of the [team](https://github.com/orgs/r-hyperspec/people), I have them to thank for an awesome `GSOC2020` experience.
+
+If you are interested in the journey that was the GSoC2020 experience (might be interested in trying the program next year), then please feel free to jump around these READMEs to get a feel for the things that I learned and how I worked with the `r-hyperspec` team.
+
+Best,
+E. Oduniyi
