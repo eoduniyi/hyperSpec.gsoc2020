@@ -1,4 +1,4 @@
-#### [A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, and Light](introduction.md)  
+#### [A Short Introduction to Spectroscopy: Notes on Information, Energy, Matter, and Light](blog/introduction.md)  
 
 ---
 #### [Goals of GSoC2020 - RGSoC2020 application proposal](https://storage.googleapis.com/root-proposal-1246/opensource/RGSoC2020/RGSoC_2020_PROPOSAL-2.pdf)
