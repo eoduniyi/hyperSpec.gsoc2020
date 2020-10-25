@@ -34,7 +34,7 @@
 Created a clear communication schedule for weekly meetings, protocols for check-ins, and a high-level road map for successful contribution to the `hyperSpec` project (e.g., forking, merging, pulling, etc.).
 
 # 1. Infrastructure for Open-source Contribution
-Before contributing or creating a repository, there must be an individual or team that manages  **contributions** and the people that make them: **contributors** - _A person, or organization responsible for making contributions to the repository_ (open-source projects don't write themselves, really). And so, we'll specify that contributions can come in the form of **coding contributions** (CCs) and **non-coding contributions** (NCCs):
+Before contributing or creating a repository, there must be an individual or team that manages **contributions** and the people that make them: **contributors** - _A person, or organization responsible for making contributions to the repository_ (open-source projects don't write themselves, really). And so, we'll specify that contributions can come in the form of **coding contributions** (CCs) and **non-coding contributions** (NCCs):
 
 * coding contributions - _contributions that consist of the addition or deletion of code_
 
@@ -367,8 +367,7 @@ Update the config file to reflect your user credentials.
 # Report for Week of 5-25-20 (Week 4)
 
 > **Week-4-expected:**
-> Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly
-> report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-4-actual:**
 Started replacing the `chondro` dataset with the `faux_cell` dataset, worked on [mutate.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/mutate.R) and [setLabels.R](https://github.com/r-hyperspec/hySpc.dplyr/blob/develop/R/setLabels.R), and continued to look into `pkgdown` and `drat`.
@@ -452,9 +451,7 @@ The real work starts after the replacement happens. Because even IF, the two dat
 # Report for Week of 6-1-20 (Week 5)
 
 > **Week-5-expected:**
-> Let the coding begin! Start making progress on Goal 1. Stick to the development cycle > for all weekly tasks (i.e., describe, design, implement, quality check, test,
-> document, deliver, and iterate).
-> Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> Let the coding begin! Start making progress on Goal 1. Stick to the development cycle for all weekly tasks (i.e., describe, design, implement, quality check, test, document, deliver, and iterate). Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-5-actual:**
 This was actually the start of the first coding period, but A LOT is going on
@@ -464,8 +461,7 @@ locally, nationally, and globally, so I honestly took this week to mediate and o
 # Report for Week of 6-8-20 (Week 6)
 
 > **Week-6-expected:**
-> Let the coding continue! Continue making progress on Goal 1. Compile a weekly report
-> of progress made. Meet with mentors. (check-in with mentors as necessary)
+> Let the coding continue! Continue making progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-6-actual:**
 * Reviewed a [PR related to a quosure bugfix](https://github.com/cbeleites/hyperSpec/pull/150)
@@ -478,9 +474,7 @@ locally, nationally, and globally, so I honestly took this week to mediate and o
     * Worked on replacing `chondro` with `faux_cell` in `hyperSpec` and submitted a [PR](https://github.com/cbeleites/hyperSpec/pull/156)
 
 ## 1. The Return of `hyperSpec.mutate/transmute`
-Still need to finish fleshing out the details of the `hyperSpec.mutate()` and `hyperSpec.transmute()` functions.
-
-According to our Monday meeting, the generalized `mutate/transmute` should allow and disallow the following:
+Still need to finish fleshing out the details of the `hyperSpec.mutate()` and `hyperSpec.transmute()` functions. According to our Monday meeting, the generalized `mutate/transmute` should allow and disallow the following:
 
 ```R
 # Is allowed:
@@ -742,8 +736,7 @@ The vignettes still make use of examples that reference `chondro`, so at some po
 ---
 # Report for Week of 6-22-20 (Week 7)
 
-> **Week-7-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a
-> weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-7-expected:** Let the coding continue! Wrap up progress on Goal 1. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-7-actual:**
 Started implementing the [`hySpc.read.Witec`](https://github.com/eoduniyi/hySpc.read.Witec) package (this package would later come to be known as `hySpc.read.txt`).
@@ -795,8 +788,7 @@ The [`hySpc.skeleton`](https://github.com/r-hyperspec/hySpc.skeleton) package in
 ----
 # Report for Week of 6-29-20 (Week 9)
 
-> **Week-9-expected:** This period will be used to write a detailed report on the work
-> done in Coding Period 1. All work completed will be uploaded and documented.
+> **Week-9-expected:** This period will be used to write a detailed report on the work done in Coding Period 1. All work completed will be uploaded and documented.
 
 **June 29 - July 3: Phase 1 Evaluations**
 
@@ -850,8 +842,7 @@ for (s in seq_along(i_spectra)) {
 ```
 
 ### 1.2. Developing `hySpc.read.Witec` for non-spc columns
-Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the `Witec` format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. While I don't understand all of the details the current `read_txt_Witec_TrueMatch()`
-function has a lot of guides for parsing the remainder of the header information.
+Claudia, Roman, and I met on Wednesday to go over a lot of progress for the `hySpc.read.Witec` package. In particular, we helped each other make sure the package had the correct infrasturcutre (`pkgdown`, `hySpc.testthat`), fleshed out the functionality for reading in the `Witec` format. The work that Claudia did to get from the Header information of the example file to a complete `hyperSpec` object was pretty brilliant to watch. While I don't understand all of the details the current `read_txt_Witec_TrueMatch()` function has a lot of guides for parsing the remainder of the header information.
 
 In fact, let's following the guidance left for us:
 ```R
@@ -903,8 +894,7 @@ So although there are still approximately the same number of .R files, there has
 ---
 # Report for Week of 7-6-20 (Week 10)
 
-> **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. > Stick to the development cycle for all weekly tasks. Compile a weekly report of
-> progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-10-expected:** Let the coding continue! Start making progress on Goals 2 and 3. Stick to the development cycle for all weekly tasks. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-10-actual:**
 * Continued to flesh out the `hySpc.read.Witec` package (it was renamed later to `hySpc.read.txt`) and worked on drat strategy for automated resource moving.
@@ -1028,7 +1018,7 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 ---
 # Report for Week of 7-13-20 (Week 11)
 
-> **Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors > as necessary)
+> **Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-11-actual:**
 * Reviewed Bryan's [PR](https://github.com/r-hyperspec/hySpc.read.txt/pull/4) for the deploy-pkg branch of `hySpc.read.txt`.
@@ -1036,7 +1026,6 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
     * Learned how to update labels for a repo using the [GitHub Label Manager](http://www.dorukdestan.com/github-label-manager/)
 
     * All the labels for the `r-hyperspec` ecosystem are now "synced".
-
 
 * Made some small [commits](https://github.com/r-hyperspec/hySpc.pkgs/commits?author=eoduniyi) to the [`hySpc.pkgs`](https://github.com/r-hyperspec/hySpc.pkgs) package
 
@@ -1063,7 +1052,7 @@ Okay, for whatever reason I have been letting a couple of things on the Trello "
 ---
 # Report for Week of 7-20-20 (Week 12)
 
-> **Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors > as necessary)
+> **Week-12-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-12-actual:**
 Not much progress this week because of personal issues/medical reasons.
@@ -1071,8 +1060,7 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for Week of 8-27-20 (Week 13)
 
-> **Week-13-expected:** Let the coding continue! Start making progress on Goal 3.
-> Stick to the development cycle for all weekly tasks (be adaptable too). Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-13-expected:** Let the coding continue! Start making progress on Goal 3. Stick to the development cycle for all weekly tasks (be adaptable too). Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **July 27 - July 31: Phase 2 Evaluations**
 
@@ -1122,8 +1110,7 @@ Not much progress this week because of personal issues/medical reasons.
 ---
 # Report for week of 8-10-20 (Week 15)
 
-> **Week-15-expected:** Let the coding continue! Continue making progress on Goal 3.
-> Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-15-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-15-actual:**
 Test cases for the remaining styles of `Witec`...these test were taken from the original `hyperSpec` repo:
@@ -1151,8 +1138,7 @@ read.txt.Witec("fileio/txt.Witec/Witec-Map_no.txt",
 ---
 # Report for week of 8-17-20 (Week 16)
 
-> **Week-16-expected:** Let the coding continue! Continue making progress on Goal 3.
-> Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-16-expected:** Let the coding continue! Continue making progress on Goal 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-16-actual:**
 * Reviewed PRs related to `hyperSpec`
@@ -1214,7 +1200,7 @@ Moving the remaining functions related to `read.txt` out of `hyperSpec` into `re
 # Report for week of 8-24-20 (Week 17)
 
 > **Week-17-expected:** Let the coding continue! Wrap up progress on Goal 3. Compile a
-> weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-17-actual:**
 With the guidance of the `r-hyperspec` team I worked on my final GSoC2020 report. I did my best to follow the guidelines as stated [here](https://developers.google.com/open-source/gsoc/help/work-product).
