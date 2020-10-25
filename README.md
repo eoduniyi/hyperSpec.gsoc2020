@@ -1018,7 +1018,7 @@ read_txt_Witec_TrueMatch <- function(file, keys.2header = c("all", "none")) {
 ---
 # Report for Week of 7-13-20 (Week 11)
 
-> **Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and > 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
+> **Week-11-expected:** Let the coding continue! Continue making progress on Goals 2 and 3. Compile a weekly report of progress made. Meet with mentors. (check-in with mentors as necessary)
 
 **Week-11-actual:**
 * Reviewed Bryan's [PR](https://github.com/r-hyperspec/hySpc.read.txt/pull/4) for the deploy-pkg branch of `hySpc.read.txt`.
